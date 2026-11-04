@@ -1,0 +1,6 @@
+{
+  "name": "iso-skills",
+  "description": "ISO yönetim sistemi doküman setleri (27001, 20000-1, 22301, 27701, 42001, 45001), entegre yönetim sistemi ve baş tetkikçi asistanı skill'leri.",
+  "version": "2.0.0",
+  "author": { "name": "Mahmut Açıkel" }
+}

@@ -25,7 +25,7 @@ ORTAK = ["ys_docx.py", "ys_xlsx.py", "sablon_analiz.py", "tutarlilik_tarama.py"]
 
 def main() -> int:
     kontrol = "--kontrol" in sys.argv
-    hedefler = sorted(glob.glob(os.path.join(KOK, "iso-*-dokuman-seti", "scripts")))
+    hedefler = sorted(glob.glob(os.path.join(KOK, "skills", "iso-*-dokuman-seti", "scripts")))
     sapma = 0
     for h in hedefler:
         for f in ORTAK:

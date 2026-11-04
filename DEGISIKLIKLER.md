@@ -1,13 +1,6 @@
 # iso-* skill'leri — 2.0.0 değişiklikleri (2026-11-04)
 
-## Yükleme
-- claude.ai: `dist/*.zip` dosyalarını Ayarlar → Skills'ten mevcut skill'lerin yerine yükleyin (8 paket).
-- Claude Code: `~/.claude/skills/iso-*` altına kuruldu. claude.ai sürümü güncellenince senkron kopya
-  (`anthropic-skills:iso-*`) ile çift görünür; o zaman yerel kopyaları silin.
-
-## Bakım
-- Ortak motorun tek kaynağı `_ortak/scripts/`. Değiştirdikten sonra:
-  `python _ortak/senkron.py` (tüm skill'lere kopyalar) → `python _ortak/dogrula.py --paketle`.
+Kurulum ve bakım: `README.md`.
 
 ## Test bulgularına göre yapılanlar
 | Bulgu (baseline test) | Çözüm |

@@ -1,0 +1,21 @@
+name: dogrula
+on:
+  push:
+  pull_request:
+jobs:
+  dogrula:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install python-docx openpyxl pyyaml
+      - name: Skill ve motor dogrulamasi
+        run: python _ortak/dogrula.py
+      - name: Kayit uretecleri calisiyor mu
+        run: |
+          for d in skills/iso-*-dokuman-seti; do
+            s=$(ls $d/scripts/kayitlar_*.py)
+            python "$s" --kurulus "CI Deneme A.Ş." --cikti "$RUNNER_TEMP/$(basename $d)" --tarih 2026-01-01 > /dev/null
+          done

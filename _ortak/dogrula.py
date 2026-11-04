@@ -77,7 +77,7 @@ def paketle(d: str) -> str:
 
 
 def main() -> int:
-    skilller = sorted(x for x in glob.glob(os.path.join(KOK, "iso-*")) if os.path.isdir(x))
+    skilller = sorted(x for x in glob.glob(os.path.join(KOK, "skills", "iso-*")) if os.path.isdir(x))
     hatalar = []
     for d in skilller:
         hatalar += dogrula(d)

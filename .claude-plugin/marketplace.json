@@ -1,0 +1,12 @@
+{
+  "name": "iso-skills",
+  "owner": { "name": "Mahmut Açıkel" },
+  "plugins": [
+    {
+      "name": "iso-skills",
+      "source": "./",
+      "description": "ISO yönetim sistemi doküman setleri, entegre yönetim sistemi ve baş tetkikçi asistanı skill'leri.",
+      "version": "2.0.0"
+    }
+  ]
+}
