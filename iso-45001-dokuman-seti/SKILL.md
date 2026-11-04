@@ -61,7 +61,8 @@ Sırayı koru; sonraki doküman öncekine atıf verir:
 7. **Acil Durum Planı, talimatlar, formlar, planlar**
 8. **OKUBENI.md** — her zaman, en son
 9. **Denetim hazırlık yol göstericileri** (kodsuz, K2): boşluk raporu, revizyon
-   rehberi, kod geçiş tablosu (mevcut set varsa), madde-kanıt matrisi, öz değerlendirme
+   rehberi, kod geçiş tablosu (mevcut set varsa), madde-kanıt matrisi, öz değerlendirme.
+   Motorda: `Kimlik(..., tur="yol_gosterici")` ver ve dosyayı `k.dosya_adi()` ile kaydet; kapak, antet etiketi, giriş notu ve kodsuz dosya adı otomatik gelir.
 
 Word için `scripts/ys_docx.py` (`antet="klasik"` sahada yaygın 4 satırlı Türk
 antetini verir; kuruluşun dokümanları böyleyse onu kullan). Talimat ve sahada

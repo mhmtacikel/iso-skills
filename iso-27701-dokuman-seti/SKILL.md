@@ -252,7 +252,7 @@ Boşluk raporu, BGYS ve uyum yazılımı revizyon rehberleri, kontrol-kanıt mat
 ve öz değerlendirme **yönetim sistemi dokümanı değildir**. Bunlar belgelendirme
 denetiminden önce üst yönetime ve KVYS Komitesine neyin, kim tarafından, hangi
 sırayla yapılacağını gösteren **yol göstericilerdir**.
-`iso-entegre-yonetim-sistemi` K2 kuralını uygula:
+`iso-entegre-yonetim-sistemi` K2 kuralını uygula. Motorda: `Kimlik(..., tur="yol_gosterici")` ver ve dosyayı `k.dosya_adi()` ile kaydet; kapak, antet etiketi, giriş notu ve kodsuz dosya adı otomatik gelir.
 
 - **Doküman kodu verilmez.** Dosya adı yalnız addır: `Mevcut Doküman
   Değerlendirme ve Boşluk Raporu.docx`, `Kontrol-Kanıt Matrisi ve Öz
