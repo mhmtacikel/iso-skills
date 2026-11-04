@@ -648,7 +648,7 @@ def dokuman_listesi(bilgi: dict, cikti: str) -> str:
 
 def zincir(bilgi: dict, cikti: str) -> str:
     """Envanter zincir kontrolu — denetcinin yapacagi testi onceden yapar."""
-    k = _kayit(bilgi, "Envanter Zincir Kontrolü", bilgi.get("kod_zin", "KVYS-RP-03"))
+    k = _kayit(bilgi, "Envanter Zincir Kontrolü", bilgi.get("kod_zin", "Yol Gösterici"))
     k.bilgi_sayfasi(
         aciklama=("Denetçi envanterden rastgele bir faaliyet seçip zinciri takip eder: "
                   "hukuki sebep → aydınlatma → saklama → aktarım → DPIA → SoA."),
@@ -735,7 +735,7 @@ def gecis(bilgi: dict, cikti: str) -> str:
     """2019 -> 2025 esleme ve bosluk analizi."""
     k27 = _kontroller()
     k = _kayit(bilgi, "2019 → 2025 Geçiş Boşluk Analizi",
-               bilgi.get("kod_gec", "KVYS-RP-04"))
+               bilgi.get("kod_gec", "Yol Gösterici"))
     k.bilgi_sayfasi(
         aciklama=("ISO/IEC 27701:2019'dan 2025'e geçiş için kontrol eşlemesi ve "
                   "boşluk analizi. Kontrollerin büyük kısmı yalnızca yeniden "
@@ -812,9 +812,9 @@ URETICILER = {
     "dof": (dof, "KVYS-FR-07 DOF Takip Formu.xlsx"),
     "yetkinlik": (yetkinlik, "KVYS-LS-12 Yetkinlik ve Egitim Matrisi.xlsx"),
     "dokuman": (dokuman_listesi, "KVYS-LS-13 Dokuman Ana Listesi.xlsx"),
-    "zincir": (zincir, "KVYS-RP-03 Envanter Zincir Kontrolu.xlsx"),
+    "zincir": (zincir, "Envanter Zincir Kontrolu.xlsx"),
     "kvkk": (kvkk, "KVYS-LS-03 KVKK Uyum Matrisi.xlsx"),
-    "gecis": (gecis, "KVYS-RP-04 Gecis Bosluk Analizi.xlsx"),
+    "gecis": (gecis, "Gecis Bosluk Analizi.xlsx"),
 }
 
 VARSAYILAN = ("envanter,soa,risk,dpia,basvuru,saklama,aktarim,ihlal,riza,ifsa,"

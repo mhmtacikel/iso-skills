@@ -85,7 +85,8 @@ class YSKayit:
             ws["B4"].font = Font(size=11, color="595959")
 
         alanlar = [
-            ("Doküman No", m["kod"]),
+            (("Doküman Türü", "Yol Gösterici") if m["kod"] in ("", "Yol Gösterici")
+             else ("Doküman No", m["kod"])),
             ("Yönetim Sistemi", m["sistem"]),
             ("Revizyon No", m["revizyon"]),
             ("Yayın / Revizyon Tarihi", m["tarih"]),
