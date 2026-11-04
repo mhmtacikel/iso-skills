@@ -31,6 +31,16 @@ Kullanim:
 
 from __future__ import annotations
 
+MOTOR_SURUM = "2.0.0"   # _ortak/scripts kaynagindan senkronlanir; elle degistirme
+
+import re as _re
+
+
+def sayfa_adi(ad: str) -> str:
+    """Excel sayfa adi kurali: ters bolu, / ? * [ ] : yasak, en fazla 31 karakter.
+    'Tedarikçi / Alt Yüklenici' -> 'Tedarikçi - Alt Yüklenici'."""
+    return _re.sub(r"\s*[\/?*\[\]:]\s*", " - ", str(ad)).strip()[:31]
+
 import os
 import re
 from typing import Sequence
@@ -53,7 +63,7 @@ KENAR = Border(left=_ince, right=_ince, top=_ince, bottom=_ince)
 class YSKayit:
     def __init__(self, kurulus: str, ad: str, kod: str, standart: str = "",
                  sistem: str = "", revizyon: str = "00", tarih: str = "",
-                 gizlilik: str = "Ic Kullanim", hazirlayan: str = "", onaylayan: str = ""):
+                 gizlilik: str = "İç Kullanım", hazirlayan: str = "", onaylayan: str = ""):
         self.meta = dict(kurulus=kurulus, ad=ad, kod=kod, standart=standart, sistem=sistem,
                          revizyon=revizyon, tarih=tarih, gizlilik=gizlilik,
                          hazirlayan=hazirlayan, onaylayan=onaylayan)
@@ -75,12 +85,12 @@ class YSKayit:
             ws["B4"].font = Font(size=11, color="595959")
 
         alanlar = [
-            ("Dokuman No", m["kod"]),
-            ("Yonetim Sistemi", m["sistem"]),
+            ("Doküman No", m["kod"]),
+            ("Yönetim Sistemi", m["sistem"]),
             ("Revizyon No", m["revizyon"]),
-            ("Yayin / Revizyon Tarihi", m["tarih"]),
+            ("Yayın / Revizyon Tarihi", m["tarih"]),
             ("Gizlilik Derecesi", m["gizlilik"]),
-            ("Hazirlayan", m["hazirlayan"]),
+            ("Hazırlayan", m["hazirlayan"]),
             ("Onaylayan", m["onaylayan"]),
         ]
         r = 6
@@ -94,12 +104,12 @@ class YSKayit:
 
         if aciklama:
             r += 1
-            ws.cell(r, 2, "Amac").font = Font(bold=True, size=10, color=ANA)
+            ws.cell(r, 2, "Amaç").font = Font(bold=True, size=10, color=ANA)
             ws.cell(r + 1, 2, aciklama).alignment = Alignment(wrap_text=True, vertical="top")
             ws.merge_cells(start_row=r + 1, start_column=2, end_row=r + 4, end_column=7)
             r += 6
         if kullanim_notu:
-            ws.cell(r, 2, "Kullanim / Guncelleme").font = Font(bold=True, size=10, color=ANA)
+            ws.cell(r, 2, "Kullanım / Güncelleme").font = Font(bold=True, size=10, color=ANA)
             ws.cell(r + 1, 2, kullanim_notu).alignment = Alignment(wrap_text=True, vertical="top")
             ws.merge_cells(start_row=r + 1, start_column=2, end_row=r + 4, end_column=7)
 
@@ -129,7 +139,7 @@ class YSKayit:
         bos_satir  : kullanicinin dolduracagi bos satir sayisi
         notlar     : {"Sutun adi": "hucre aciklamasi"}
         """
-        ws = self.wb.create_sheet(ad[:31])
+        ws = self.wb.create_sheet(sayfa_adi(ad))
         idx = {b: i + 1 for i, b in enumerate(basliklar)}
 
         for i, b in enumerate(basliklar, start=1):
@@ -182,8 +192,8 @@ class YSKayit:
                     type="list",
                     formula1='"' + ",".join(str(s) for s in secenekler) + '"',
                     allow_blank=True, showDropDown=False)
-                dv.error = "Lutfen listeden bir deger secin."
-                dv.errorTitle = "Gecersiz deger"
+                dv.error = "Lütfen listeden bir değer seçin."
+                dv.errorTitle = "Geçersiz değer"
                 ws.add_data_validation(dv)
                 dv.add(f"{harf}2:{harf}{max(son, 500)}")
 
@@ -200,9 +210,10 @@ class YSKayit:
         if durum_sutunu and durum_sutunu in idx:
             harf = get_column_letter(idx[durum_sutunu])
             alan = f"{harf}2:{harf}{max(son, 500)}"
-            for kelime, renk in (("Kapali", "C6EFCE"), ("Tamamlandi", "C6EFCE"),
-                                 ("Devam", "FFEB9C"), ("Acik", "FFC7CE"),
-                                 ("Gecikti", "FFC7CE")):
+            for kelime, renk in (("Kapalı", "C6EFCE"), ("Tamamlandı", "C6EFCE"),
+                                 ("Uygun", "C6EFCE"), ("Devam", "FFEB9C"),
+                                 ("Kısmen Uygun", "FFEB9C"), ("Açık", "FFC7CE"),
+                                 ("Gecikti", "FFC7CE"), ("Uygun Değil", "FFC7CE")):
                 ws.conditional_formatting.add(alan, CellIsRule(
                     operator="equal", formula=[f'"{kelime}"'],
                     fill=PatternFill("solid", fgColor=renk)))
@@ -211,7 +222,7 @@ class YSKayit:
             from openpyxl.comments import Comment
             for sutun, metin in notlar.items():
                 if sutun in idx:
-                    ws.cell(1, idx[sutun]).comment = Comment(metin, "Yonetim Sistemi")
+                    ws.cell(1, idx[sutun]).comment = Comment(metin, "Yönetim Sistemi")
 
         if genislikler:
             for i, g in enumerate(genislikler[:len(basliklar)], start=1):
@@ -228,7 +239,8 @@ class YSKayit:
     def ozet_sayfasi(self, ad: str, kaynak_sayfa: str, sutun: str,
                      basliklar: Sequence[str]) -> "YSKayit":
         """Basit sayim ozeti - denetimde 'bu kayittan ne cikiyor' sorusunun cevabi."""
-        ws = self.wb.create_sheet(ad[:31])
+        ws = self.wb.create_sheet(sayfa_adi(ad))
+        kaynak_sayfa = sayfa_adi(kaynak_sayfa)
         kws = self.wb[kaynak_sayfa]
         idx = {c.value: c.column for c in kws[1] if c.value}
         if sutun not in idx:
@@ -268,4 +280,5 @@ if __name__ == "__main__":
             formuller={"Risk Skoru": '=IF(AND([Olasilik]{r}<>"",[Etki]{r}<>""),[Olasilik]{r}*[Etki]{r},"")'},
             isi_haritasi=["Risk Skoru"], durum_sutunu="Durum", bos_satir=30)
     k.ozet_sayfasi("Ozet", "Risk Envanteri", "Durum", ["Acik", "Devam", "Kapali"])
-    print(k.kaydet("/tmp/ornek_risk.xlsx"))
+    import os, tempfile
+    print(k.kaydet(os.path.join(tempfile.gettempdir(), "ornek_risk.xlsx")))

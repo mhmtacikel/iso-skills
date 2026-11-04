@@ -31,6 +31,16 @@ Kullanim:
 
 from __future__ import annotations
 
+MOTOR_SURUM = "2.0.0"   # _ortak/scripts kaynagindan senkronlanir; elle degistirme
+
+import re as _re
+
+
+def sayfa_adi(ad: str) -> str:
+    """Excel sayfa adi kurali: ters bolu, / ? * [ ] : yasak, en fazla 31 karakter.
+    'Tedarikçi / Alt Yüklenici' -> 'Tedarikçi - Alt Yüklenici'."""
+    return _re.sub(r"\s*[\/?*\[\]:]\s*", " - ", str(ad)).strip()[:31]
+
 import os
 import re
 from typing import Sequence
@@ -129,7 +139,7 @@ class YSKayit:
         bos_satir  : kullanicinin dolduracagi bos satir sayisi
         notlar     : {"Sutun adi": "hucre aciklamasi"}
         """
-        ws = self.wb.create_sheet(ad[:31])
+        ws = self.wb.create_sheet(sayfa_adi(ad))
         idx = {b: i + 1 for i, b in enumerate(basliklar)}
 
         for i, b in enumerate(basliklar, start=1):
@@ -229,7 +239,8 @@ class YSKayit:
     def ozet_sayfasi(self, ad: str, kaynak_sayfa: str, sutun: str,
                      basliklar: Sequence[str]) -> "YSKayit":
         """Basit sayim ozeti - denetimde 'bu kayittan ne cikiyor' sorusunun cevabi."""
-        ws = self.wb.create_sheet(ad[:31])
+        ws = self.wb.create_sheet(sayfa_adi(ad))
+        kaynak_sayfa = sayfa_adi(kaynak_sayfa)
         kws = self.wb[kaynak_sayfa]
         idx = {c.value: c.column for c in kws[1] if c.value}
         if sutun not in idx:
@@ -269,4 +280,5 @@ if __name__ == "__main__":
             formuller={"Risk Skoru": '=IF(AND([Olasilik]{r}<>"",[Etki]{r}<>""),[Olasilik]{r}*[Etki]{r},"")'},
             isi_haritasi=["Risk Skoru"], durum_sutunu="Durum", bos_satir=30)
     k.ozet_sayfasi("Ozet", "Risk Envanteri", "Durum", ["Acik", "Devam", "Kapali"])
-    print(k.kaydet("/tmp/ornek_risk.xlsx"))
+    import os, tempfile
+    print(k.kaydet(os.path.join(tempfile.gettempdir(), "ornek_risk.xlsx")))

@@ -6,7 +6,7 @@ ys_docx.py — Yonetim sistemi dokumanlari icin Word uretim motoru.
 Neden var: her politika/prosedur/plan ayni kurumsal kiyafeti giymeli. Denetci
 bir dokumani acip kapak, antet, dokuman kodu, revizyon tablosu ve onay blogunu
 ayni yerde bulamazsa "dokuman kontrolu" (7.5.3) maddesinden bulgu yazar. Bu
-motor o iskeleti tek yerden uretir; iceriÄŸi sen yazarsin.
+motor o iskeleti tek yerden uretir; icerigi sen yazarsin.
 
 Kullanim:
     from ys_docx import YSBelge, Kimlik
@@ -26,6 +26,17 @@ Kullanim:
     d.onay_blogu()
     d.kaydet("/cikti/BGYS-PL-01.docx")
 
+Yol gosterici (K2): Kimlik(tur="yol_gosterici") verilirse kapakta ve antette
+kod yerine "YOL GÖSTERİCİ" / "Doküman Türü | Yol Gösterici" yazilir, kapaktan
+sonra "yönetim sistemi dokümanı değildir" notu otomatik eklenir ve
+dosya_adi() kodsuz ad dondurur.
+
+Turkce terim (K3): terim_cevir=True (varsayilan) iken h1/h2/h3/p/madde/tablo
+metinleri TERIMLER sozlugunden gecer (SoA -> Uygulanabilirlik Bildirgesi ...).
+Kesme isaretli ekli bicimler ("SoA'nin") ses uyumu bozulmasin diye otomatik
+cevrilmez; tutarlilik_tarama.py bunlari raporlar. Ingilizce karsiliklar yalniz
+tanimlar() tablosunda, cevrilmeden gorunur.
+
 Sablon davranisi: `sablon` verilirse o dosya taban alinir, yani kurumsal
 stiller/antet/renkler korunur ve eksik stiller uzerine eklenir. Verilmezse
 asagidaki varsayilan kurumsal kimlik uygulanir.
@@ -35,6 +46,7 @@ from __future__ import annotations
 
 import copy
 import os
+import re
 from dataclasses import dataclass, field
 from typing import Iterable, Sequence
 
@@ -45,6 +57,57 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
+
+MOTOR_SURUM = "2.0.0"   # _ortak/scripts kaynagindan senkronlanir; elle degistirme
+
+# K3 — basliklarda ve govdede Ingilizce kisaltma yerine kullanilacak Turkce
+# karsiliklar. Uzun ifadeler once denenir.
+TERIMLER = {
+    "Statement of Applicability": "Uygulanabilirlik Bildirgesi",
+    "Business Impact Analysis": "İş Etki Analizi",
+    "SoA": "Uygulanabilirlik Bildirgesi",
+    "DPIA": "Gizlilik Etki Değerlendirmesi",
+    "PII": "kişisel veri",
+    "BIA": "İş Etki Analizi",
+    "SLA": "Hizmet Düzeyi Anlaşması",
+    "OLA": "Operasyonel Düzey Anlaşması",
+    "CMDB": "Konfigürasyon Yönetim Veri Tabanı",
+    "RTO": "Kurtarma Süresi Hedefi",
+    "RPO": "Kurtarma Noktası Hedefi",
+    "MTPD": "Azami Tolere Edilebilir Kesinti Süresi",
+    "AIMS": "Yapay Zekâ Yönetim Sistemi",
+    "DLP": "Veri Sızıntısı Önleme sistemi",
+    "SIEM": "Güvenlik Olay ve Kayıt Yönetim sistemi",
+    "CCTV": "kapalı devre kamera",
+    "MFA": "çok faktörlü kimlik doğrulama",
+    "SOC": "Güvenlik Operasyon Merkezi",
+    "IVR": "sesli yanıt sistemi",
+}
+
+
+def _derle(sozluk: dict):
+    anahtar = sorted(sozluk, key=len, reverse=True)
+    # Kisaltmadan once/sonra harf veya kesme isareti varsa (SoA'nin) dokunma.
+    return re.compile(r"(?<![\w'’])(" + "|".join(re.escape(k) for k in anahtar) + r")(?![\w'’])")
+
+
+_TERIM_RE = _derle(TERIMLER)
+
+
+def tr(metin, sozluk: dict | None = None) -> str:
+    """K3: metindeki Ingilizce kisaltmalari Turkce karsiligina cevirir.
+    sozluk: kurulusa ozgu ek terimler (once uygulanir)."""
+    if metin is None:
+        return ""
+    metin = str(metin)
+    if sozluk:
+        metin = _derle(sozluk).sub(lambda m: sozluk[m.group(1)], metin)
+    return _TERIM_RE.sub(lambda m: TERIMLER[m.group(1)], metin)
+
+
+YOL_GOSTERICI_NOTU = ("Bu dosya yönetim sistemi dokümanı değildir; doküman kontrolüne "
+                      "tabi değildir ve Geçerli Doküman Listesi'ne girmez. Belgelendirme "
+                      "denetimine hazırlık süresince iş ilerledikçe güncellenir.")
 
 # --------------------------------------------------------------------------
 # Kurumsal varsayilanlar. Kullanicinin sablonu yoksa devreye girer.
@@ -79,6 +142,20 @@ class Kimlik:
     kapsam_notu: str = ""
     yururluk: str = ""            # ilk yürürlük tarihi (boşsa tarih kullanılır)
     ek_alanlar: dict = field(default_factory=dict)
+    tur: str = "kodlu"            # "kodlu" | "yol_gosterici" (K2)
+
+    @property
+    def yol_gosterici(self) -> bool:
+        return self.tur == "yol_gosterici"
+
+    def kod_etiketi(self) -> tuple:
+        """Kodlu -> ("Doküman No", kod); yol gösterici -> ("Doküman Türü", "Yol Gösterici")."""
+        return ("Doküman Türü", "Yol Gösterici") if self.yol_gosterici else ("Doküman No", self.kod)
+
+    def dosya_adi(self, uzanti: str = ".docx") -> str:
+        """Kodlu: 'KOD Ad.docx'; yol gösterici: 'Ad.docx'. Yasak karakterler '-' olur."""
+        ad = self.ad if (self.yol_gosterici or not self.kod) else f"{self.kod} {self.ad}"
+        return re.sub(r'[<>:"/\\|?*]', "-", ad).strip() + uzanti
 
 
 def tr_upper(metin) -> str:
@@ -134,13 +211,16 @@ class YSBelge:
 
     def __init__(self, kimlik: Kimlik, sablon: str | None = None,
                  logo: str | None = None, tema: dict | None = None,
-                 antet: str = "modern"):
+                 antet: str = "modern", terim_cevir: bool = True,
+                 sozluk: dict | None = None):
         """antet: "klasik" = Türk sanayi kuruluşlarında yaygın 4 satırlı antet
         (logo | DOKÜMAN ADI | Doküman Kodu / Yürürlük Tarihi / Revizyon No /
         Revizyon Tarihi) + altbilgide Hazırlayan/Kontrol/Onay şeridi.
         "modern" = 2 satırlı sade antet."""
         self.k = kimlik
         self.antet = antet
+        self.terim_cevir = terim_cevir
+        self.sozluk = sozluk or {}
         self.logo = logo if (logo and os.path.exists(logo)) else None
         self.tema = {**VARSAYILAN_TEMA, **(tema or {})}
         self.sablon_kullanildi = bool(sablon and os.path.exists(sablon))
@@ -154,6 +234,11 @@ class YSBelge:
 
         self._stilleri_kur()
         self._antet_altbilgi()
+
+    def _t(self, metin) -> str:
+        if not self.terim_cevir:
+            return "" if metin is None else str(metin)
+        return tr(metin, self.sozluk)
 
     # ---------------------------------------------------------------- kurulum
     def _sablonu_temizle(self) -> None:
@@ -280,7 +365,9 @@ class YSBelge:
             orta.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
             sag_ust, sag_alt = tbl.cell(0, 2), tbl.cell(1, 2)
-            for hucre, metin in ((sag_ust, f"Dok. No: {self.k.kod}"),
+            ust = ("Doküman Türü | Yol Gösterici" if self.k.yol_gosterici
+                   else f"Dok. No: {self.k.kod}")
+            for hucre, metin in ((sag_ust, ust),
                                  (sag_alt, f"Rev. {self.k.revizyon} / {self.k.tarih}")):
                 r = hucre.paragraphs[0].add_run(metin)
                 r.font.size = Pt(8.5)
@@ -321,7 +408,8 @@ class YSBelge:
             from docx.enum.table import WD_ALIGN_VERTICAL
             sol.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             orta.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-            satirlar = [("Doküman Kodu", k.kod),
+            satirlar = [(("Doküman Türü", "Yol Gösterici") if k.yol_gosterici
+                         else ("Doküman Kodu", k.kod)),
                         ("Yürürlük Tarihi", k.yururluk or k.tarih),
                         ("Revizyon No", k.revizyon),
                         ("Revizyon Tarihi", k.tarih if k.revizyon not in ("00", "0") else "-")]
@@ -369,8 +457,10 @@ class YSBelge:
         elif self.k.standart:
             self.doc.add_paragraph(self.k.standart, style="YS Kapak Alt")
 
+        if self.k.yol_gosterici:
+            self.doc.add_paragraph("YOL GÖSTERİCİ", style="YS Kapak Alt")
         satirlar = [
-            ("Doküman No", self.k.kod),
+            self.k.kod_etiketi(),
             ("Revizyon No", self.k.revizyon),
             ("Yayın / Revizyon Tarihi", self.k.tarih),
             ("Gizlilik Derecesi", self.k.gizlilik),
@@ -386,6 +476,9 @@ class YSBelge:
             sag.paragraphs[0].add_run(str(deger))
             sol.width = Cm(6.0); sag.width = Cm(8.0)
         _kenarlik(t, self.tema["acik_gri"])
+        if self.k.yol_gosterici:
+            self.doc.add_paragraph("", style="YS Govde")
+            self.not_kutusu(YOL_GOSTERICI_NOTU)
         self.sayfa_sonu()
         return self
 
@@ -409,29 +502,29 @@ class YSBelge:
         return self
 
     def h1(self, metin: str) -> "YSBelge":
-        self.doc.add_paragraph(metin, style="Heading 1")
+        self.doc.add_paragraph(self._t(metin), style="Heading 1")
         return self
 
     def h2(self, metin: str) -> "YSBelge":
-        self.doc.add_paragraph(metin, style="Heading 2")
+        self.doc.add_paragraph(self._t(metin), style="Heading 2")
         return self
 
     def h3(self, metin: str) -> "YSBelge":
-        self.doc.add_paragraph(metin, style="Heading 3")
+        self.doc.add_paragraph(self._t(metin), style="Heading 3")
         return self
 
     def p(self, metin: str, stil: str = "YS Govde") -> "YSBelge":
-        self.doc.add_paragraph(metin, style=stil)
+        self.doc.add_paragraph(self._t(metin), style=stil)
         return self
 
     def madde(self, ogeler: Iterable[str], numarali: bool = False) -> "YSBelge":
         stil = "List Number" if numarali else "List Bullet"
         for o in ogeler:
-            self.doc.add_paragraph(o, style=stil)
+            self.doc.add_paragraph(self._t(o), style=stil)
         return self
 
     def not_kutusu(self, metin: str) -> "YSBelge":
-        self.doc.add_paragraph(f"NOT: {metin}", style="YS Not")
+        self.doc.add_paragraph(f"NOT: {self._t(metin)}", style="YS Not")
         return self
 
     def doldurulacak(self, metin: str) -> "YSBelge":
@@ -452,13 +545,13 @@ class YSBelge:
         for i, b in enumerate(basliklar):
             c = t.cell(0, i)
             c.paragraphs[0].style = self.doc.styles["YS Tablo Basligi"]
-            c.paragraphs[0].add_run(str(b))
+            c.paragraphs[0].add_run(self._t(b))
             _shade(c, renk)
         for j, satir in enumerate(satirlar):
             hucreler = t.add_row().cells
             for i, deger in enumerate(satir[:len(basliklar)]):
                 hucreler[i].paragraphs[0].style = self.doc.styles["YS Tablo Govde"]
-                hucreler[i].paragraphs[0].add_run("" if deger is None else str(deger))
+                hucreler[i].paragraphs[0].add_run(self._t(deger))
             if self.tema["tablo_seritli"] and j % 2 == 1:
                 for c in hucreler:
                     _shade(c, "F2F6FA")
@@ -472,6 +565,17 @@ class YSBelge:
                     row.cells[i].width = Cm(g)
         _kenarlik(t, self.tema["acik_gri"])
         self.doc.add_paragraph("", style="YS Govde")
+        return self
+
+    def tanimlar(self, satirlar: Sequence[Sequence[str]]) -> "YSBelge":
+        """Tanımlar tablosu (Terim, Tanım). K3 çevirisi UYGULANMAZ: İngilizce
+        karşılık parantez içinde yalnız burada görünür."""
+        eski = self.terim_cevir
+        self.terim_cevir = False
+        try:
+            self.tablo(["Terim", "Tanım"], [list(x) for x in satirlar], genislikler=[5.0, 11.4])
+        finally:
+            self.terim_cevir = eski
         return self
 
     def onay_blogu(self) -> "YSBelge":
@@ -515,7 +619,8 @@ class YSBelge:
 def standart_belge(kimlik: Kimlik, bolumler: Sequence[tuple], **kw) -> YSBelge:
     """Kapak + revizyon + icindekiler + bolumler + onay iskeletini tek cagriyla kurar.
 
-    bolumler: [("h1"|"h2"|"h3"|"p"|"madde"|"tablo"|"not"|"doldurulacak", veri), ...]
+    bolumler: [("h1"|"h2"|"h3"|"p"|"madde"|"numara"|"tablo"|"tanimlar"|"not"|
+                "doldurulacak"|"sayfa", veri), ...]
     saha=True: talimat/form kipi — kapaksız, klasik antetli, 1-2 sayfaya sığacak şekilde.
     tablo verisi: (basliklar, satirlar) veya (basliklar, satirlar, genislikler)
     """
@@ -546,6 +651,8 @@ def standart_belge(kimlik: Kimlik, bolumler: Sequence[tuple], **kw) -> YSBelge:
             d.doldurulacak(veri)
         elif tip == "tablo":
             d.tablo(*veri)
+        elif tip == "tanimlar":
+            d.tanimlar(veri)
         elif tip == "sayfa":
             d.sayfa_sonu()
     if not saha:
@@ -567,4 +674,5 @@ if __name__ == "__main__":
         ("tablo", (["Rol", "Sorumluluk"], [["Ust Yonetim", "Kaynak saglar"],
                                             ["BGYS Yoneticisi", "Sistemi isletir"]], [5.0, 10.0])),
     ])
-    print(d.kaydet("/tmp/ornek_politika.docx"))
+    import tempfile
+    print(d.kaydet(os.path.join(tempfile.gettempdir(), k.dosya_adi())))
