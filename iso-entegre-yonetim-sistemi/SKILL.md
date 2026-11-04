@@ -147,7 +147,7 @@ tadilatından sonra yayımlanan/güncellenen standartlar (örn. ISO/IEC 27001:20
 10.1'i "Sürekli iyileştirme", 10.2'yi "Uygunsuzluk" yapacak şekilde sırayı
 değiştirdi; tadilat öncesi sürümler (örn. ISO 22301:2019, ISO/IEC 20000-1:2018)
 eski sırayı korur. Bunu asla ezbere yazma — kapsamdaki her standardın kendi
-`references/madde-4-10.md` (veya eşdeğeri) dosyasındaki gerçek sırayı doğrula.
+`<alt skill>/references/madde-4-10.md` (veya eşdeğeri) dosyasındaki gerçek sırayı doğrula.
 
 ## Çalışma akışı
 
@@ -176,7 +176,7 @@ yazılmıştır. Örnek setteki doküman sayısını hedef sanma; kendi kullanı
 
 ### 2 — Tek, birleşik açılış görüşmesi yap
 
-Her `iso-*-dokuman-seti` skill'inin `references/gorusme-rehberi.md` dosyası **aynı
+Her `iso-*-dokuman-seti` skill'inin `<alt skill>/references/gorusme-rehberi.md` dosyası **aynı
 altı soruluk** temel anketi taşır (kuruluş, ölçek, mevcut sistem, şablon, kodlama,
 sadeleştirilmiş/tam set tercihi) — bunu beş kez sorma, **bir kez** sor. Ardından
 her kapsamdaki standardın kendi SKILL.md'sindeki standarda özgü 1–2 soruyu ekle
@@ -234,7 +234,7 @@ karıştırıp her ikisini de zayıflatabilir — okunabilirlik kaybolacaksa ay�
 aynı format ve aynı sesle yaz.
 
 Bu adımda motor olarak kapsamdaki standartlardan **herhangi birinin**
-`scripts/ys_docx.py` / `scripts/ys_xlsx.py` dosyalarını kullan — bütün
+`<alt skill>/scripts/ys_docx.py` / `<alt skill>/scripts/ys_xlsx.py` dosyalarını kullan — bütün
 `iso-*-dokuman-seti` skill'lerinde motor aynı sürümdür (dosya başındaki
 `MOTOR_SURUM`; farklıysa büyük olanı kullan). O skill'i `Skill` aracıyla
 çağırıp taban dizinini elde et, motoru oradan çalıştır; burada kopyalama.
@@ -322,7 +322,7 @@ Beş ayrı öz kontrol yerine **tek** matris üret (K2'ye tabi): satırlar Madde
 her standardın kendi Ek A/standarda özgü gereklilikleri, sütunlar kapsamdaki
 her standart için "karşılanıyor mu / hangi dokümanla / hangi kanıtla". Ortak
 maddeler bir kez görünür, çoklu ✓ alır. Sonra her standardın kendi
-`references/denetim-oz-kontrol.md` listesini yalnızca **o standarda özgü**
+`<alt skill>/references/denetim-oz-kontrol.md` listesini yalnızca **o standarda özgü**
 satırlar için ek bir geçiş olarak uygula — ortak maddeleri tekrar tekrar kontrol
 etmek zaman kaybıdır ve tutarsız sonuç riski taşır.
 
