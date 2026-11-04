@@ -1,5 +1,15 @@
 # ISO/IEC 20000-1:2018 Madde 4–7, 9–10 — Yönetim Sistemi Gövdesi
 
+## İçindekiler
+
+- 4 — Kuruluşun bağlamı
+- 5 — Liderlik
+- 6 — Planlama
+- 7 — Destek
+- 9 — Performans değerlendirmesi
+- 10 — İyileştirme
+- Zorunlu dokümante bilgi — hızlı kontrol listesi
+
 Madde 8 (hizmet yönetimi süreçleri) ayrı dosyadadır: `madde-8-surecler.md`.
 Burada Annex SL gövdesi ve 20000-1'e özgü farkları var.
 
@@ -8,6 +18,17 @@ Burada Annex SL gövdesi ve 20000-1'e özgü farkları var.
 ---
 
 ## 4 — Kuruluşun bağlamı
+
+**İklim değişikliği (Amd 1:2024).** ISO/IEC 20000-1:2018/Amd 1:2024 (Şubat 2024, "Climate
+action changes") iki ekleme yapar ve belgelendirme denetimlerinde aranır:
+**4.1**'e "kuruluş iklim değişikliğinin ilgili bir husus olup olmadığını
+belirler" şartı; **4.2**'ye "ilgili taraflar iklim değişikliğiyle ilgili
+gerekliliklere sahip olabilir" notu. Bağlam Analizi'ne iklim değişikliğini
+ayrı bir satır olarak koy ve ilgili olup olmadığına **gerekçeli** karar yaz
+(ör. veri merkezi/bulut sağlayıcısının aşırı hava olaylarına dayanıklılığı,
+enerji kesintisi, müşterinin sürdürülebilirlik şartları). "İlgili değildir"
+kararı da geçerlidir ama gerekçesiz olamaz. İlgili taraflar tablosunda
+iklimle ilgili gereklilik varsa işaretle.
 
 | Madde | Gereklilik | Doküman | Denetçi ne sorar |
 |---|---|---|---|

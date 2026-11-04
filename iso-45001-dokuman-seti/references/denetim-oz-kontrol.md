@@ -1,5 +1,23 @@
 # Teslim Öncesi Öz Kontrol
 
+## İçindekiler
+
+- A — Bütünlük
+- B — Tutarlılık
+- C — Denetlenebilirlik
+- D — Biçim
+- E — Dürüstlük
+- F — Ölçek
+- G — İSGYS'ye özgü
+- Otomatik kontrol
+- OKUBENI.md kalıbı
+- Ne üretildi
+- Denetim öncesi kapatılması gerekenler
+- [DOLDURULACAK] alanlar
+- Doğrulanması gereken varsayımlar
+- Üretilmeyenler ve nedeni
+- Sonraki adımlar
+
 Doküman seti üretildikten sonra, kullanıcıya teslim etmeden önce bu listeyi geç.
 Amaç mükemmellik değil — **kullanıcının denetimde şaşırmaması.** Bulduğun her
 açığı `OKUBENI.md` içinde açıkça yaz; gizlemek kimseye yaramaz.

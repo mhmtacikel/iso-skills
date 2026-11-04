@@ -1,5 +1,21 @@
 # BIA, RTO/RPO/MTPD, Strateji ve Plan Yazımı
 
+## İçindekiler
+
+- 1. Terimler — karıştırılması en pahalı üç kısaltma
+- 2. BIA nasıl yapılır
+  - Adım 1 — Faaliyetleri listele
+  - Adım 2 — Kesinti etkisini zaman içinde değerlendir
+  - Adım 3 — MTPD ve RTO belirle
+  - Adım 4 — Bağımlılıkları çıkar
+  - Adım 5 — Önceliklendir
+  - BIA tablosunun zorunlu sütunları
+- 3. Strateji ve boşluk analizi
+  - Kaynak gereksinimi tablosu (8.3.4)
+- 4. İş sürekliliği planının yapısı (8.4.4)
+- 5. Tatbikat programı (8.5)
+- 6. Değerlendirme (8.6)
+
 22301'in tamamı bu zincirin üzerine kuruludur. Zincir koparsa sistem çöker:
 
 ```

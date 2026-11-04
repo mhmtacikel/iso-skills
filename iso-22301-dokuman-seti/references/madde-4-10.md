@@ -1,11 +1,39 @@
 # ISO 22301:2019 Madde 4–10 — Gereklilik / Doküman / Kanıt
 
+## İçindekiler
+
+- 4 — Kuruluşun bağlamı
+- 5 — Liderlik
+- 6 — Planlama
+- 7 — Destek
+- 8 — İşletim (22301'in kalbi)
+  - 8.1 İşletimsel planlama ve kontrol
+  - 8.2 İş etki analizi ve risk değerlendirmesi **Z**
+  - 8.3 İş sürekliliği stratejileri ve çözümleri **Z**
+  - 8.4 İş sürekliliği planları ve prosedürleri **Z**
+  - 8.5 Alıştırma (tatbikat) programı **Z**
+  - 8.6 İş sürekliliği dokümantasyonunun ve yeteneklerinin değerlendirilmesi **Z**
+- 9 — Performans değerlendirmesi
+- 10 — İyileştirme
+- Zorunlu dokümante bilgi — hızlı kontrol listesi
+
 `Z` = standardın dokümante edilmiş bilgi olarak açıkça istediği çıktı.
 Hiçbir madde hariç tutulamaz.
 
 ---
 
 ## 4 — Kuruluşun bağlamı
+
+**İklim değişikliği (Amd 1:2024).** ISO 22301:2019/Amd 1:2024 (Şubat 2024, "Climate
+action changes") iki ekleme yapar ve belgelendirme denetimlerinde aranır:
+**4.1**'e "kuruluş iklim değişikliğinin ilgili bir husus olup olmadığını
+belirler" şartı; **4.2**'ye "ilgili taraflar iklim değişikliğiyle ilgili
+gerekliliklere sahip olabilir" notu. Bağlam Analizi'ne iklim değişikliğini
+ayrı bir satır olarak koy ve ilgili olup olmadığına **gerekçeli** karar yaz
+(ör. veri merkezi/bulut sağlayıcısının aşırı hava olaylarına dayanıklılığı,
+enerji kesintisi, müşterinin sürdürülebilirlik şartları). "İlgili değildir"
+kararı da geçerlidir ama gerekçesiz olamaz. İlgili taraflar tablosunda
+iklimle ilgili gereklilik varsa işaretle.
 
 | Madde | Gereklilik | Doküman | Denetçi ne sorar |
 |---|---|---|---|

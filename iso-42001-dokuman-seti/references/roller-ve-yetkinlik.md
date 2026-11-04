@@ -1,5 +1,13 @@
 # Roller, Sorumluluklar ve Yetkinlik
 
+## İçindekiler
+
+- 1. Kuruluşun YZ ekosistemindeki rolü (4.1)
+- 2. Kuruluş içindeki YZYS rolleri (5.3, A.3.2)
+  - Başlangıç rol matrisi
+- 3. RACI iskeleti
+- 4. Yetkinlik matrisi (7.2, A.4.6)
+
 Bu dosya iki farklı "rol" kavramını ayırır. Karıştırılması 42001'de en sık
 görülen kavramsal hatalardan biridir:
 

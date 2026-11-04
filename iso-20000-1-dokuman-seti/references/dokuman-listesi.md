@@ -1,5 +1,17 @@
 # ISO/IEC 20000-1:2018 — Üretilecek Doküman Listesi
 
+## İçindekiler
+
+- 00 — Kapsam ve Planlama
+- 01 — Politikalar
+- 02 — Prosedürler (Madde 8'in gövdesi)
+- 03 — Kataloglar ve Envanterler (Excel)
+  - Hizmet kataloğunun zorunlu sütunları
+  - CMDB'nin zorunlu sütunları
+- 04 — Formlar ve Kayıtlar
+- 07 — Denetim Hazırlık
+- Sayısal beklenti
+
 `Z` = zorunlu dokümante bilgi. `U` = denetimde beklenen.
 Sade set: tek hizmet grubu, < 30 kişilik BT ekibi, dış müşteri yok veya az.
 

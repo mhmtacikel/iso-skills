@@ -1,6 +1,8 @@
 ---
-name: "iso-45001-dokuman-seti"
+name: iso-45001-dokuman-seti
 description: "ISO 45001:2018 (+Amd 1:2024, TS EN ISO 45001) İş Sağlığı ve Güvenliği Yönetim Sistemi için 6331 sayılı Kanun ve alt mevzuatıyla entegre, belgelendirme denetiminden geçebilecek doküman seti üretir ya da mevcut İSG setini analiz edip yeniler — kapsam, İSG politikası, prosedürler, tehlike belirleme ve risk değerlendirme tablosu, yasal şartlar listesi, acil durum planı, iş izni, talimatlar, makine güvenlik talimatları, formlar, planlar; kurumsal Word/Excel stilleriyle. Kullanıcı \"45001 dokümanları hazırla\", \"İSG yönetim sistemi kur\", \"İSG prosedürü yaz\", \"risk değerlendirmesi formu\", \"acil durum planı\", \"İSG doküman setimi incele/yenile\", \"OHSAS'tan 45001'e geçiş\", \"İSG belgelendirmeye hazırlan\", \"iş güvenliği talimatı\" dediğinde ya da İSG/iş güvenliği dokümantasyonu, ISO 45001 denetimine hazırlık, boşluk analizi, İSG klasörü düzenleme işi geçtiğinde mutlaka kullan — standardı açıkça anmasa bile iş sağlığı ve güvenliği yönetim sistemi bağlamı varsa devreye girmeli."
+metadata:
+  surum: "2.0.0"
 ---
 
 # ISO 45001 Doküman Seti Üretimi ve Yenilenmesi
@@ -68,7 +70,7 @@ yok, klasik antet + altbilgide onay şeridi; talimat 1–2 sayfaya sığmalı, �
 makinenin yanına asılır. Excel için `scripts/ys_xlsx.py`. Tekrar eden Excel kayıtlarının tamamı tek komutla:
 
 ```bash
-python3 scripts/kayitlar_45001.py --kurulus "..." --cikti "<04_Formlar_ve_Listeler>" \
+python scripts/kayitlar_45001.py --kurulus "..." --cikti "<04_Formlar_ve_Listeler>" \
   --tarih 2026-10-02 --hazirlayan "İş Güvenliği Uzmanı" --onaylayan "Genel Müdür" \
   --tehlike-sinifi "çok tehlikeli" [--yontem fine-kinney] [--sade] \
   [--kodlar '{"risk":"1000-11-FR-022"}']
@@ -89,13 +91,23 @@ Hangi dokümanlar: `references/dokuman-listesi.md` · Madde bazlı gereklilik ve
 çapraz referansları, Türkçe büyük harf hatalarını tara. Sonuçları OKUBENI'de
 "denetim öncesi kapatılması gerekenler" altında ver.
 
+Teslimden önce tutarlılık taramasını çalıştır (K1 büyük harf, K2 kodlu
+yol gösterici, K3 kısaltma, kırık kod atıfları, klişe ve ölçülemez ifade,
+etiket sayımı, yayın tarihi):
+
+```bash
+python scripts/tutarlilik_tarama.py "<set klasörü>" --md "<set klasörü>/_tarama.md"
+```
+
+Çıkış kodu 1 ise bulgular vardır; kapat veya `OKUBENI.md`'de gerekçesiyle listele.
+
 ## Mevcut set varsa — önce analiz, sonra üretim
 
 Türkiye'de 45001 işi çoğunlukla OHSAS 18001'den kalma bir setin yenilenmesidir.
 `references/mevcut-set-analizi.md`'yi oku ve şu sırayla ilerle:
 
 1. Klasör bağlıysa envanteri **kullanıcının bilgisayarında** çıkar
-   (`device_bash` ile `scripts/envanter.py`) — yüzlerce dosyayı tek tek açma.
+   (`scripts/envanter.py` ile) — yüzlerce dosyayı tek tek açma.
 2. Çekirdek dokümanları oku (politika, prosedürler, RD, mevzuat listesi, acil durum planı).
 3. Madde bazlı boşluk analizi + revizyon rehberi + kod geçiş tablosu üret.
 4. Kullanıcıya anlat, karar al (korunacak / revize / birleştirilecek / iptal).
@@ -181,18 +193,33 @@ Her dosyayı `soffice` ile PDF'e çevirip görsel kontrol et.
 Kilitleme ve Etiketleme, PPE → KKD, near miss → ramak kala, SDS → Güvenlik Bilgi
 Formu, ATEX → patlayıcı ortam; İngilizcesi yalnız Tanımlar tablosunda parantezde.
 
+## Çalışma ortamı
+
+Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
+
+| İş | Cowork (bağlı klasör) | Claude Code / yerel |
+|---|---|---|
+| Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
+
+Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden
+üretimde adı değişen eski dosyaları `_to_delete/` alt klasörüne taşı
+(`mv -n`) ve söyle.
+
 ## Kullanılacak skill'ler ve araçlar
 
 | Aşama | Araç | Ne için |
 |---|---|---|
-| Girdi | Cihaz köprüsü (`device_list_dir`, `device_bash`) | Bağlı klasörde envanter ve okuma yerinde; yalnız görsel kontrol gereken dosyayı buluta al |
+| Girdi | Bağlı klasör / yerel dosya sistemi (bkz. Çalışma ortamı) | Bağlı klasörde envanter ve okuma yerinde; yalnız görsel kontrol gereken dosyayı buluta al |
 | Mevzuat | WebSearch / Firecrawl; `regulatory-legal:reg-feed-watcher`, `policy-diff` | Resmî Gazete künyeleri ve 2026 değişiklikleri |
 | İş hukuku | `employment-legal:policy-drafting`, `internal-investigation` | Disiplin/ihlal yaptırımları, iş kazası sonrası soruşturma |
 | Yüklenici | `commercial-legal:vendor-agreement-review` | Alt işveren sözleşmelerinde İSG maddeleri |
 | Kişisel veri | `privacy-legal:*` | Sağlık verisi, kamera, kaza kayıtları |
 | Çıktı | `anthropic-skills:docx`, `xlsx`, `pdf` | Üretim ve doğrulama |
 | Entegrasyon | `iso-entegre-yonetim-sistemi` | 14001/9001 ile birlikte kurulum |
-| Teslim | `device_commit_files` (bağlı klasörde yeni alt klasör) | Kullanıcının dosyalarını değiştirmeden teslim |
+| Teslim | Yeni alt klasöre teslim (bkz. Çalışma ortamı) | Kullanıcının dosyalarını değiştirmeden teslim |
 
 ## Referans dosyaları
 
@@ -210,6 +237,11 @@ Formu, ATEX → patlayıcı ortam; İngilizcesi yalnız Tanımlar tablosunda par
 
 ## Bağımlılıklar
 
+`python-docx` ve `openpyxl` gerekir:
+
 ```bash
-pip install python-docx openpyxl --break-system-packages
+pip install python-docx openpyxl
 ```
+
+Linux'ta "externally-managed-environment" hatası alırsan komuta
+`--break-system-packages` ekle; Windows ve macOS'ta gerekmez.

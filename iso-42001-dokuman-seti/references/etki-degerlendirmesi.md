@@ -1,5 +1,16 @@
 # YZ Risk Değerlendirmesi ile YZ Sistemi Etki Değerlendirmesi
 
+## İçindekiler
+
+- 1. İki soru, iki değerlendirme
+- 2. YZ risk değerlendirmesi (6.1.2 / 6.1.3)
+- 3. YZ sistemi etki değerlendirmesi (6.1.4 / 8.4 / Ek A.5)
+  - A.5.3 — dokümantasyonun içermek zorunda olduğu yedi kalem
+  - Değerlendirme yapısı
+- 4. Ne zaman etki değerlendirmesi yapılır
+- 5. Adillik metriği seçimi
+- 6. Çift zincir kontrolü
+
 Bu ayrım 42001'in kalbidir ve en sık yapılan hata bunları birleştirmektir.
 Birleştirilmiş bir doküman her iki gerekliliği de karşılamaz.
 

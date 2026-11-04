@@ -1,6 +1,8 @@
 ---
-name: "iso-22301-dokuman-seti"
+name: iso-22301-dokuman-seti
 description: "ISO 22301:2019 (TS EN ISO 22301) İş Sürekliliği Yönetim Sistemi için belgelendirme denetiminden geçebilecek kapsamlı doküman seti üretir — kapsam, iş sürekliliği politikası, İş Etki Analizi (BIA), RTO/RPO/MTPD tanımları, süreklilik stratejileri, olay müdahale yapısı, iş sürekliliği planları, tatbikat programı, formlar; hepsi kurumsal Word/Excel stilleriyle. Kullanıcı \"ISO 22301 dokümanları hazırla\", \"iş sürekliliği yönetim sistemi kur\", \"İSYS\", \"BIA yap\", \"iş etki analizi\", \"iş sürekliliği planı yaz\", \"RTO RPO belirle\", \"felaket kurtarma planı\", \"tatbikat planı\", \"22301 belgelendirmeye hazırlan\" dediğinde mutlaka kullan. Standart açıkça anılmasa bile iş sürekliliği, kriz yönetimi, olağanüstü durum planlaması veya iş kesintisine hazırlık dokümantasyonu bağlamı varsa bu skill devreye girmeli."
+metadata:
+  surum: "2.0.0"
 ---
 
 # ISO 22301:2019 İş Sürekliliği Doküman Seti Üretimi
@@ -40,7 +42,7 @@ revizyon rehberiyle mi ele alınacak.
 Kurumsal şablon yüklendiyse önce tanı:
 
 ```bash
-python3 scripts/sablon_analiz.py "<şablon.docx>"
+python scripts/sablon_analiz.py "<şablon.docx>"
 ```
 
 ### 2 — Kapsamı ve plan taslağını onaylat
@@ -92,6 +94,16 @@ olduğunu satır satır doğrula; kalan İngilizce kısaltmaları, kırık kod a
 yol gösterici dosyalara kodla verilmiş atıfları ve etiket sayılarını tara.
 Bulguları `OKUBENI.md`'de "Denetim öncesi kapatılması gerekenler" tablosunda
 raporla.
+
+Teslimden önce tutarlılık taramasını çalıştır (K1 büyük harf, K2 kodlu
+yol gösterici, K3 kısaltma, kırık kod atıfları, klişe ve ölçülemez ifade,
+etiket sayımı, yayın tarihi):
+
+```bash
+python scripts/tutarlilik_tarama.py "<set klasörü>" --md "<set klasörü>/_tarama.md"
+```
+
+Çıkış kodu 1 ise bulgular vardır; kapat veya `OKUBENI.md`'de gerekçesiyle listele.
 
 ## Kırılma noktaları
 
@@ -155,6 +167,7 @@ yok, dosya adı yalnız ad; kapakta "YOL GÖSTERİCİ", antette "Doküman Türü
 Gösterici"; onay İSYS komitesi başkanı; metnin başında "yönetim sistemi dokümanı
 değildir" notu; Doküman Listesi'ne girmez ve listenin not alanında bu açıklanır;
 setin geri kalanı bu dosyalara adıyla atıf verir.
+Motorda: `Kimlik(..., tur="yol_gosterici")` ver ve dosyayı `k.dosya_adi()` ile kaydet; kapak, antet etiketi, giriş notu ve kodsuz dosya adı otomatik gelir.
 
 ## Türkçe terim kuralı
 
@@ -193,11 +206,26 @@ karşılanır. Ortak dokümanları (doküman kontrol, iç tetkik, YGG, DÖF, yet
 `EYS-` önekiyle tek doküman olarak üret ve her iki standardın maddesine atıf ver.
 Birden fazla standart kapsamdaysa `iso-entegre-yonetim-sistemi` ile çalış.
 
+## Çalışma ortamı
+
+Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
+
+| İş | Cowork (bağlı klasör) | Claude Code / yerel |
+|---|---|---|
+| Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
+
+Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden
+üretimde adı değişen eski dosyaları `_to_delete/` alt klasörüne taşı
+(`mv -n`) ve söyle.
+
 ## Kullanılacak skill'ler ve connector'ler
 
 | Aşama | Skill / connector | Ne için |
 |---|---|---|
-| Girdi | Cihaz köprüsü (`device_list_dir`, `device_bash`, `device_stage_files`) | Bağlı klasördeki mevcut analiz ve planları yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları buluta al |
+| Girdi | Bağlı klasör / yerel dosya sistemi (bkz. Çalışma ortamı) | Bağlı klasördeki mevcut analiz ve planları yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları buluta al |
 | Girdi | Google Drive connector | Doküman kütüphanesi Drive'daysa |
 | Mevzuat | WebSearch / Firecrawl; `regulatory-legal:reg-feed-watcher`, `regulatory-legal:policy-diff` | AFAD, sektörel süreklilik düzenlemeleri, kamu için BİG Rehberi; tarih/süre uydurma |
 | Tedarikçi | `commercial-legal:vendor-agreement-review`, `commercial-legal:saas-msa-review` | Tedarikçi süreklilik taahhütleri, bulut yedekliliği |
@@ -205,7 +233,7 @@ Birden fazla standart kapsamdaysa `iso-entegre-yonetim-sistemi` ile çalış.
 | Çıktı | `anthropic-skills:docx`, `anthropic-skills:xlsx`, `anthropic-skills:pdf`, `anthropic-skills:pptx` (tatbikat brifingi, YGG sunumu) | Üretim ve doğrulama |
 | Görsel kontrol | `soffice` → `pdftoppm` → Read | Şablon birebirliği, tablo taşmaları |
 | Entegrasyon | `iso-entegre-yonetim-sistemi`, `iso-27001-dokuman-seti`, `iso-20000-1-dokuman-seti` | A.5.29/5.30 ve 8.7.2 kesişimleri, K1–K4 kuralları |
-| Teslim | `device_commit_files` (bağlı klasörde yeni alt klasör) | Kullanıcının dosyalarını değiştirmeden teslim |
+| Teslim | Yeni alt klasöre teslim (bkz. Çalışma ortamı) | Kullanıcının dosyalarını değiştirmeden teslim |
 
 ## Referans dosyaları
 
@@ -221,6 +249,11 @@ Birden fazla standart kapsamdaysa `iso-entegre-yonetim-sistemi` ile çalış.
 
 ## Bağımlılıklar
 
+`python-docx` ve `openpyxl` gerekir:
+
 ```bash
-pip install python-docx openpyxl --break-system-packages
+pip install python-docx openpyxl
 ```
+
+Linux'ta "externally-managed-environment" hatası alırsan komuta
+`--break-system-packages` ekle; Windows ve macOS'ta gerekmez.

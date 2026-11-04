@@ -1,5 +1,18 @@
 # İçerik Rehberi — Kalite Çıtası ve Örnek Metinler
 
+## İçindekiler
+
+- 1. Kapsam beyanı
+- 2. Hizmet kataloğu kaydı
+- 3. SLA hedefi
+- 4. SLA–OLA–UC hizalaması
+- 5. Olay–problem ayrımı (aynı vaka, iki kayıt)
+- 6. Değişiklik kaydı — geri alma planı
+- 7. CMDB doğrulama kaydı
+- 8. Hizmet raporu tanımı
+- 9. `[DOLDURULACAK]` ve `[ÖRNEK]`
+- 10. Ton kontrolü
+
 Her örneğin zayıf ve güçlü sürümü verilmiştir. Zayıf sürümler gerçek denetimlerde
 bulgu almış kalıplardır.
 

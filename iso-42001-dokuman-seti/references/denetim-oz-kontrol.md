@@ -1,5 +1,24 @@
 # Teslim Öncesi Öz Kontrol
 
+## İçindekiler
+
+- A — Bütünlük
+- A2 — 42001'e özgü zorunlu kontroller
+- B — Tutarlılık
+- C — Denetlenebilirlik
+- D — Biçim
+- E — Dürüstlük
+- F — Ölçek
+- Otomatik kontrol
+- OKUBENI.md kalıbı
+- Ne üretildi
+- Denetim öncesi kapatılması gerekenler
+- [DOLDURULACAK] alanlar
+- Doğrulanması gereken varsayımlar
+- Üretilmeyenler ve nedeni
+- Sonraki adımlar
+- Öz kontrol §A3: eklenti entegrasyonu kontrolleri
+
 Doküman seti üretildikten sonra, kullanıcıya teslim etmeden önce bu listeyi geç.
 Amaç mükemmellik değil — **kullanıcının denetimde şaşırmaması.** Bulduğun her
 açığı `OKUBENI.md` içinde açıkça yaz; gizlemek kimseye yaramaz.
@@ -138,3 +157,18 @@ işim kaldı" sorusunun cevabını rakamla görmeli.
 ## Sonraki adımlar
 1. ...
 ```
+
+## Öz kontrol §A3: eklenti entegrasyonu kontrolleri
+
+Teslim öncesi `denetim-oz-kontrol.md` §A2 listesine ek olarak geç:
+
+- [ ] `Ek E4` son teyit tarihi 90 günden yeni; değilse ilgili satırlar web aramasıyla kontrol edildi
+- [ ] YZYS kayıtlarında eklentinin gizlilik başlığı ("PRIVILEGED", "ATTORNEY WORK PRODUCT") **yok**; hukuki notlara yalnızca sonuç + referans + tarih ile atıf var
+- [ ] Envanterde iki rol sütunu ayrı: 42001 rolü ve AB YZ Yasası rolü; biri diğerinden otomatik türetilmemiş
+- [ ] `envanter_senkron.py fark` çalıştırıldı; yalnız-Excel sistemler için öneri taslağı kullanıcıya sunuldu, çelişkiler kapatıldı
+- [ ] `envanter_senkron.py zincir` raporunda açık zincir yok veya OKUBENI'de listelendi
+- [ ] Eklenti bulgularının önem derecesi risk kaydında taban olarak korunmuş; düşürülen her bulgu için gerekçe var
+- [ ] Profildeki kırmızı çizgiler YZ politikasının yasaklı kullanımlarında ve envanterin "Yasak Kullanım" sütununda yer alıyor
+- [ ] Danışman modunda: dosyalar doğru matter altında, başka müşteriye ait içerik yok
+- [ ] Olay prosedüründe tespit zamanı dakika hassasiyetinde ve her bildirim kolu (KVKK, AB YZ Yasası, siber, sektörel, tedarikçi) için karar sütunu var
+- [ ] Yetkinlik matrisi kişi grubu × YZ sistemi bazında; insan gözetimi yapanlar ve dış kişiler ayrı satırda

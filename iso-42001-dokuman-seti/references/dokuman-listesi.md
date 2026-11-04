@@ -1,5 +1,18 @@
 # ISO/IEC 42001:2023 — Üretilecek Doküman Listesi
 
+## İçindekiler
+
+- 00 — Kapsam ve El Kitabı
+- 01 — Politikalar
+- 02 — Prosedürler
+- 03 — Envanterler ve Değerlendirmeler (Excel)
+  - YZ Sistem Envanterinin zorunlu sütunları
+  - Etki Değerlendirmesinin yapısı
+- 04 — Formlar ve Planlar
+- Yaşam döngüsü kontrol noktaları (YZYS-PN-01)
+- 07 — Denetim Hazırlık
+- Sayısal beklenti
+
 `Z` = zorunlu dokümante bilgi. `U` = denetimde beklenen.
 Sade set: az sayıda YZ sistemi, çoğunlukla üçüncü taraf kullanıcı rolü.
 

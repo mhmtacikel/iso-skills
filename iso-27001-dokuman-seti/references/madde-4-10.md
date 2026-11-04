@@ -1,5 +1,16 @@
 # ISO/IEC 27001:2022 Madde 4–10 — Gereklilik / Doküman / Kanıt
 
+## İçindekiler
+
+- 4 — Kuruluşun bağlamı
+- 5 — Liderlik
+- 6 — Planlama
+- 7 — Destek
+- 8 — İşletim
+- 9 — Performans değerlendirmesi
+- 10 — İyileştirme
+- Zorunlu dokümante bilgi — hızlı kontrol listesi
+
 Ek A kontrolleri "ne yapılacağını" söyler; Madde 4–10 **yönetim sisteminin
 kendisini** kurar. Denetçinin Aşama 1 tetkikinde neredeyse tamamen bu maddelere
 baktığını unutma — Ek A daha çok Aşama 2'nin konusudur.
@@ -13,6 +24,17 @@ birini hariç tutamaz.
 ---
 
 ## 4 — Kuruluşun bağlamı
+
+**İklim değişikliği (Amd 1:2024).** ISO/IEC 27001:2022/Amd 1:2024 (Şubat 2024, "Climate
+action changes") iki ekleme yapar ve belgelendirme denetimlerinde aranır:
+**4.1**'e "kuruluş iklim değişikliğinin ilgili bir husus olup olmadığını
+belirler" şartı; **4.2**'ye "ilgili taraflar iklim değişikliğiyle ilgili
+gerekliliklere sahip olabilir" notu. Bağlam Analizi'ne iklim değişikliğini
+ayrı bir satır olarak koy ve ilgili olup olmadığına **gerekçeli** karar yaz
+(ör. veri merkezi/bulut sağlayıcısının aşırı hava olaylarına dayanıklılığı,
+enerji kesintisi, müşterinin sürdürülebilirlik şartları). "İlgili değildir"
+kararı da geçerlidir ama gerekçesiz olamaz. İlgili taraflar tablosunda
+iklimle ilgili gereklilik varsa işaretle.
 
 | Madde | Gereklilik | Doküman | Denetçi ne sorar |
 |---|---|---|---|

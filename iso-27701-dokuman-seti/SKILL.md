@@ -1,6 +1,8 @@
 ---
-name: "iso-27701-dokuman-seti"
+name: iso-27701-dokuman-seti
 description: "ISO/IEC 27701 Kişisel Veri Yönetim Sistemi (KVYS/PIMS) için belgelendirme denetiminden geçebilecek doküman seti üretir — hem 2019 (27001 eklentisi) hem 2025 (bağımsız sistem) sürümü, ayrıca 2019→2025 geçiş ve boşluk analizi. Veri işleme envanteri, aydınlatma metni, açık rıza, DPIA, ilgili kişi başvuru süreci, saklama-imha, yurt dışı aktarım, veri ihlali yönetimi, Uygulanabilirlik Bildirgesi ve KVKK eşleme matrisi dahil; kurumsal Word/Excel stilleriyle. Kullanıcı \"ISO 27701 dokümanları hazırla\", \"KVYS kur\", \"PIMS\", \"kişisel veri yönetim sistemi\", \"27701 belgelendirmeye hazırlan\", \"27701:2025 geçiş\", \"veri işleme envanteri\", \"DPIA yap\", \"aydınlatma metni yaz\", \"VERBİS\", \"ilgili kişi başvuru prosedürü\", \"saklama imha politikası\", \"veri ihlali prosedürü\" dediğinde mutlaka kullan. Standart anılmasa bile kişisel veri koruma yönetim sistemi, KVKK/GDPR uyum dokümantasyonu veya gizlilik sertifikasyonu bağlamı varsa devreye girmeli."
+metadata:
+  surum: "2.0.0"
 ---
 
 # ISO/IEC 27701 Kişisel Veri Yönetim Sistemi Doküman Seti Üretimi
@@ -78,7 +80,7 @@ anketini sor (kuruluş, kapsam, ölçek, dış kaynak, mevcut dokümanlar, hedef
 Kurumsal şablon yüklendiyse önce tanı:
 
 ```bash
-python3 scripts/sablon_analiz.py "<şablon.docx>"
+python scripts/sablon_analiz.py "<şablon.docx>"
 ```
 
 ### 2 — Kapsamı ve plan taslağını onaylat
@@ -125,7 +127,7 @@ değerlendirmesi olmalı. Denetçi envanterden rastgele bir satır seçip bunlar
 Word için `scripts/ys_docx.py`, Excel için `scripts/ys_xlsx.py`, kayıtlar için:
 
 ```bash
-python3 scripts/kayitlar_27701.py --kurulus "..." --cikti "<klasör>" \
+python scripts/kayitlar_27701.py --kurulus "..." --cikti "<klasör>" \
   --surum 2025 --rol her-ikisi --tarih 2026-08-11
 ```
 
@@ -141,6 +143,16 @@ kısaltmalar, kırık doküman kodu atıfları, yol gösterici dosyalara kodla v
 atıf, `[DOLDURULACAK]` / `[ÖRNEK]` / `[DOĞRULANACAK]` / Hukuk teyidi etiket
 sayıları (dosya bazında). Bulguları `OKUBENI.md`'de "Denetim öncesi kapatılması
 gerekenler" tablosunda (öncelik, konu, dosya, yapılacak) raporla.
+
+Teslimden önce tutarlılık taramasını çalıştır (K1 büyük harf, K2 kodlu
+yol gösterici, K3 kısaltma, kırık kod atıfları, klişe ve ölçülemez ifade,
+etiket sayımı, yayın tarihi):
+
+```bash
+python scripts/tutarlilik_tarama.py "<set klasörü>" --md "<set klasörü>/_tarama.md"
+```
+
+Çıkış kodu 1 ise bulgular vardır; kapat veya `OKUBENI.md`'de gerekçesiyle listele.
 
 ## Kırılma noktaları
 
@@ -304,11 +316,26 @@ Kullanıcı "bu dokümanı şablon olarak bire bir kullan" derse `ys_docx.py` ye
   bloğunu şablondaki gibi koru; kişi adı yerine unvan yaz.
 - Her dosyayı PDF'e çevirip en az bir sayfasını görsel olarak kontrol et.
 
+## Çalışma ortamı
+
+Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
+
+| İş | Cowork (bağlı klasör) | Claude Code / yerel |
+|---|---|---|
+| Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
+
+Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden
+üretimde adı değişen eski dosyaları `_to_delete/` alt klasörüne taşı
+(`mv -n`) ve söyle.
+
 ## Kullanılacak skill'ler ve connector'ler
 
 | Aşama | Skill / connector | Ne için |
 |---|---|---|
-| Girdi | Cihaz köprüsü (`device_list_dir`, `device_bash`, `device_stage_files`) | Bağlı klasördeki mevcut Excel/PDF'leri yerinde oku (`python3 + openpyxl`, `pdftotext`); yalnız şablon .docx ve görsel kontrol gereken dosyaları buluta al |
+| Girdi | Bağlı klasör / yerel dosya sistemi (bkz. Çalışma ortamı) | Bağlı klasördeki mevcut Excel/PDF'leri yerinde oku (`python3 + openpyxl`, `pdftotext`); yalnız şablon .docx ve görsel kontrol gereken dosyaları buluta al |
 | Girdi | Google Drive connector | Doküman kütüphanesi Drive'daysa arama ve okuma |
 | Mevzuat teyidi | WebSearch / Firecrawl; `regulatory-legal:reg-feed-watcher`, `regulatory-legal:policy-diff` | KVKK değişiklikleri, Kurul kararları, yönetmelik güncelliği; tarih/süre uydurma |
 | Hukuki içerik | `privacy-legal:pia-generation`, `privacy-legal:dsar-response`, `privacy-legal:dpa-review`, `privacy-legal:reg-gap-analysis` | Etki değerlendirmesi, başvuru yanıtı, veri işleyen sözleşmesi, mevzuat boşluk analizi |
@@ -318,7 +345,7 @@ Kullanıcı "bu dokümanı şablon olarak bire bir kullan" derse `ys_docx.py` ye
 | Çıktı | `anthropic-skills:docx`, `anthropic-skills:xlsx`, `anthropic-skills:pdf` | Word/Excel/PDF üretim ve doğrulama |
 | Görsel kontrol | `soffice --headless --convert-to pdf` → `pdftoppm` → Read | Şablon birebirliği, tablo taşmaları |
 | Entegrasyon | `iso-entegre-yonetim-sistemi`, `iso-27001-dokuman-seti` | 2019'da BGYS zemini, çoklu standart, K1–K4 kuralları |
-| Teslim | `device_commit_files` (bağlı klasöre alt klasör olarak), gerekirse Artifact | Kullanıcının dosyalarını değiştirmeden yeni klasöre yaz |
+| Teslim | Yeni alt klasöre teslim (bkz. Çalışma ortamı), gerekirse Artifact | Kullanıcının dosyalarını değiştirmeden yeni klasöre yaz |
 
 ## 2019 → 2025 geçişi
 
@@ -363,6 +390,11 @@ birleştirme, birbirine referans ver.
 
 ## Bağımlılıklar
 
+`python-docx` ve `openpyxl` gerekir:
+
 ```bash
-pip install python-docx openpyxl --break-system-packages
+pip install python-docx openpyxl
 ```
+
+Linux'ta "externally-managed-environment" hatası alırsan komuta
+`--break-system-packages` ekle; Windows ve macOS'ta gerekmez.

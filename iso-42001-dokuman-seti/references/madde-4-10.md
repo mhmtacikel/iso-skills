@@ -1,5 +1,19 @@
 # ISO/IEC 42001:2023 Madde 4–10 — Gereklilik / Doküman / Kanıt
 
+## İçindekiler
+
+- 4 — Kuruluşun bağlamı
+  - İklim değişikliği — atlanırsa kesin bulgu
+- 5 — Liderlik
+- 6 — Planlama
+  - 6.1.1 — risk kriteri seti üçünü birden kapsamalı
+  - 6.3 — değişiklik yönetiminin altı unsuru
+- 7 — Destek
+- 8 — İşletim
+- 9 — Performans değerlendirmesi
+- 10 — İyileştirme
+- Zorunlu dokümante bilgi — hızlı kontrol listesi
+
 `Z` = dokümante edilmiş bilgi olarak açıkça istenen. Hiçbir madde hariç tutulamaz.
 Ek A kontrolleri gerekçeyle hariç tutulabilir.
 

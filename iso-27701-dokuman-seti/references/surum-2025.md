@@ -1,5 +1,24 @@
 # ISO/IEC 27701:2025 — Madde Yapısı ve Doküman Listesi
 
+## İçindekiler
+
+- 1. Madde yapısı
+  - Madde 4 — Kuruluşun bağlamı
+  - Madde 5 — Liderlik
+  - Madde 6 — Planlama
+  - Madde 7 — Destek
+  - Madde 8 — İşletim
+  - Madde 9 — Performans değerlendirmesi
+  - Madde 10 — İyileştirme
+- 2. Doküman listesi (2025)
+  - 00 — Kapsam ve çerçeve
+  - 01 — Politikalar
+  - 02 — Prosedürler
+  - 03 — Envanterler ve kayıtlar (Excel)
+  - 04 — Formlar ve planlar
+  - 07 — Denetim hazırlık
+- 3. Sayısal beklenti
+
 **Bu sürüm bağımsız bir yönetim sistemi standardıdır.** ISO/IEC 27001 gerekmez.
 Annex SL gövdesini kullanır, yani 27001/22301/42001 ile aynı iskelete oturur ve
 entegre kurulum kolaydır.

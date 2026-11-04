@@ -1,6 +1,8 @@
 ---
-name: "iso-entegre-yonetim-sistemi"
+name: iso-entegre-yonetim-sistemi
 description: "Birden fazla ISO yönetim sistemi standardını (27001, 20000-1, 22301, 27701, 42001 ve iso- ile başlayıp -dokuman-seti ile biten her yeni skill) Annex SL ortak üst yapısı altında TEK bir Entegre Yönetim Sistemi (EYS) doküman setinde birleştirir; alttaki iso-*-dokuman-seti skillerini kendi motoru olarak çalıştırır ve tüm sete tek, istikrarlı bir \"ghost writer\" sesiyle yazar. Kullanıcı \"entegre yönetim sistemi kur\", \"EYS\", \"IMS\", \"çoklu standart\", \"27001 ve 22301'i birlikte kur\", \"birden fazla ISO sertifikasyonuna hazırlan\", \"Annex SL\", \"mevcut sistemlerimi birleştir\" dediğinde ya da iki veya daha fazla ISO standardı gündeme geldiğinde mutlaka kullan."
+metadata:
+  surum: "2.0.0"
 ---
 
 # Entegre Yönetim Sistemi (EYS) Kurulumu — Annex SL Orkestrasyonu
@@ -37,8 +39,9 @@ antet tablosunda, başlıklar gövdede otomatik büyük harfe çevrildiği için
 sette yüzlerce kez tekrarlanır: "BİLGİ GÜVENLİĞİ YÖNETİM SİSTEMİ" yerine
 "BILGI GÜVENLIĞI YÖNETIM SISTEMI" yazılır ve set amatör görünür.
 
-**Kural: üretim kodunda doğrudan `.upper()` / `.lower()` çağırma.** Motoru kurarken
-şu iki fonksiyonu tanımla ve büyük/küçük harf gereken her yerde bunları kullan:
+**Kural: üretim kodunda doğrudan `.upper()` / `.lower()` çağırma.** Motor 2.0.0
+bu iki fonksiyonu içerir (`from ys_docx import tr_upper, tr_lower`); kendi
+kodunda da bunları kullan:
 
 ```python
 def tr_upper(metin):
@@ -97,8 +100,9 @@ Değerlendirmesi, PII → kişisel veri, BIA → İş Etki Analizi, SLA → Hizm
 Anlaşması, OLA → Operasyonel Düzey Anlaşması, CMDB → Konfigürasyon Yönetim
 Veri Tabanı, RTO/RPO/MTPD → Kurtarma Süresi Hedefi / Kurtarma Noktası Hedefi /
 Azami Tolere Edilebilir Kesinti Süresi, AIMS → Yapay Zekâ Yönetim Sistemi,
-DLP / SIEM / CCTV / IVR / MFA → Türkçe karşılıkları). Motora bir sözlük + `tr()`
-fonksiyonu koy ve tüm Word/Excel metinlerini bundan geçir; İngilizce karşılık
+DLP / SIEM / CCTV / IVR / MFA → Türkçe karşılıkları). Motor 2.0.0 bu sözlüğü
+(`TERIMLER`) ve `tr()` fonksiyonunu içerir, Word metinlerini otomatik geçirir;
+Excel kayıtlarında ve kendi yazdığın kodda `tr()`'yi çağır. İngilizce karşılık
 yalnız Tanımlar tablosunda parantez içinde bir kez görünür. Ürün adları olduğu
 gibi kalır. Kullanıcının mevcut dokümanlarından alınan çevirilerdeki ekli
 biçimleri ("PII'nin", "PII ilgilileri") de sözlüğe ekle; uzun ifadeleri önce
@@ -229,15 +233,18 @@ türlerini (tehdit/açıklık ile etki/olasılık farklı boyutlardır) birbirin
 karıştırıp her ikisini de zayıflatabilir — okunabilirlik kaybolacaksa ayır, ama
 aynı format ve aynı sesle yaz.
 
-Bu adımda motor olarak kapsamdaki standartlardan **birinin** (alfabetik ilki
-yeterli, script'ler standartlar arası birebir aynıdır — doğrulaman gerekirse
-`diff` ile karşılaştır) `scripts/ys_docx.py` / `scripts/ys_xlsx.py` dosyalarını
-kullan. O skill'i `Skill` aracıyla çağırıp taban dizinini elde et, motoru oradan
-çalıştır. Bu motoru burada tekrar yazma veya kopyalama — kaynak skill güncellenirse
-otomatik güncel kalırsın. Motoru kendin kurman gerekiyorsa (kullanıcının örnek
-verdiği kurumsal şablonu birebir taklit etmek gibi) **K1–K4 kurallarını
-motora yerleştirerek** başla; K2 için motora "yol gösterici" modu koy (kapak,
-antet etiketi, onay, giriş notu, dosya adı otomatik değişsin).
+Bu adımda motor olarak kapsamdaki standartlardan **herhangi birinin**
+`scripts/ys_docx.py` / `scripts/ys_xlsx.py` dosyalarını kullan — bütün
+`iso-*-dokuman-seti` skill'lerinde motor aynı sürümdür (dosya başındaki
+`MOTOR_SURUM`; farklıysa büyük olanı kullan). O skill'i `Skill` aracıyla
+çağırıp taban dizinini elde et, motoru oradan çalıştır; burada kopyalama.
+
+Motor 2.0.0 K1–K3'ü yerleşik uygular: antette `tr_upper()`, metinlerde `tr()`
+terim sözlüğü (kuruluşa özgü ek terimler `YSBelge(..., sozluk={...})`),
+`tanimlar()` tablosunda çeviri yapılmaz, yol gösterici için
+`Kimlik(tur="yol_gosterici")` kapak/antet/not/dosya adını (`k.dosya_adi()`)
+otomatik değiştirir. Motoru kendin kurman gerekiyorsa (K4 — şablon birebir
+klonlanacaksa) bu davranışları klon koduna da koy.
 
 ### 5 — Standarda özgü katmanı üret
 
@@ -267,9 +274,17 @@ to have" değil — beş skill'i ayrı ayrı çalıştırmak yerine bu skill'i k
 **tek** somut farkı budur; atlarsan kullanıcı beş ayrı klasör indirip elle
 birleştirseydi ne elde edecekse onu almış olur.
 
-Geçişi elle değil **script ile** yap: üretilen tüm .docx ve .xlsx dosyalarının
-metnini çıkar (docx için XML'den etiket temizle, xlsx için hücre değerlerini oku;
-.md vb. dosyaları taramaya alma) ve şu on kontrolü çalıştır:
+Geçişi elle değil hazır betikle yap. Önce 3. adımdaki terim sözlüğünden bir
+JSON yaz (`unvan`, `unvan_varyantlari`, `roller` {yanlış: doğru},
+`yayin_tarihi`), sonra herhangi bir doküman seti skill'inin betiğini çalıştır:
+
+```bash
+python <iso-*-dokuman-seti taban dizini>/scripts/tutarlilik_tarama.py "<set>" \
+  --sozluk "<set>/_terimler.json" --md "<set>/_tarama.md"
+```
+
+Betik .docx (gövde, antet, altbilgi) ve .xlsx metnini çıkarır, `_to_delete/`
+klasörünü atlar ve şu on kontrolü yapar:
 
 1. Kuruluş unvanı varyantları — tek biçime indir.
 2. Sözlük dışı rol adları ("BT Müdürü" vs "Bilgi İşlem Şefi").
@@ -284,8 +299,11 @@ metnini çıkar (docx için XML'den etiket temizle, xlsx için hücre değerleri
 10. K3 sözlüğü dışında kalan İngilizce kısaltmalar (DPIA, PII, SoA, BIA, SLA,
     DLP, SIEM, CCTV…).
 
-Bu on kontrol elle okumayla yakalanamayacak hataları saniyeler içinde bulur;
-raporu doğrudan `OKUBENI.md`'ye gir.
+Çıkış kodu 1 ise bulgu vardır. Rol, unvan ve klişe bulgularını düzelt, betiği
+yeniden çalıştır; kalan bulguları (ör. kullanıcının kararını bekleyen
+`[DOLDURULACAK]`) `_tarama.md` özetiyle `OKUBENI.md`'ye gir. Betiğin
+yakalayamadığı tek şey anlam tutarlılığıdır (aynı faaliyete iki farklı sıklık):
+bunun için `ghost-writer-tutarlilik-rehberi.md`'deki okuma listesini uygula.
 
 ### 7 — Klasör ve kodlama şeması
 
@@ -323,23 +341,37 @@ sayısı ve yol gösterici sayısı (ayrı), yapılan varsayımlar ve somut sonu
 yapılacak), etiket sayımı, öz denetimde çıkan boşluklar, 6. adımdaki tutarlılık
 taramasının sonucu, üretilmeyenler ve nedeni, sonraki adımlar.
 
-Kullanıcının bilgisayarında bağlı bir klasör varsa seti oraya **yeni bir alt
-klasör** olarak `device_commit_files` ile yaz; kullanıcının mevcut dosyalarını
-değiştirme. Yeniden üretimde adı değişen dosyaların eski kopyalarını silme,
-`_to_delete/` alt klasörüne taşı.
+Seti **yeni bir alt klasöre** yaz (ortama göre araç: Çalışma ortamı tablosu);
+kullanıcının mevcut dosyalarını değiştirme. Yeniden üretimde adı değişen
+dosyaların eski kopyalarını silme, `_to_delete/` alt klasörüne taşı.
+
+## Çalışma ortamı
+
+Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
+
+| İş | Cowork (bağlı klasör) | Claude Code / yerel |
+|---|---|---|
+| Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
+
+Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden
+üretimde adı değişen eski dosyaları `_to_delete/` alt klasörüne taşı
+(`mv -n`) ve söyle.
 
 ## Kullanılacak skill'ler ve connector'ler
 
 | Aşama | Skill / connector | Ne için |
 |---|---|---|
 | Keşif | `iso-*-dokuman-seti` skill'leri (Skill aracı) | Standarda özgü katman ve motor |
-| Girdi | Cihaz köprüsü (`device_list_dir`, `device_bash`, `device_stage_files`) | Mevcut dokümanları yerinde oku; yalnız şablon/görsel kontrol dosyalarını buluta al |
+| Girdi | Bağlı klasör / yerel dosya sistemi (bkz. Çalışma ortamı) | Mevcut dokümanları yerinde oku; yalnız şablon/görsel kontrol dosyalarını buluta al |
 | Girdi | Google Drive connector | Doküman kütüphanesi Drive'daysa |
 | Mevzuat | WebSearch / Firecrawl; `regulatory-legal:reg-feed-watcher`, `regulatory-legal:policy-diff`, `regulatory-legal:gaps` | Mevzuat güncelliği ve politika boşlukları |
 | Hukuki içerik | `privacy-legal:*` (27701), `ai-governance-legal:*` (42001), `commercial-legal:vendor-agreement-review` / `saas-msa-review` (tedarikçi), `employment-legal:policy-drafting` (İK) | Standarda özgü hukuki metinlerin kalitesi |
 | Çıktı | `anthropic-skills:docx`, `anthropic-skills:xlsx`, `anthropic-skills:pdf`, `anthropic-skills:pptx` (YGG sunumu) | Üretim ve doğrulama |
 | Görsel kontrol | `soffice` → `pdftoppm` → Read | Şablon birebirliği, tablo taşmaları |
-| Teslim | `device_commit_files`, gerekirse Artifact (paylaşılacak özet sayfa) | |
+| Teslim | Yeni alt klasöre teslim (bkz. Çalışma ortamı), gerekirse Artifact (paylaşılacak özet sayfa) | |
 
 ## Kanıt üretimi — nerede durulur
 
@@ -430,9 +462,11 @@ olduğunu anlar; görmezse kendi bulur ve bulgu yazar.
 ## Bağımlılıklar
 
 Doğrudan bağımlılığı yok; kapsamdaki `iso-*-dokuman-seti` skill'lerinin
-motorlarını kullanır, dolayısıyla onların bağımlılığını (`python-docx`,
-`openpyxl`) devralır:
+motorlarını kullanır ve onların bağımlılığını (`python-docx`, `openpyxl`) devralır:
 
 ```bash
-pip install python-docx openpyxl --break-system-packages
+pip install python-docx openpyxl
 ```
+
+Linux'ta "externally-managed-environment" hatası alırsan komuta
+`--break-system-packages` ekle; Windows ve macOS'ta gerekmez.

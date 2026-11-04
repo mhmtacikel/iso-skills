@@ -1,5 +1,16 @@
 # İçerik Rehberi — Kalite Çıtası ve Örnek Metinler
 
+## İçindekiler
+
+- 1. Kapsam beyanı
+- 2. Envanter kaydı
+- 3. Risk ile etkinin ayrımı — aynı sistem, iki kayıt
+- 4. İnsan gözetimi
+- 5. Veri kökeni
+- 6. Model kartı (A.6.2.7)
+- 7. `[DOLDURULACAK]` ve `[ÖRNEK]`
+- 8. Ton kontrolü
+
 Her örneğin zayıf ve güçlü sürümü verilmiştir.
 
 ---

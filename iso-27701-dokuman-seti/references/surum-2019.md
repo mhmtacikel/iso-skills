@@ -1,5 +1,19 @@
 # ISO/IEC 27701:2019 — Madde Yapısı ve Doküman Listesi
 
+## İçindekiler
+
+- 1. Madde yapısı
+  - Madde 5 — 27001'e eklemeler (alt maddeler)
+  - Madde 6 — 27002'ye eklemeler
+- 2. Doküman listesi (2019)
+  - 00 — Kapsam ve çerçeve
+  - 01 — Politikalar
+  - 02 — Prosedürler
+  - 03 — Envanterler ve kayıtlar (Excel)
+  - 04 — Formlar
+  - 07 — Denetim hazırlık
+- 3. Sayısal beklenti
+
 **Bu sürüm bir eklentidir.** ISO/IEC 27001 belgesi olmadan 27701:2019
 belgelendirmesi yapılamaz. Kullanıcının 27001 belgesi yoksa bunu ilk cümlede
 söyle ve iki yol öner: (a) önce 27001, sonra 27701:2019; (b) doğrudan

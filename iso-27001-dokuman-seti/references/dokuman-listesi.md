@@ -1,5 +1,18 @@
 # ISO/IEC 27001:2022 — Üretilecek Doküman Listesi
 
+## İçindekiler
+
+- 00 — Kapsam ve El Kitabı
+- 01 — Politikalar
+- 02 — Prosedürler
+- 03 — Talimatlar
+- 04 — Formlar ve Listeler (Excel)
+  - SoA'nın zorunlu sütunları (6.1.3 d)
+  - Risk envanterinin zorunlu sütunları
+- 05 — Planlar
+- 07 — Denetim Hazırlık
+- Sayısal beklenti
+
 İki set var: **tam set** (50+ çalışan, düzenlemeye tabi sektör, karmaşık BT) ve
 **sadeleştirilmiş set** (50 altı çalışan, tek lokasyon, bulut ağırlıklı).
 Sadeleştirilmiş sette prosedürler birleştirilir; gereklilikler kaybolmaz, sadece
@@ -155,9 +168,9 @@ ve artık riski kabul etmesini açıkça ister. Onay sütunu yoksa bu kanıt yok
 
 | Kod | Dosya | İçerik |
 |---|---|---|
-| BGYS-RP-01 | Madde-Kanıt Matrisi.xlsx | Madde/kontrol → doküman → kanıt → sorumlu → durum |
-| BGYS-RP-02 | Öz Değerlendirme.xlsx | Her madde için uygunluk durumu ve boşluklar |
-| BGYS-RP-03 | Denetçi Soru Listesi.xlsx | Denetçinin soracağı sorular ve hazırlanan cevaplar |
+| — (yol gösterici) | Madde-Kanıt Matrisi.xlsx | Madde/kontrol → doküman → kanıt → sorumlu → durum |
+| — (yol gösterici) | Öz Değerlendirme.xlsx | Her madde için uygunluk durumu ve boşluklar |
+| — (yol gösterici) | Denetçi Soru Listesi.xlsx | Denetçinin soracağı sorular ve hazırlanan cevaplar |
 | — | OKUBENI.md | Ne üretildi, ne eksik, `[DOLDURULACAK]` listesi, sonraki adımlar |
 
 Denetim hazırlık dosyalarına da kod ver (`RP` = rapor). Kodsuz dosya, öz

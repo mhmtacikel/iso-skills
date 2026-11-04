@@ -1,5 +1,18 @@
 # Mevzuat Kesişimi — 42001 Nerede Biter, Hukuk Nerede Başlar
 
+## İçindekiler
+
+- 1. Kaynak etiketleme disiplini — zorunlu
+- 2. Türkiye katmanı — 42001 dokümanlarına nerede değer
+  - KVKK (Kişisel Verilerin Korunması)
+  - Fikri mülkiyet ve ticari sır
+  - Sektörel katman
+- 3. AB YZ Yasası katmanı
+- 4. YZYS-LS-10 Yasal Uyum ve Yükümlülük Matrisi
+- 5. Tedarikçi ve model sağlayıcı sözleşmesi kontrolü
+- 6. Hukuk birimine devir — nerede durulur
+- 7. Kullanıcıya söylenecek cümle
+
 **Bu dosyanın birinci kuralı:** ISO/IEC 42001 bir yönetim sistemi standardıdır.
 Tek başına hiçbir yasal yükümlülüğü karşılamaz, hiçbir uyumu garanti etmez.
 Yaptığı şey, uyumun **altyapısını** kurmaktır: envanter, rol tanımı, risk ve

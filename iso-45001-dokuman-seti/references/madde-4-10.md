@@ -1,5 +1,15 @@
 # ISO 45001:2018 (+Amd 1:2024) — Madde 4–10: Dokümante Bilgi, Türk Mevzuatı Kesişimi ve Denetçinin Sorusu
 
+## İçindekiler
+
+- 4 — Kuruluşun Bağlamı
+- 5 — Liderlik ve Çalışanların Katılımı
+- 6 — Planlama
+- 7 — Destek
+- 8 — Operasyon
+- 9 — Performans Değerlendirme
+- 10 — İyileştirme
+
 Standart metni burada aktarılmaz (telif + "şablondan kopyalanmış" izlenimi); her
 madde **ne istediği**, **hangi dokümanda karşılandığı**, **6331 tarafındaki karşılığı**
 ve **denetçinin tipik sorusu** ile özetlenir. Kod sütunu `dokuman-listesi.md` ile aynıdır.

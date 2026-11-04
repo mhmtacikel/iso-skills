@@ -1,5 +1,14 @@
 # ISO/IEC 27701 Kontrol Tabloları — 2019 ↔ 2025 Karşılıklı Eşleme
 
+## İçindekiler
+
+- Veri sorumlusu kontrolleri (2019 Ek A / 2025 Ek A.1)
+  - Alt bölümler
+- Veri işleyen kontrolleri (2019 Ek B / 2025 Ek A.2)
+  - Alt bölümler
+- Bilgi güvenliği kontrolleri — YALNIZCA 2025 (Ek A.3)
+- 2025'in diğer ekleri (bilgi amaçlı)
+
 İki sürümün numaralandırması farklıdır ama **veri sorumlusu ve veri işleyen**
 kontrollerinin içeriği büyük ölçüde korunmuştur. 2025'te her alt bölümün ilk
 maddesi (`X.Y.1`) *Amaç* beyanına ayrıldığı için kontrol numaraları bir

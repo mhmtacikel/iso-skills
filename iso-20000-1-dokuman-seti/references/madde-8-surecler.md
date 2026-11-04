@@ -1,5 +1,19 @@
 # ISO/IEC 20000-1:2018 Madde 8 — Hizmet Yönetimi Süreçleri
 
+## İçindekiler
+
+- Madde 8 haritası
+- 8.2.4 Hizmet kataloğu — zincirin başlangıcı
+- 8.3.3 SLA — ölçülebilirlik testi
+  - SLA–OLA–UC hizalaması
+- 8.6.1 / 8.6.2 / 8.6.3 — Olay, Talep, Problem ayrımı
+  - Önceliklendirme matrisi
+- 8.5.1 / 8.5.3 — Değişiklik ve Sürüm ayrımı
+- 8.5.2 Yeni veya değiştirilen hizmetlerin tasarımı ve geçişi
+- 8.2.6 Konfigürasyon yönetimi (CMDB)
+- 8.4.2 Hizmet raporlaması
+- 8.2.3 Diğer taraflarca işletilen prosesler
+
 Bu standardın ağırlık merkezi. Diğer Annex SL standartlarında Madde 8 birkaç
 paragraftır; burada standardın yarısıdır ve denetimin de yarısıdır.
 

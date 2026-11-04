@@ -1,5 +1,18 @@
 # ISO 45001:2018 (+Amd 1:2024) — Üretilecek Doküman Listesi
 
+## İçindekiler
+
+- 00 — Kapsam ve El Kitabı
+- 01 — Politikalar
+- 02 — Prosedürler
+- 03 — Talimatlar (risk değerlendirmesine göre seçilir — hepsi değil)
+- 04 — Formlar ve Listeler
+  - Kayıtlar (Excel, `kayitlar_45001.py`)
+  - Formlar (Word — sahada doldurulur, kısa tut)
+- 05 — Planlar
+- 07 — Denetim Hazırlık (kodsuz, Yol Gösterici — K2)
+- Sayılar (yaklaşık)
+
 `Z` = standardın zorunlu kıldığı dokümante bilgi. `U` = denetimde beklenen.
 `Y` = Türk mevzuatı gereği zaten bulunması gereken (6331 ve alt mevzuat) — denetçi
 45001 maddesi altında bunları da ister, çünkü 6.1.3 yasal şartlara uyumu kapsar.

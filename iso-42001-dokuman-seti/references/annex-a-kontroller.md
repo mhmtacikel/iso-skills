@@ -1,5 +1,19 @@
 # ISO/IEC 42001:2023 Ek A — Referans Kontrol Hedefleri ve Kontrolleri
 
+## İçindekiler
+
+- A.2 — YZ ile ilgili politikalar
+- A.3 — İç organizasyon
+- A.4 — YZ sistemleri için kaynaklar
+- A.5 — YZ sistemlerinin etkilerinin değerlendirilmesi
+- A.6 — YZ sistemi yaşam döngüsü
+- A.7 — YZ sistemleri için veriler
+- A.8 — YZ sistemlerinin ilgili tarafları için bilgiler
+- A.9 — YZ sistemlerinin kullanımı
+- A.10 — Üçüncü taraf ve müşteri ilişkileri
+- Sık kaçırılan alt gereklilikler
+  - A.9.4'ün iki yüzü
+
 Uygulanabilirlik Bildirgesi bu tablodan üretilir. `Doküman` sütunu skill'in
 ürettiği dosyalara, `Kanıt` sütunu denetçinin sahada isteyeceği uygulama kanıtına
 işaret eder. Ek B, her kontrol için uygulama kılavuzu sağlar; Ek C potansiyel

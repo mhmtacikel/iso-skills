@@ -213,6 +213,8 @@ class YSKayit:
             for kelime, renk in (("Kapalı", "C6EFCE"), ("Tamamlandı", "C6EFCE"),
                                  ("Uygun", "C6EFCE"), ("Devam", "FFEB9C"),
                                  ("Kısmen Uygun", "FFEB9C"), ("Açık", "FFC7CE"),
+                                 ("Aktif", "C6EFCE"), ("Pilot", "FFEB9C"),
+                                 ("Emekli", "D9D9D9"),
                                  ("Gecikti", "FFC7CE"), ("Uygun Değil", "FFC7CE")):
                 ws.conditional_formatting.add(alan, CellIsRule(
                     operator="equal", formula=[f'"{kelime}"'],

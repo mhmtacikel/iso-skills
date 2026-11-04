@@ -1,5 +1,18 @@
 # İçerik Rehberi — Kalite Çıtası ve Örnek Metinler
 
+## İçindekiler
+
+- 1. Kapsam beyanı
+- 2. İşleme envanteri satırı
+- 3. Hukuki sebep ifadesi
+- 4. Aydınlatma metni
+- 5. DPIA eşiği
+- 6. Saklama süresi
+- 7. Veri ihlali kaydı
+- 8. İlgili kişi başvurusu
+- 9. `[DOLDURULACAK]` ve `[ÖRNEK]`
+- 10. Ton kontrolü
+
 Her örneğin zayıf ve güçlü sürümü verilmiştir. Zayıf sürümler gerçek
 denetimlerde bulgu almış kalıplardır.
 

@@ -1,5 +1,12 @@
 # ISO/IEC 27001:2022 Ek A — 93 Kontrol / Doküman / Kanıt Matrisi
 
+## İçindekiler
+
+- A.5 — Kurumsal kontroller
+- A.6 — Kişi kontrolleri
+- A.7 — Fiziksel kontroller
+- A.8 — Teknolojik kontroller
+
 Uygulanabilirlik Bildirgesi (SoA) bu tablodan üretilir. `Doküman` sütunu skill'in
 ürettiği dosya kodlarına, `Kanıt` sütunu denetçinin sahada isteyeceği uygulama
 kanıtına işaret eder. Kontrol başlıkları TS EN ISO/IEC 27001:2023 Türkçe

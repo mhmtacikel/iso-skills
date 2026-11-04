@@ -1,5 +1,22 @@
 # Görüşme Rehberi — Ne Zaman Sor, Ne Zaman Varsay
 
+## İçindekiler
+
+- 1. Açılış anketi (her zaman, üretimden önce)
+- 1b. Sistem bazlı derin anket (yalnızca kapsamdaki YZ sistemleri için)
+  - Veri tarafı
+  - Kullanım tarafı
+- 2. Doküman iste — hangi durumda, nasıl
+- 3. Karmaşık durumlar — soru sormadan ilerleme
+  - Kapsam belirsizliği
+  - Hariç tutma talebi
+  - Entegre sistem sinyali
+  - Ölçek uyumsuzluğu
+  - Gerçek veri talebi
+  - Sektörel zorunluluk
+- 4. Soru sorma — ne zaman sorMA
+- 5. Üretim öncesi teyit
+
 Bu skill'in en kolay hata yapacağı yer burası. İki uçtan da kaçınmak gerekiyor:
 
 - **Az sorup çok varsaymak:** jenerik, kuruluşa benzemeyen, denetçinin ilk

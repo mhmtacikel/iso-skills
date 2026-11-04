@@ -1,5 +1,17 @@
 # İçerik Rehberi — Kalite Çıtası ve Örnek Metinler
 
+## İçindekiler
+
+- 1. Kapsam beyanı
+- 2. Politika ilkesi
+- 3. Sorumluluk tanımı
+- 4. Prosedür süreç tablosu
+- 5. Risk kaydı
+- 6. SoA gerekçesi
+- 7. Hedef
+- 8. `[DOLDURULACAK]` kullanımı
+- 9. Ton kontrolü
+
 Bu dosya "nasıl yazılacağını" örnekle gösterir. Doküman iskeletleri
 `dokuman-mimarisi.md` §5'te; burada **metnin kendisi** var.
 

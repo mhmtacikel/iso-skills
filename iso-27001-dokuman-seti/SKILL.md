@@ -1,6 +1,8 @@
 ---
-name: "iso-27001-dokuman-seti"
+name: iso-27001-dokuman-seti
 description: "ISO/IEC 27001:2022 (TS EN ISO/IEC 27001:2023) Bilgi Güvenliği Yönetim Sistemi için belgelendirme denetiminden geçebilecek kapsamlı doküman seti üretir — kapsam, politikalar, prosedürler, risk envanteri, Uygulanabilirlik Bildirgesi (SoA), formlar, planlar; hepsi kurumsal Word/Excel stilleriyle. Kullanıcı \"ISO 27001 dokümanları hazırla\", \"BGYS kur\", \"bilgi güvenliği politikası yaz\", \"SoA oluştur\", \"risk envanteri hazırla\", \"27001 belgelendirmeye hazırlan\", \"bilgi güvenliği prosedürü\", \"BGYS doküman seti\" dediğinde ya da 27001 denetimine hazırlık, boşluk analizi, eksik doküman tamamlama işi geçtiğinde mutlaka kullan. Kullanıcı standardı açıkça anmasa bile bilgi güvenliği yönetim sistemi dokümantasyonu, ISMS kurulumu veya bilgi güvenliği sertifikasyonu bağlamı varsa bu skill devreye girmeli."
+metadata:
+  surum: "2.0.0"
 ---
 
 # ISO/IEC 27001:2022 Doküman Seti Üretimi
@@ -34,7 +36,7 @@ kullanıcının yazma yükünü kaldırır ve cevap kalitesini yükseltir.
 Kullanıcı kurumsal şablonunu yüklediyse önce onu tanı:
 
 ```bash
-python3 scripts/sablon_analiz.py "<şablon.docx>"
+python scripts/sablon_analiz.py "<şablon.docx>"
 ```
 
 Çıktıdaki yazı tipi, renk, antet ve doküman kodu kalıbını üretimde kullan.
@@ -82,7 +84,7 @@ envanteri, hedefler, doküman listesi, yetkinlik matrisi, DÖF, tetkik programı
 tek komutla:
 
 ```bash
-python3 scripts/kayitlar_27001.py --kurulus "..." --cikti "<klasör>" \
+python scripts/kayitlar_27001.py --kurulus "..." --cikti "<klasör>" \
   --tarih 2026-08-11 --hazirlayan "..." --onaylayan "..." [--sade]
 ```
 
@@ -107,6 +109,16 @@ Ek A kontrol → doküman → kanıt eşlemesi: `references/annex-a-kontroller.m
 kapsam beyanının her dokümanda aynı olduğunu kontrol et, kalan İngilizce
 kısaltmaları ve yol gösterici dosyalara kodla verilmiş atıfları tara. Bulguları
 `OKUBENI.md` içinde "denetim öncesi kapatılması gerekenler" başlığı altında ver.
+
+Teslimden önce tutarlılık taramasını çalıştır (K1 büyük harf, K2 kodlu
+yol gösterici, K3 kısaltma, kırık kod atıfları, klişe ve ölçülemez ifade,
+etiket sayımı, yayın tarihi):
+
+```bash
+python scripts/tutarlilik_tarama.py "<set klasörü>" --md "<set klasörü>/_tarama.md"
+```
+
+Çıkış kodu 1 ise bulgular vardır; kapat veya `OKUBENI.md`'de gerekçesiyle listele.
 
 ## Kırılma noktaları
 
@@ -156,6 +168,7 @@ yalnız ad; kapakta "YOL GÖSTERİCİ", antette "Doküman Türü | Yol Gösteric
 onay yönetim sistemi komitesi başkanı; Doküman Listesi'ne girmez ve listenin not
 alanında bu açıklanır; setin geri kalanı bu dosyalara adıyla atıf verir.
 `07_Denetim_Hazirlik` klasöründe durur.
+Motorda: `Kimlik(..., tur="yol_gosterici")` ver ve dosyayı `k.dosya_adi()` ile kaydet; kapak, antet etiketi, giriş notu ve kodsuz dosya adı otomatik gelir.
 
 ## Kullanıcı bir doküman istediğinde
 
@@ -197,13 +210,29 @@ kullanma (SoA → Uygulanabilirlik Bildirgesi, DLP → Veri Sızıntısı Önlem
 SIEM → Güvenlik Olay ve Kayıt Yönetim sistemi, CCTV → kapalı devre kamera, MFA →
 çok faktörlü kimlik doğrulama, SOC → Güvenlik Operasyon Merkezi). İngilizce
 karşılığı yalnız Tanımlar tablosunda parantez içinde ver; ürün adları olduğu
-gibi kalır. Motorda sözlük + `tr()` fonksiyonuyla tüm metinlere uygula.
+gibi kalır. Motor (`ys_docx.py` 2.0.0) Word
+metinlerine `tr()` sözlüğünü otomatik uygular; Excel'de ve kendi kodunda `tr()` çağır.
+
+## Çalışma ortamı
+
+Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
+
+| İş | Cowork (bağlı klasör) | Claude Code / yerel |
+|---|---|---|
+| Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
+
+Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden
+üretimde adı değişen eski dosyaları `_to_delete/` alt klasörüne taşı
+(`mv -n`) ve söyle.
 
 ## Kullanılacak skill'ler ve connector'ler
 
 | Aşama | Skill / connector | Ne için |
 |---|---|---|
-| Girdi | Cihaz köprüsü (`device_list_dir`, `device_bash`, `device_stage_files`) | Bağlı klasördeki mevcut dokümanları yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları buluta al |
+| Girdi | Bağlı klasör / yerel dosya sistemi (bkz. Çalışma ortamı) | Bağlı klasördeki mevcut dokümanları yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları buluta al |
 | Girdi | Google Drive connector | Doküman kütüphanesi Drive'daysa |
 | Mevzuat teyidi | WebSearch / Firecrawl; `regulatory-legal:reg-feed-watcher`, `regulatory-legal:policy-diff` | 5651, 7545, BİG Rehberi, sektörel düzenlemelerin güncelliği |
 | Tedarikçi | `commercial-legal:vendor-agreement-review`, `commercial-legal:saas-msa-review` | A.5.19–5.23 tedarikçi ve bulut sözleşmeleri |
@@ -211,7 +240,7 @@ gibi kalır. Motorda sözlük + `tr()` fonksiyonuyla tüm metinlere uygula.
 | Çıktı | `anthropic-skills:docx`, `anthropic-skills:xlsx`, `anthropic-skills:pdf` | Üretim ve doğrulama |
 | Görsel kontrol | `soffice` → `pdftoppm` → Read | Şablon birebirliği |
 | Entegrasyon | `iso-entegre-yonetim-sistemi` | Çoklu standart, K1–K4 kuralları |
-| Teslim | `device_commit_files` (bağlı klasörde yeni alt klasör) | Kullanıcının dosyalarını değiştirmeden teslim |
+| Teslim | Yeni alt klasöre teslim (bkz. Çalışma ortamı) | Kullanıcının dosyalarını değiştirmeden teslim |
 
 ## Referans dosyaları
 
@@ -230,5 +259,8 @@ gibi kalır. Motorda sözlük + `tr()` fonksiyonuyla tüm metinlere uygula.
 `python-docx` ve `openpyxl` gerekir:
 
 ```bash
-pip install python-docx openpyxl --break-system-packages
+pip install python-docx openpyxl
 ```
+
+Linux'ta "externally-managed-environment" hatası alırsan komuta
+`--break-system-packages` ekle; Windows ve macOS'ta gerekmez.

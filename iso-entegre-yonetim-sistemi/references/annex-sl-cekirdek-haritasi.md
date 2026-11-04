@@ -23,8 +23,8 @@ bölümünde her standardın kendi numarasını ayrı satırda listele.
 
 | Annex SL maddesi | Tipik EYS dokümanı | Standartlar arası fark |
 |---|---|---|
-| 4.1 İç/dış hususlar | EYS-FR-01 Bağlam Analizi | Yok — hususların listesi ortak, yalnızca bazı dış hususlar (mevzuat) standarda göre çeşitlenir; aynı tabloya ek sütun olarak eklenebilir |
-| 4.2 İlgili taraflar | EYS-LS-01 İlgili Taraflar Analizi | Yok — hangi tarafın hangi standartla ilgili olduğu bir sütunla işaretlenir |
+| 4.1 İç/dış hususlar | EYS-FR-01 Bağlam Analizi | İklim değişikliği satırı (Amd 1:2024) tüm standartlar için ortak tek satırdır; 27701:2019 eklenti olduğundan 27001 üzerinden gelir. Bunun dışında yok — hususların listesi ortak, yalnızca bazı dış hususlar (mevzuat) standarda göre çeşitlenir; aynı tabloya ek sütun olarak eklenebilir |
+| 4.2 İlgili taraflar | EYS-LS-01 İlgili Taraflar Analizi | İklimle ilgili gereklilik sütunu (Amd 1:2024 notu) ortak. Bunun dışında yok — hangi tarafın hangi standartla ilgili olduğu bir sütunla işaretlenir |
 | 4.4 Sistemin kurulması | EYS-EK-01 El Kitabı | Yok, tek kitap tüm sistemi anlatır |
 | 5.1 Liderlik ve taahhüt | YGG tutanakları, taahhüt beyanı | Yok |
 | 5.3 Rol ve sorumluluk | Organizasyon şeması, görev tanımları | Yok — roller genelde ortak (Üst Yönetim, EYS Yöneticisi); standarda özgü rol varsa (örn. Veri Sorumlusu Temsilcisi, YZ Sistem Sahibi) ek satır |
@@ -90,3 +90,7 @@ ses**tir (bkz. `ghost-writer-tutarlilik-rehberi.md`), içerik değil.
 Bu üç sorunun cevabı belirsizse kullanıcıya sor — yanlış birleştirme (farklı
 riskleri tek tabloya sıkıştırmak) yanlış ayırmaktan (aynı prosedürü beş kez
 yazmak) daha tehlikelidir, çünkü ilkinde denetçinin bulacağı hata gizlenmiş olur.
+
+## İklim değişikliği tadilatı (Amd 1:2024)
+
+Şubat 2024'te ISO, Annex SL yapısındaki yönetim sistemi standartlarına aynı iki eklemeyi yaptı: 4.1'e "kuruluş iklim değişikliğinin ilgili bir husus olup olmadığını belirler", 4.2'ye "ilgili taraflar iklim değişikliğiyle ilgili gerekliliklere sahip olabilir" notu. Bu sette karşılığı: 27001:2022/Amd 1:2024, 22301:2019/Amd 1:2024, 20000-1:2018/Amd 1:2024, 42001:2023/Amd 1:2024, 45001:2018/Amd 1:2024. 27701:2025 metnini kendi kaynağından doğrula; 27701:2019 27001'in eklentisidir, şartı 27001 üzerinden alır. EYS'de bu iki ekleme **bir kez**, ortak Bağlam Analizi ve İlgili Taraflar Analizi'nde karşılanır; gerekçeli "ilgili değildir" kararı da geçerlidir.
