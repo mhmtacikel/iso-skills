@@ -226,9 +226,9 @@ yaz. A.3 kontrolleri bu şekilde karşılanır.
 
 | Kod | Dosya | İçerik |
 |---|---|---|
-| KVYS-RP-01 | Kontrol-Kanıt Matrisi | Kontrol → doküman → kanıt → sorumlu → durum |
-| KVYS-RP-02 | Öz Değerlendirme | Madde ve kontrol bazlı uygunluk |
-| KVYS-RP-03 | Envanter Zincir Kontrolü | Faaliyet → hukuki sebep → saklama → aydınlatma → DPIA |
+| — (yol gösterici) | Kontrol-Kanıt Matrisi | Kontrol → doküman → kanıt → sorumlu → durum |
+| — (yol gösterici) | Öz Değerlendirme | Madde ve kontrol bazlı uygunluk |
+| — (yol gösterici) | Envanter Zincir Kontrolü | Faaliyet → hukuki sebep → saklama → aydınlatma → DPIA |
 | — | OKUBENI.md | Ne üretildi, ne eksik, sonraki adımlar |
 
 ---

@@ -55,8 +55,8 @@ sabitle ve tüm üretim boyunca değiştirme.** İki farklı toplantıda "İSYS"
 │   └── [standarda özgü planlar — süreklilik/tatbikat planı, risk işleme planı…]
 ├── 06_Kayitlar_ORNEK/          ← yalnızca kullanıcı açıkça isterse (bkz. dokuman-mimarisi.md §3)
 ├── 07_Denetim_Hazirlik/
-│   ├── EYS-RP-01 Birleşik Kanıt Matrisi (gereklilik → standart(lar) → doküman → kanıt → sorumlu)
-│   └── EYS-RP-02 Öz Değerlendirme (ortak geçiş + her standardın kendine özgü geçişi)
+│   ├── Birleşik Kanıt Matrisi (yol gösterici, kodsuz) (gereklilik → standart(lar) → doküman → kanıt → sorumlu)
+│   └── Öz Değerlendirme (yol gösterici, kodsuz) (ortak geçiş + her standardın kendine özgü geçişi)
 └── OKUBENI.md
 ```
 

@@ -227,8 +227,8 @@ Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
 | İş | Cowork (bağlı klasör) | Claude Code / yerel |
 |---|---|---|
 | Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
-| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
-| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine (bu SKILL.md'nin bulunduğu klasör) göredir; Claude Code skill yüklenirken bunu "Base directory" satırında verir, dosya doğrudan okunduysa SKILL.md'nin klasörünü kullan |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde **yeni alt klasör**; klasör belirtilmediyse üretimden önce sor |
 | Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
 
 Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden

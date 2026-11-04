@@ -59,6 +59,18 @@ Talep → /ai-governance-legal:use-case-triage
         → envanter_senkron.py zincir → açık zincir kalmadı mı
 ```
 
+**Eklenti yoksa** aynı akış elle yürür; kayıtlar aynıdır, yalnız hukuki
+adımlar hukuk birimine devredilir:
+
+| Eklenti adımı | Eklentisiz karşılığı |
+|---|---|
+| `use-case-triage` | YZ Kullanım Onay Kaydı'na talep satırı; YZ politikasındaki yasaklı kullanımlarla karşılaştır; karar sahibi ve tarih yaz |
+| `ai-inventory add/classify` | YZYS-LS-04'e satırı doğrudan gir; AB YZ Yasası rolü/seviyesi sütununa `[Hukuk teyidi]` |
+| `envanter_senkron.py aktar` | Atla (YAML yok) |
+| `aia-generation` | Yalnız FR-04 YZ Sistemi Etki Değerlendirmesi; hukuki AIA gerekip gerekmediğini hukuka sor |
+| `vendor-ai-review` | LS-06 satırı + sözleşmenin YZ maddeleri (veriyle eğitim, saklama, veri yeri, model değişikliği bildirimi) için hukuk incelemesi talebi |
+| `envanter_senkron.py zincir` | Elle kontrol: LS-04 satırının risk no (FR-03) ve etki değerlendirmesi no (FR-04) sütunları dolu mu |
+
 ### 2b. Mevcut sistemde değişiklik
 
 Tetikleyiciler: model sürümü değişti, ince ayar yapıldı, amaçlanan kullanım
@@ -66,7 +78,7 @@ genişledi, karar özerkliği arttı, yeni kullanıcı/etkilenen grup, yeni veri
 kaynağı, tedarikçi şartlarını değiştirdi.
 
 - Envanterde "Önemli Değişiklik" sütunu → Evet ise rol iki eksende yeniden
-  değerlendirilir (Ek E1 §5).
+  değerlendirilir (eklenti-entegrasyonu.md §5).
 - Etki değerlendirmesi yeniden yapılır veya "değişiklik etkiyi değiştirmiyor"
   gerekçesi kayda geçer.
 - Tedarikçi model değişikliği → `vendor-ai-review` sözleşmedeki bildirim
@@ -74,13 +86,13 @@ kaynağı, tedarikçi şartlarını değiştirdi.
 
 ### 2c. Yeni düzenleme veya yürürlük tarihi değişikliği
 
-Ek E4 veya `regulatory-legal` izleme ajanı bir değişiklik
+guncellik-izleme.md veya `regulatory-legal` izleme ajanı bir değişiklik
 gösterdiğinde → `reg-gap-analysis` → LS-10 satırları güncellenir → 4.1/4.2
 bağlam ve ilgili taraf kayıtları gözden geçirilir → 6.3 değişiklik planı.
 
 ### 2d. YZ olayı veya endişe bildirimi
 
-Ek E3 §1 akışı. Olay kaydı (YZYS olay formu) →
+olay-bildirim-ve-okuryazarlik.md §1 akışı. Olay kaydı (YZYS olay formu) →
 DÖF (10.2) → etki değerlendirmesi ve risk kaydı güncellemesi.
 
 ### 2e. Sistemin emekliye ayrılması
@@ -175,7 +187,7 @@ gereklilikleri koyar `[teyit]`. Doküman seti için pratik sonuçları:
   dürüst doldurulması bu yüzden önemlidir.
 - **Etki değerlendirmesi derinlemesine incelenir.** Biçimsel değil, sistemin
   gerçek kullanımını yansıtan değerlendirme aranır — 42005 hizalaması
-  (Ek E5) burada değer kazanır.
+  (42005-hizalama.md) burada değer kazanır.
 - **Kapsam beyanı ve roller** denetim planlamasının girdisidir; belirsiz rol
   tanımı denetim süresinin ve tartışmanın uzamasına yol açar.
 
@@ -199,6 +211,6 @@ Doküman setinin yanına, denetim sırasında hızlı erişim için:
 └── 09_Yasal_Uyum/                  (LS-10, doğrulama günlüğü özeti)
 ```
 
-Hukuki notlar bu klasöre girmez (Ek E1 §4). Kanıt
+Hukuki notlar bu klasöre girmez (eklenti-entegrasyonu.md §4). Kanıt
 klasörü Doküman Ana Listesi'ne girmez; kayıtların saklama yeri olarak 7.5.3
 prosedüründe tanımlanır.

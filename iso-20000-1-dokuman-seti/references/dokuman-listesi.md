@@ -24,7 +24,7 @@ Sade set: tek hizmet grubu, < 30 kişilik BT ekibi, dış müşteri yok veya az.
 | HYYS-EK-01 | HYYS El Kitabı | Word | 4.4 | U | U |
 | HYYS-PL-00 | HYYS Kapsam Dokümanı | Word | **4.3 Z** | Z | Z |
 | HYYS-PN-01 | **Hizmet Yönetim Planı** | Word | **6.3 Z** | Z | Z |
-| HYYS-FR-01 | Bağlam Analizi | Word | 4.1 | U | birleşir |
+| HYYS-FR-01 | Bağlam Analizi | Word | 4.1 | U | birleşir→HYYS-LS-06 (tek Word: "Bağlam ve İlgili Taraflar Analizi"; taraf tablosu içinde) |
 | HYYS-LS-06 | İlgili Taraflar Analizi | Excel | 4.2 | U | U |
 
 ---

@@ -162,7 +162,7 @@ işim kaldı" sorusunun cevabını rakamla görmeli.
 
 Teslim öncesi `denetim-oz-kontrol.md` §A2 listesine ek olarak geç:
 
-- [ ] `Ek E4` son teyit tarihi 90 günden yeni; değilse ilgili satırlar web aramasıyla kontrol edildi
+- [ ] `guncellik-izleme.md` son teyit tarihi 90 günden yeni; değilse ilgili satırlar web aramasıyla kontrol edildi
 - [ ] YZYS kayıtlarında eklentinin gizlilik başlığı ("PRIVILEGED", "ATTORNEY WORK PRODUCT") **yok**; hukuki notlara yalnızca sonuç + referans + tarih ile atıf var
 - [ ] Envanterde iki rol sütunu ayrı: 42001 rolü ve AB YZ Yasası rolü; biri diğerinden otomatik türetilmemiş
 - [ ] `envanter_senkron.py fark` çalıştırıldı; yalnız-Excel sistemler için öneri taslağı kullanıcıya sunuldu, çelişkiler kapatıldı

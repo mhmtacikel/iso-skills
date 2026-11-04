@@ -31,14 +31,25 @@ mevcut dokümanların boşluk analizi mi? Sürdürme ve denetim modları için
 `references/surdurme-ve-denetim-asamalari.md` dosyasını oku; bu modlarda yeni
 doküman seti üretme, mevcut kayıtları revize et.
 
-**Eklenti.** `ai-governance-legal:*` yetenekleri listede varsa
+**Hafif yol.** Kullanıcı kısa bir soru soruyorsa ("hangi dokümanlar
+güncellenmeli?", "bu kontrol ne ister?") anketi ve üretim akışını çalıştırma:
+cevabı ilgili referanstan ver, cevabı değiştirecek en fazla 3–5 netleştirme
+sorusunu sonda sor. Açılış anketi yalnız set üretimi veya kayıt doldurma
+başlarken zorunludur.
+
+**Eklenti.** Kullanıcı eklentinin kurulu olmadığını söylediyse o beyan
+esastır. Aksi hâlde `ai-governance-legal:*` yetenekleri listede varsa
 `references/eklenti-entegrasyonu.md` dosyasını oku ve profili ara
 (`~/.claude/plugins/config/claude-for-legal/ai-governance-legal/` — bulutta,
 yoksa bağlı bilgisayarda). Profil doluysa açılış anketini profilden önceden
 doldur ve yalnız eksikleri sor. Profil yoksa skill **durmaz**: kendi anketini
 yürüt, bir kez `cold-start-interview` öner. Profil ve `ai-systems.yaml`
 yalnızca okunur; yazma eklentinin kendi yetenekleriyle ve kullanıcı onayıyla
-olur.
+olur. Eklenti yoksa sürdürme akışlarındaki eklenti
+adımlarının elle karşılığı `surdurme-ve-denetim-asamalari.md` §2'deki
+"Eklenti yoksa" tablosundadır; hukuki sınıflandırma (AB YZ Yasası rolü/seviyesi,
+KVKK aktarım dayanağı) bu skill'de yapılmaz, hukuk birimine `[Hukuk teyidi]`
+etiketiyle devredilir.
 
 **Bağlam.** Danışman çok müşteriye set hazırlıyorsa matter workspace kullan
 (`eklenti-entegrasyonu.md` §7): aktif müşteri belli olmadan üretme, müşteriler
@@ -385,8 +396,8 @@ Bu skill hem Cowork'te hem Claude Code'da çalışır. Aracı ortama göre seç:
 | İş | Cowork (bağlı klasör) | Claude Code / yerel |
 |---|---|---|
 | Mevcut dosyaları okuma | `device_list_dir`, `device_bash` ile yerinde oku; yalnız şablon ve görsel kontrol gereken dosyaları `device_stage_files` ile al | `Read`, `Glob`, `Bash`/`PowerShell` ile doğrudan |
-| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine göredir; Claude Code bu dizini skill yüklenirken "Base directory" satırında verir |
-| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde, yoksa çalışma dizininde **yeni alt klasör** |
+| Script çalıştırma | `python3 scripts/<betik>.py …` | `python scripts/<betik>.py …` (Windows'ta `py -3` de olur). `scripts/` yolu skill'in taban dizinine (bu SKILL.md'nin bulunduğu klasör) göredir; Claude Code skill yüklenirken bunu "Base directory" satırında verir, dosya doğrudan okunduysa SKILL.md'nin klasörünü kullan |
+| Teslim | `device_commit_files` ile bağlı klasörde **yeni alt klasör** | Kullanıcının gösterdiği klasörde **yeni alt klasör**; klasör belirtilmediyse üretimden önce sor |
 | Dosyaları sunma | `mcp__cowork__present_files` | Tam dosya yollarını listele |
 
 Her iki ortamda: kullanıcının mevcut dosyalarını değiştirme ve silme. Yeniden

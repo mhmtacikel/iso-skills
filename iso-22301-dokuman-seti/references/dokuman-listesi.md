@@ -23,7 +23,7 @@ denetçinin beklediği. Sade set: < 50 çalışan, tek lokasyon, düşük karma�
 |---|---|---|---|---|---|
 | İSYS-EK-01 | İSYS El Kitabı | Word | 4.4 | U | U |
 | İSYS-PL-00 | İSYS Kapsam Dokümanı | Word | **4.3.1 Z**, 4.3.2 | Z | Z |
-| İSYS-FR-01 | Bağlam Analizi | Word | 4.1 | U | birleşir |
+| İSYS-FR-01 | Bağlam Analizi | Word | 4.1 | U | birleşir→İSYS-LS-06 (tek Word: "Bağlam ve İlgili Taraflar Analizi"; taraf tablosu içinde) |
 | İSYS-LS-06 | İlgili Taraflar Analizi | Excel | 4.2.1 | U | U |
 | İSYS-LS-03 | Yasal ve Düzenleyici Yükümlülükler Matrisi | Excel | **4.2.2 Z** | Z | Z |
 

@@ -30,7 +30,7 @@ söyle.
 |---|---|---|---|---|---|
 | BGYS-EK-01 | BGYS El Kitabı | Word | 4.4 | U | U |
 | BGYS-PL-00 | BGYS Kapsam Dokümanı | Word | **4.3 Z** | Z | Z |
-| BGYS-FR-01 | Bağlam Analizi (SWOT / PESTLE) | Word | 4.1 | U | birleşir |
+| BGYS-FR-01 | Bağlam Analizi (SWOT / PESTLE) | Word | 4.1 | U | birleşir→BGYS-LS-06 (tek Word: "Bağlam ve İlgili Taraflar Analizi"; taraf tablosu içinde) |
 | BGYS-LS-06 | İlgili Taraflar ve Beklentileri Analizi | Excel | 4.2 | U | U |
 
 Kapsam dokümanı bu setin en kritik dosyasıdır. Şunları içermeli: sertifikada
@@ -173,9 +173,10 @@ ve artık riski kabul etmesini açıkça ister. Onay sütunu yoksa bu kanıt yok
 | — (yol gösterici) | Denetçi Soru Listesi.xlsx | Denetçinin soracağı sorular ve hazırlanan cevaplar |
 | — | OKUBENI.md | Ne üretildi, ne eksik, `[DOLDURULACAK]` listesi, sonraki adımlar |
 
-Denetim hazırlık dosyalarına da kod ver (`RP` = rapor). Kodsuz dosya, öz
-kontroldeki "dosya adları kod + ad formatında" maddesiyle çelişir ve doküman
-ana listesine giremez.
+Denetim hazırlık dosyaları **kodsuz yol göstericidir** (K2): dosya adı yalnız
+addır, kapakta "YOL GÖSTERİCİ", antette "Doküman Türü | Yol Gösterici" yazar,
+Doküman Ana Listesi'ne girmez ve listenin not alanında bu açıklanır. Doküman
+kontrolüne tabi değildir; denetime hazırlık süresince güncellenir.
 
 Bu dört dosya seti "doküman yığını" olmaktan çıkarıp kullanılabilir hâle getirir.
 Özellikle `OKUBENI.md`'yi asla atlama.

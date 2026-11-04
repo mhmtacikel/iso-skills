@@ -48,8 +48,8 @@ dokümana yazma.
 | Standart | Durum | Sette nerede |
 |---|---|---|
 | ISO/IEC 42001:2023 | Yürürlükte; 2024 iklim tadilatı (Amd 1) dahil `[teyit]` | Tüm set |
-| ISO/IEC 42005:2025 — YZ sistemi etki değerlendirmesi | Yayımlandı (2025) `[teyit]`. Rehber niteliğinde; belgelendirme şartı değil | Ek E5 |
-| ISO/IEC 42006:2025 — YZYS denetim/belgelendirme kuruluşu gereklilikleri | Yayımlandı (2025) `[teyit]` | Ek E2 §5 |
+| ISO/IEC 42005:2025 — YZ sistemi etki değerlendirmesi | Yayımlandı (2025) `[teyit]`. Rehber niteliğinde; belgelendirme şartı değil | 42005-hizalama.md |
+| ISO/IEC 42006:2025 — YZYS denetim/belgelendirme kuruluşu gereklilikleri | Yayımlandı (2025) `[teyit]` | surdurme-ve-denetim-asamalari.md §5 |
 | ISO/IEC 23894:2023 — YZ risk yönetimi rehberi | Yürürlükte `[teyit]` | 6.1.2 risk metodolojisi |
 | ISO/IEC 22989:2022 — kavram ve terminoloji | Yürürlükte `[teyit]` | Rol taksonomisi |
 | ISO/IEC 42001 TS (Türkçe) | TSE yayımı ve sürümü kontrol edilmeli `[teyit]` | Kapak ve atıflar |
@@ -58,7 +58,7 @@ dokümana yazma.
 
 - Yasal Uyum Matrisi (LS-10) veya bağlam dokümanı (4.1) yazılırken bu
   listedeki her ilgili satır için **web araması yap** ve sonucu etiketle.
-- Bir satır değiştiyse ve kuruluşun seti varsa → sürdürme modu (Ek E2 §2c;
+- Bir satır değiştiyse ve kuruluşun seti varsa → sürdürme modu (surdurme-ve-denetim-asamalari.md §2c;
   `reg-gap-analysis` → LS-10 güncellemesi).
 - Kullanıcı kendi bildiği bir gelişmeyi söylerse önce doğrula; listeye eklemeden
   önce kaynak iste veya ara.

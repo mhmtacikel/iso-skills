@@ -57,7 +57,7 @@ Kök neden → DÖF (10.2) → risk kaydı ve etki değerlendirmesi güncellemes
 | Kol | Bilinen çerçeve | Etiket | Kim karar verir |
 |---|---|---|---|
 | KVKK veri ihlali | Veri sorumlusu ihlali Kurul'a ve ilgili kişilere en kısa sürede bildirir; Kurul kararıyla bu süre Kurul'a bildirim için 72 saat olarak yorumlanmıştır | `[teyit-madde]` (KVKK m.12/5 ve ilgili Kurul kararı) | Veri sorumlusu / KVKK irtibat kişisi + hukuk |
-| AB YZ Yasası ciddi olay | Yüksek riskli YZ sistemi **sağlayıcıları** ciddi olayları piyasa gözetim otoritesine bildirir; olayın türüne göre farklı ve kısa süreler vardır. Uygulayıcı (deployer) ciddi olayı tespit ederse sağlayıcıyı ve ilgili otoriteyi bilgilendirir | `[teyit-madde]` (sağlayıcı bildirimi ve uygulayıcı yükümlülükleri ile ilgili maddeler); yüksek risk yükümlülüklerinin uygulama tarihleri Digital Omnibus ile ertelendi — Ek E4 | Hukuk birimi; sistem sahibi bilgi sağlar |
+| AB YZ Yasası ciddi olay | Yüksek riskli YZ sistemi **sağlayıcıları** ciddi olayları piyasa gözetim otoritesine bildirir; olayın türüne göre farklı ve kısa süreler vardır. Uygulayıcı (deployer) ciddi olayı tespit ederse sağlayıcıyı ve ilgili otoriteyi bilgilendirir | `[teyit-madde]` (sağlayıcı bildirimi ve uygulayıcı yükümlülükleri ile ilgili maddeler); yüksek risk yükümlülüklerinin uygulama tarihleri Digital Omnibus ile ertelendi — guncellik-izleme.md | Hukuk birimi; sistem sahibi bilgi sağlar |
 | Genel amaçlı YZ modeli (sistemik risk) | Sistemik riskli model sağlayıcılarının ciddi olay takibi ve raporlama yükümlülüğü | `[teyit-madde]` | Yalnız kuruluş bu sıfatta ise |
 | Siber güvenlik | 7545 sayılı Siber Güvenlik Kanunu ve ikincil düzenlemeler kapsamında bildirim yükümlülükleri olabilir | `[teyit]` | Bilgi güvenliği + hukuk |
 | Sektörel | Bankacılık, sermaye piyasası, sağlık, enerji, elektronik haberleşmede ayrı bildirim kuralları | `[teyit]` | Uyum birimi |
@@ -101,7 +101,7 @@ YZYS-FR-12 olay kaydında bu alanlar bulunmalı (betik sürümü bunları üretm
 | 42001 7.2 | YZYS'yi etkileyen işleri yapan kişilerin yetkinliğinin belirlenmesi, sağlanması, etkinliğinin değerlendirilmesi ve **kanıt olarak saklanması** |
 | 42001 7.3 | Farkındalık: YZ politikası, kişinin katkısı, uygunsuzluğun sonuçları |
 | 42001 A.4.6 | YZ sistemlerinde çalışan insan kaynaklarının yetkinliği |
-| AB YZ Yasası okuryazarlık hükmü | Sağlayıcı ve uygulayıcıların, çalışanları ve kendi adlarına YZ sistemleriyle uğraşan kişiler için yeterli YZ okuryazarlığını destekleyecek önlemler alması. Digital Omnibus sonrası yükümlülük sürüyor; ancak her bireyin belirli bir yetkinlik düzeyine ulaştığını **garanti etme** beklentisi kaldırıldı `[teyit]` — Ek E4 |
+| AB YZ Yasası okuryazarlık hükmü | Sağlayıcı ve uygulayıcıların, çalışanları ve kendi adlarına YZ sistemleriyle uğraşan kişiler için yeterli YZ okuryazarlığını destekleyecek önlemler alması. Digital Omnibus sonrası yükümlülük sürüyor; ancak her bireyin belirli bir yetkinlik düzeyine ulaştığını **garanti etme** beklentisi kaldırıldı `[teyit]` — guncellik-izleme.md |
 
 AB bağlantısı olan kuruluşta tek bir **Yetkinlik ve YZ Okuryazarlığı Matrisi**
 (YZYS-LS-07 genişletilmiş) iki yükümlülüğün kanıtını birlikte üretir. Ayrı

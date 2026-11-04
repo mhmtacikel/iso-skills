@@ -26,7 +26,7 @@ değerlendirmesi kişi/grup/toplum etkisini 42005 çerçevesinde belgeler. İkis
 **aynı sistem için paralel yürür**:
 
 - 42001 raporunda "Yasal bağlam" bölümü AIA'nın **sonucunu ve referansını**
-  taşır, gerekçesini değil (Ek E1 §4).
+  taşır, gerekçesini değil (eklenti-entegrasyonu.md §4).
 - AIA'da bulunan her somut risk (eklentinin "kötü risk / iyi risk" kalitesinde)
   42001 raporunda bir etki satırına karşılık gelmeli; karşılığı yoksa ya AIA
   42001 alanlarında bir boşluk bulmuştur ya da etki değerlendirmesi eksiktir.

@@ -84,9 +84,9 @@ yapılmaz, sessizce atlanmaz.
 | `use-case-triage` | Sonuç (🟢/🟡/🔴) ve şartlar → YZ Kullanım Onay Kaydı; 🔴 gerekçeleri → YZ politikası yasaklı kullanımlar ve envanterdeki "Yasak Kullanım"; 🟡 şartları → risk işleme planında kontrol | Envantere girmemiş yeni kullanım talebi geldiğinde, 42001 YZ kullanım prosedürünün (A.9.2) ilk adımı olarak |
 | `aia-generation` | Hukuki sınıflandırma, rejim bazlı yükümlülükler, FRIA gerekip gerekmediği → YZYS-FR-04 etki değerlendirmesinin "yasal bağlam" bölümüne **atıf ve sonuç** olarak (§4) | Etki değerlendirmesi Yüksek kademe sistem, AB bağlantısı veya kişiler hakkında karar içeriyorsa |
 | `vendor-ai-review` | Tedarikçi puanı, kabul edilen sapmalar → YZYS-LS-06 Üçüncü Taraf Envanteri ve A.10.2/A.10.3 kanıtı; "eğitimde kullanım" ve "model değişikliği bildirimi" maddeleri → risk kaydı | Envanterde sözleşmesi incelenmemiş üçüncü taraf model/API varsa |
-| `reg-gap-analysis` | Gereklilik listesi ve iyileştirme planı → YZYS-LS-10 Yasal Uyum Matrisi satırları; 4.2 ilgili taraf gereklilikleri; 6.3 değişiklik planı | Güncellik listesinde (Ek E4) yeni bir düzenleme veya yürürlük tarihi değiştiyse |
+| `reg-gap-analysis` | Gereklilik listesi ve iyileştirme planı → YZYS-LS-10 Yasal Uyum Matrisi satırları; 4.2 ilgili taraf gereklilikleri; 6.3 değişiklik planı | Güncellik listesinde (guncellik-izleme.md) yeni bir düzenleme veya yürürlük tarihi değiştiyse |
 | `policy-starter` | Model politikalardan kaynaklı taslak → YZYS-PL-01 YZ Politikası'nın gövdesi; 42001 5.2 zorunlu taahhütleri (gerekliliklere uyum, sürekli iyileştirme, hedef çerçevesi) bu skill ekler | Kuruluşun YZ kullanım politikası yoksa veya 2024 öncesiyse |
-| `policy-monitor` | Tarama raporu (REQUIRED/ADVISABLE boşluklar) → 9.1 izleme kaydı, A.2.4 politika gözden geçirme kanıtı, 9.3 YGG girdisi | Sürdürme modunda periyodik (bkz. Ek E2) |
+| `policy-monitor` | Tarama raporu (REQUIRED/ADVISABLE boşluklar) → 9.1 izleme kaydı, A.2.4 politika gözden geçirme kanıtı, 9.3 YGG girdisi | Sürdürme modunda periyodik (bkz. surdurme-ve-denetim-asamalari.md) |
 | `matter-workspace` | Aktif müşteri bağlamı (§7) | Danışman modunda her yeni müşteri seti için `new <slug>` |
 
 **Diğer eklentiler** (kuruluysa): `privacy-legal:pia-generation` (kişisel veri
@@ -214,7 +214,7 @@ noktalarında da geçerlidir:
 - **Sessiz tamamlama yok — üç değer.** Bilgi eksikse: etiketle tamamla,
   dur ve iste, veya "kullanmıyorum ama bilmen gerek" diye işaretle.
 - **Güncellik tetikleyicisi.** Yürürlük tarihi, eşik, yasalaşma durumu
-  gerektiren her atıftan önce web araması yap (Ek E4).
+  gerektiren her atıftan önce web araması yap (guncellik-izleme.md).
 - **Kullanıcının söylediği hukuki olguyu doğrula** — madde numarası, tarih,
   süre yanlışsa ilk cümlede söyle.
 - **Hukukçu olmayan modu.** `## Who's using this` hukukçu değilse belirsiz
