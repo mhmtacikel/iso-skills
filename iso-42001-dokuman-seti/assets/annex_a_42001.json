@@ -1,0 +1,230 @@
+[
+ [
+  "2.2",
+  "YZ politikası",
+  "YZYS-PL-01 YZ Politikası",
+  "Onaylı politika, duyuru kaydı, üst yönetim taahhüdü"
+ ],
+ [
+  "2.3",
+  "Diğer kurumsal politikalar ile uyum",
+  "YZYS-PL-01 §Uyum, YZYS-LS-08 Politika Uyum Matrisi",
+  "Bilgi güvenliği, KVKK, kalite politikalarıyla çelişki analizi"
+ ],
+ [
+  "2.4",
+  "YZ politikasının gözden geçirilmesi",
+  "YZYS-PL-01 §Gözden Geçirme",
+  "Yıllık gözden geçirme tutanağı, revizyon kaydı"
+ ],
+ [
+  "3.2",
+  "YZ rolleri ve sorumlulukları",
+  "YZYS-EK-01 §Roller, YZYS-FR-01 Görev Tanımları",
+  "Organizasyon şeması, YZ sorumlusu ataması, RACI matrisi"
+ ],
+ [
+  "3.3",
+  "Endişelerin raporlanması",
+  "YZYS-PR-09 Endişe Bildirim Prosedürü",
+  "Bildirim kanalı kanıtı, gelen bildirim kayıtları, gizlilik güvencesi"
+ ],
+ [
+  "4.2",
+  "Kaynak dokümantasyonu",
+  "YZYS-LS-02 YZ Kaynak Envanteri",
+  "Yaşam döngüsü aşaması bazında kaynak dokümantasyonu"
+ ],
+ [
+  "4.3",
+  "Veri kaynakları",
+  "YZYS-LS-03 Veri Kaynakları Envanteri",
+  "Veri seti listesi, kaynak, izin/lisans durumu"
+ ],
+ [
+  "4.4",
+  "Araç ve donanım kaynakları",
+  "YZYS-LS-02 §Araç ve Donanım",
+  "Kullanılan çerçeve, kütüphane, GPU/hesaplama kaynağı listesi"
+ ],
+ [
+  "4.5",
+  "Sistem ve bilgi işlem kaynakları",
+  "YZYS-LS-02 §Sistem ve Bilgi İşlem",
+  "Eğitim/çıkarım altyapısı, kapasite kayıtları"
+ ],
+ [
+  "4.6",
+  "İnsan kaynakları",
+  "YZYS-LS-07 Yetkinlik Matrisi",
+  "YZ yetkinlik gereksinimleri, eğitim kayıtları"
+ ],
+ [
+  "5.2",
+  "YZ sistemi etki değerlendirme süreci",
+  "YZYS-PR-02 Etki Değerlendirme Prosedürü",
+  "Metodoloji dokümanı, uygulanmış değerlendirme örnekleri"
+ ],
+ [
+  "5.3",
+  "YZ sistemi etki değerlendirmelerinin dokümantasyonu",
+  "YZYS-FR-04 YZ Sistemi Etki Değerlendirmesi",
+  "Tamamlanmış ve onaylanmış etki değerlendirme kayıtları"
+ ],
+ [
+  "5.4",
+  "YZ sisteminin kişiler veya kişi grupları üzerindeki etkisinin değerlendirilmesi",
+  "YZYS-FR-04 §Kişi/Grup Etkisi",
+  "Etkilenen gruplar analizi, adillik ve ayrımcılık değerlendirmesi"
+ ],
+ [
+  "5.5",
+  "YZ sistemlerinin toplumsal etkilerinin değerlendirilmesi",
+  "YZYS-FR-04 §Toplumsal Etki",
+  "Çevresel, ekonomik ve toplumsal etki değerlendirmesi"
+ ],
+ [
+  "6.1.2",
+  "YZ sisteminin sorumlu geliştirilmesi için hedefler",
+  "YZYS-PL-02 Sorumlu YZ Geliştirme Hedefleri",
+  "Adillik, şeffaflık, güvenlik, açıklanabilirlik hedefleri ve ölçümleri"
+ ],
+ [
+  "6.1.3",
+  "YZ sorumlu sistem tasarımı ve geliştirme süreçleri",
+  "YZYS-PR-03 Sorumlu Tasarım ve Geliştirme Prosedürü",
+  "Tasarım gözden geçirme kayıtları, etik kontrol noktaları"
+ ],
+ [
+  "6.2.2",
+  "YZ sistem gereklilikleri ve özellikleri",
+  "YZYS-FR-05 YZ Sistem Gereksinim Formu",
+  "Fonksiyonel ve fonksiyonel olmayan gereksinimler, kabul kriterleri"
+ ],
+ [
+  "6.2.3",
+  "YZ sistem tasarımı ve geliştirmesinin dokümantasyonu",
+  "YZYS-FR-06 Tasarım ve Geliştirme Dokümantasyonu",
+  "Mimari, model seçim gerekçesi, hiperparametre kayıtları"
+ ],
+ [
+  "6.2.4",
+  "YZ sistem doğrulaması ve geçerliliği",
+  "YZYS-PR-04 Doğrulama ve Geçerleme Prosedürü",
+  "Test planı, performans metrikleri, yanlılık testi sonuçları"
+ ],
+ [
+  "6.2.5",
+  "YZ sisteminin devreye alınması",
+  "YZYS-PR-05 Devreye Alma Prosedürü",
+  "Dağıtım planı, kabul onayı, geri alma planı"
+ ],
+ [
+  "6.2.6",
+  "YZ sistemi işletimi ve izlenmesi",
+  "YZYS-PR-06 İşletim ve İzleme Prosedürü",
+  "İzleme metrikleri, model kayması (drift) takibi, uyarı kayıtları"
+ ],
+ [
+  "6.2.7",
+  "YZ sistemi teknik dokümantasyonu",
+  "YZYS-FR-07 Teknik Dokümantasyon / Model Kartı",
+  "Model kartı, sistem kartı, ilgili taraflara sunulan teknik doküman"
+ ],
+ [
+  "6.2.8",
+  "YZ sistemi olay günlüklerinin kaydı",
+  "YZYS-PR-06 §Olay Günlükleri",
+  "Hangi aşamada hangi log, saklama süresi, erişim kontrolü"
+ ],
+ [
+  "7.2",
+  "YZ sisteminin geliştirilmesi ve iyileştirilmesi için veriler",
+  "YZYS-PR-07 Veri Yönetişimi Prosedürü",
+  "Veri yönetimi yaklaşımı, sorumluluklar"
+ ],
+ [
+  "7.3",
+  "Verilerin edinilmesi",
+  "YZYS-LS-03 §Edinme",
+  "Veri edinme kayıtları, lisans/izin belgeleri, sözleşmeler"
+ ],
+ [
+  "7.4",
+  "YZ sistemleri için verilerin kalitesi",
+  "YZYS-FR-08 Veri Kalitesi Değerlendirme Formu",
+  "Kalite kriterleri, ölçüm sonuçları, temsil edicilik analizi"
+ ],
+ [
+  "7.5",
+  "Veri kökeni",
+  "YZYS-LS-03 §Köken",
+  "Veri kökeni (provenance) kayıtları, dönüşüm izleri"
+ ],
+ [
+  "7.6",
+  "Veri hazırlama",
+  "YZYS-PR-07 §Hazırlama",
+  "Ön işleme adımları, etiketleme prosedürü, etiketleyici talimatları"
+ ],
+ [
+  "8.2",
+  "Kullanıcılar için sistem dokümantasyonu ve bilgileri",
+  "YZYS-FR-09 Kullanıcı Dokümantasyonu",
+  "Kullanım kılavuzu, sınırlılıklar beyanı, uyarılar"
+ ],
+ [
+  "8.3",
+  "Harici raporlama",
+  "YZYS-PR-08 Şeffaflık ve Raporlama Prosedürü",
+  "Dış bildirim kanalı, olumsuz etki bildirim mekanizması"
+ ],
+ [
+  "8.4",
+  "Olayların iletilmesi",
+  "YZYS-PR-10 YZ Olay Yönetimi Prosedürü",
+  "Kullanıcıya olay bildirim kayıtları, bildirim şablonları"
+ ],
+ [
+  "8.5",
+  "İlgili taraflar için bilgiler",
+  "YZYS-PR-08 §İlgili Taraflar",
+  "İlgili taraf bilgilendirme kayıtları, şeffaflık beyanları"
+ ],
+ [
+  "9.2",
+  "YZ sistemlerinin sorumlu kullanılmasına yönelik süreçler",
+  "YZYS-PR-11 Sorumlu Kullanım Prosedürü",
+  "Kullanım kuralları, kullanıcı eğitimi, izleme kayıtları"
+ ],
+ [
+  "9.3",
+  "YZ sisteminin sorumlu kullanılmasına yönelik hedefler",
+  "YZYS-PL-03 Sorumlu Kullanım Hedefleri",
+  "Kullanım ilkeleri, insan gözetimi tanımı"
+ ],
+ [
+  "9.4",
+  "YZ isteminin amaçlanan kullanımı",
+  "YZYS-FR-10 Amaçlanan Kullanım Beyanı",
+  "Amaçlanan kullanım, amaç dışı/yasak kullanım listesi, sapma izleme"
+ ],
+ [
+  "10.2",
+  "Sorumlulukların tahsisi",
+  "YZYS-PR-12 Üçüncü Taraf Yönetimi Prosedürü",
+  "Yaşam döngüsü boyunca sorumluluk paylaşım matrisi"
+ ],
+ [
+  "10.3",
+  "Tedarikçiler",
+  "YZYS-LS-06 Tedarikçi ve Model Sağlayıcı Envanteri",
+  "Sağlayıcı değerlendirmesi, sözleşme YZ ekleri"
+ ],
+ [
+  "10.4",
+  "Müşteriler",
+  "YZYS-FR-11 Müşteri Bilgilendirme ve Yükümlülük Formu",
+  "Müşteriye sunulan bilgi, sorumluluk sınırları, geri bildirim kanalı"
+ ]
+]

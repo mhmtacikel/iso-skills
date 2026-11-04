@@ -1,0 +1,554 @@
+{
+ "controller": [
+  {
+   "v2019": "7.2.1",
+   "v2025": "A.1.2.2",
+   "baslik": "Amacın tanımlanması ve dokümante edilmesi",
+   "dokuman": "KVYS-LS-01 Kişisel Veri İşleme Envanteri",
+   "kanit": "Her işleme faaliyeti için yazılı amaç; VERBİS kaydıyla tutarlılık"
+  },
+  {
+   "v2019": "7.2.2",
+   "v2025": "A.1.2.3",
+   "baslik": "Yasal dayanağın tanımlanması",
+   "dokuman": "KVYS-LS-01 §Hukuki Sebep, KVYS-LS-03 Mevzuat Matrisi",
+   "kanit": "KVKK m.5/m.6 dayanak eşlemesi; meşru menfaat testleri"
+  },
+  {
+   "v2019": "7.2.3",
+   "v2025": "A.1.2.4",
+   "baslik": "Rızanın ne zaman ve nasıl alınacağının belirlenmesi",
+   "dokuman": "KVYS-PR-02 Rıza Yönetimi Prosedürü",
+   "kanit": "Rıza gereken/gerekmeyen işleme ayrımı, karar kriterleri"
+  },
+  {
+   "v2019": "7.2.4",
+   "v2025": "A.1.2.5",
+   "baslik": "Rızanın alınması ve kaydedilmesi",
+   "dokuman": "KVYS-FR-02 Açık Rıza Metni, KVYS-LS-05 Rıza Kayıt Defteri",
+   "kanit": "Zaman damgalı rıza kayıtları, metin sürümü, kanal"
+  },
+  {
+   "v2019": "7.2.5",
+   "v2025": "A.1.2.6",
+   "baslik": "Gizlilik etki değerlendirmesi (PIA/DPIA)",
+   "dokuman": "KVYS-PR-03 Etki Değerlendirme Prosedürü, KVYS-FR-03",
+   "kanit": "Tamamlanmış ve onaylı DPIA raporları, eşik kriterleri"
+  },
+  {
+   "v2019": "7.2.6",
+   "v2025": "A.1.2.7",
+   "baslik": "Kişisel veri işleyenlerle yapılan sözleşmeler",
+   "dokuman": "KVYS-FR-08 Veri İşleyen Sözleşme Eki",
+   "kanit": "İmzalı veri işleyen sözleşmeleri, talimat maddesi"
+  },
+  {
+   "v2019": "7.2.7",
+   "v2025": "A.1.2.8",
+   "baslik": "Ortak kişisel veri sorumlusu",
+   "dokuman": "KVYS-FR-09 Ortak Veri Sorumlusu Mutabakatı",
+   "kanit": "Sorumluluk paylaşım mutabakatı, ilgili kişiye duyurulan özet"
+  },
+  {
+   "v2019": "7.2.8",
+   "v2025": "A.1.2.9",
+   "baslik": "Kişisel veri işlenmesine ilişkin kayıtlar",
+   "dokuman": "KVYS-LS-01 Kişisel Veri İşleme Envanteri",
+   "kanit": "Güncel envanter; VERBİS bildirimi ile eşleşme"
+  },
+  {
+   "v2019": "7.3.1",
+   "v2025": "A.1.3.2",
+   "baslik": "Veri sahiplerine karşı yükümlülüklerin belirlenmesi ve yerine getirilmesi",
+   "dokuman": "KVYS-PR-04 İlgili Kişi Başvuru Prosedürü",
+   "kanit": "Yükümlülük listesi, yerine getirme kanıtı"
+  },
+  {
+   "v2019": "7.3.2",
+   "v2025": "A.1.3.3",
+   "baslik": "Veri sahiplerine verilecek bilgilerin belirlenmesi",
+   "dokuman": "KVYS-FR-01 Aydınlatma Metni",
+   "kanit": "Aydınlatma metni içerik kontrol listesi (KVKK m.10)"
+  },
+  {
+   "v2019": "7.3.3",
+   "v2025": "A.1.3.4",
+   "baslik": "Veri sahiplerine bilgi verilmesi",
+   "dokuman": "KVYS-FR-01, yayım kanalları",
+   "kanit": "Web sitesi/ekran görüntüsü, form üzerindeki metin, duyuru kaydı"
+  },
+  {
+   "v2019": "7.3.4",
+   "v2025": "A.1.3.5",
+   "baslik": "Rızanın değiştirilmesi veya geri çekilmesine ilişkin mekanizmanın sağlanması",
+   "dokuman": "KVYS-PR-02 §Geri Çekme",
+   "kanit": "Geri çekme kanalı, işlenen geri çekme talepleri"
+  },
+  {
+   "v2019": "7.3.5",
+   "v2025": "A.1.3.6",
+   "baslik": "Veri işlemesine itiraz mekanizmasının sağlanması",
+   "dokuman": "KVYS-PR-04 §İtiraz",
+   "kanit": "İtiraz kanalı ve sonuçlandırma kayıtları"
+  },
+  {
+   "v2019": "7.3.6",
+   "v2025": "A.1.3.7",
+   "baslik": "Erişim, düzeltme ve/veya silme",
+   "dokuman": "KVYS-PR-04, KVYS-LS-06 Başvuru Kayıt Defteri",
+   "kanit": "30 günlük yanıt süresi kanıtı, işlem kayıtları"
+  },
+  {
+   "v2019": "7.3.7",
+   "v2025": "A.1.3.8",
+   "baslik": "Veri sorumlularının üçüncü tarafları uyarma yükümlülüğü",
+   "dokuman": "KVYS-PR-04 §Üçüncü Taraf Bildirimi",
+   "kanit": "Aktarım yapılan taraflara gönderilen düzeltme/silme bildirimleri"
+  },
+  {
+   "v2019": "7.3.8",
+   "v2025": "A.1.3.9",
+   "baslik": "İşlenen kişisel verilerin kopyasının sağlanması",
+   "dokuman": "KVYS-PR-04 §Veri Taşınabilirliği",
+   "kanit": "Kopya/taşınabilirlik talep kayıtları, format tanımı"
+  },
+  {
+   "v2019": "7.3.9",
+   "v2025": "A.1.3.10",
+   "baslik": "Taleplerin ele alınması",
+   "dokuman": "KVYS-LS-06 Başvuru Kayıt Defteri",
+   "kanit": "Süre takibi, ret gerekçeleri, Kurul'a yansıyan şikâyetler"
+  },
+  {
+   "v2019": "7.3.10",
+   "v2025": "A.1.3.11",
+   "baslik": "Otomatikleştirilmiş karar verme",
+   "dokuman": "KVYS-FR-10 Otomatik Karar Envanteri",
+   "kanit": "Otomatik karar veren sistemler listesi, insan müdahale yolu, itiraz hakkı"
+  },
+  {
+   "v2019": "7.4.1",
+   "v2025": "A.1.4.2",
+   "baslik": "Toplamanın sınırlandırılması",
+   "dokuman": "KVYS-PL-01 §Veri Minimizasyonu, KVYS-LS-01",
+   "kanit": "Toplanan alan listesi ve her alan için gereklilik gerekçesi"
+  },
+  {
+   "v2019": "7.4.2",
+   "v2025": "A.1.4.3",
+   "baslik": "İşlemenin sınırlandırılması",
+   "dokuman": "KVYS-PL-01 §Amaçla Sınırlılık",
+   "kanit": "Amaç dışı işleme kontrolleri, erişim kısıtları"
+  },
+  {
+   "v2019": "7.4.3",
+   "v2025": "A.1.4.4",
+   "baslik": "Doğruluk ve nitelik",
+   "dokuman": "KVYS-PR-05 Veri Kalitesi Prosedürü",
+   "kanit": "Güncelleme mekanizması, doğruluk kontrolleri"
+  },
+  {
+   "v2019": "7.4.4",
+   "v2025": "A.1.4.5",
+   "baslik": "Kişisel verileri en aza indirme hedefleri",
+   "dokuman": "KVYS-FR-04 KVYS Hedefleri",
+   "kanit": "Minimizasyon hedefi, ölçüm ve sonuç"
+  },
+  {
+   "v2019": "7.4.5",
+   "v2025": "A.1.4.6",
+   "baslik": "Kişisel verilerin işleme sonunda anonim hâle getirilmesi ve silinmesi",
+   "dokuman": "KVYS-PR-06 Saklama ve İmha Prosedürü",
+   "kanit": "Anonimleştirme yöntemi, uygulanmış örnekler"
+  },
+  {
+   "v2019": "7.4.6",
+   "v2025": "A.1.4.7",
+   "baslik": "Geçici dosyalar",
+   "dokuman": "KVYS-PR-06 §Geçici Dosyalar",
+   "kanit": "Geçici dosya temizleme mekanizması ve periyodu"
+  },
+  {
+   "v2019": "7.4.7",
+   "v2025": "A.1.4.8",
+   "baslik": "Saklama (tutma)",
+   "dokuman": "KVYS-LS-02 Saklama ve İmha Politikası/Tablosu",
+   "kanit": "Veri türü bazında saklama süresi ve mevzuat dayanağı"
+  },
+  {
+   "v2019": "7.4.8",
+   "v2025": "A.1.4.9",
+   "baslik": "Yok etme",
+   "dokuman": "KVYS-PR-06 §İmha",
+   "kanit": "Periyodik imha tutanakları (KVKK Yönetmelik: 6 aylık periyot)"
+  },
+  {
+   "v2019": "7.4.9",
+   "v2025": "A.1.4.10",
+   "baslik": "Kişisel veri aktarım kontrolleri",
+   "dokuman": "KVYS-PR-07 Aktarım Prosedürü",
+   "kanit": "Aktarım kanalı şifreleme, aktarım öncesi kontrol kayıtları"
+  },
+  {
+   "v2019": "7.5.1",
+   "v2025": "A.1.5.2",
+   "baslik": "Yetki alanları arası kişisel veri aktarımı için dayanağın tanımlanması",
+   "dokuman": "KVYS-LS-04 Yurt Dışı Aktarım Envanteri",
+   "kanit": "KVKK m.9 dayanağı: yeterlilik kararı / standart sözleşme / BKK / açık rıza"
+  },
+  {
+   "v2019": "7.5.2",
+   "v2025": "A.1.5.3",
+   "baslik": "Kişisel verilerin aktarılabileceği ülkeler ve uluslararası kuruluşlar",
+   "dokuman": "KVYS-LS-04 §Ülke Listesi",
+   "kanit": "Ülke listesi, Kurul'a bildirilen standart sözleşmeler"
+  },
+  {
+   "v2019": "7.5.3",
+   "v2025": "A.1.5.4",
+   "baslik": "Kişisel veri aktarımının kayıtları",
+   "dokuman": "KVYS-LS-04 §Aktarım Kayıtları",
+   "kanit": "Her aktarımın kaydı: alıcı, ülke, tarih, dayanak"
+  },
+  {
+   "v2019": "7.5.4",
+   "v2025": "A.1.5.5",
+   "baslik": "Üçüncü taraflara yapılan kişisel veri ifşalarının kayıtları",
+   "dokuman": "KVYS-LS-07 İfşa/Paylaşım Kayıt Defteri",
+   "kanit": "İfşa kayıtları, hukuki dayanak, talep eden makam"
+  }
+ ],
+ "processor": [
+  {
+   "v2019": "8.2.1",
+   "v2025": "A.2.2.2",
+   "baslik": "Müşteri anlaşması",
+   "dokuman": "KVYS-FR-11 Veri İşleyen Hizmet Sözleşmesi",
+   "kanit": "İmzalı sözleşmeler; sorumluluk ve talimat maddeleri"
+  },
+  {
+   "v2019": "8.2.2",
+   "v2025": "A.2.2.3",
+   "baslik": "Kuruluşun amaçları",
+   "dokuman": "KVYS-PL-02 §Amaç Sınırı",
+   "kanit": "Müşteri talimatı dışında işleme yapılmadığının kanıtı"
+  },
+  {
+   "v2019": "8.2.3",
+   "v2025": "A.2.2.4",
+   "baslik": "Pazarlama ve reklam kullanımı",
+   "dokuman": "KVYS-PL-02 §Pazarlama Yasağı",
+   "kanit": "Müşteri verisinin pazarlamada kullanılmadığına dair kontrol"
+  },
+  {
+   "v2019": "8.2.4",
+   "v2025": "A.2.2.5",
+   "baslik": "İhlale sebep olan talimatlar",
+   "dokuman": "KVYS-PR-08 Talimat Değerlendirme",
+   "kanit": "Hukuka aykırı talimat tespiti ve müşteriye bildirim kaydı"
+  },
+  {
+   "v2019": "8.2.5",
+   "v2025": "A.2.2.6",
+   "baslik": "Müşteri yükümlülükleri",
+   "dokuman": "KVYS-FR-12 Müşteri Bilgilendirme Formu",
+   "kanit": "Müşteriye sağlanan bilgi ve destek kanıtı"
+  },
+  {
+   "v2019": "8.2.6",
+   "v2025": "A.2.2.7",
+   "baslik": "Kişisel verilerin işlenmesine ilişkin kayıtlar",
+   "dokuman": "KVYS-LS-08 Veri İşleyen İşleme Kayıtları",
+   "kanit": "Müşteri bazında işleme faaliyeti kaydı"
+  },
+  {
+   "v2019": "8.3.1",
+   "v2025": "A.2.3.2",
+   "baslik": "Veri sahiplerine karşı yükümlülükler",
+   "dokuman": "KVYS-PR-04 §Veri İşleyen Rolü",
+   "kanit": "İlgili kişi taleplerinin veri sorumlusuna yönlendirilme kaydı"
+  },
+  {
+   "v2019": "8.4.1",
+   "v2025": "A.2.4.2",
+   "baslik": "Geçici dosyalar",
+   "dokuman": "KVYS-PR-06 §Geçici Dosyalar",
+   "kanit": "Geçici dosya temizleme kanıtı"
+  },
+  {
+   "v2019": "8.4.2",
+   "v2025": "A.2.4.3",
+   "baslik": "Kişisel verilerin iadesi, aktarımı ve yok edilmesi",
+   "dokuman": "KVYS-PR-09 Sözleşme Sonu Prosedürü",
+   "kanit": "Sözleşme bitiminde iade/imha tutanakları"
+  },
+  {
+   "v2019": "8.4.3",
+   "v2025": "A.2.4.4",
+   "baslik": "Kişisel veri aktarım kontrolleri",
+   "dokuman": "KVYS-PR-07 Aktarım Prosedürü",
+   "kanit": "Aktarım güvenlik kontrolleri"
+  },
+  {
+   "v2019": "8.5.1",
+   "v2025": "A.2.5.2",
+   "baslik": "Yetki alanları arası kişisel veri aktarımına ilişkin dayanak",
+   "dokuman": "KVYS-LS-04 Yurt Dışı Aktarım Envanteri",
+   "kanit": "Aktarım dayanağı ve müşteri onayı"
+  },
+  {
+   "v2019": "8.5.2",
+   "v2025": "A.2.5.3",
+   "baslik": "Kişisel verilerin aktarılabileceği ülkeler ve uluslararası kuruluşlar",
+   "dokuman": "KVYS-LS-04 §Ülke Listesi",
+   "kanit": "Müşteriye bildirilen ülke listesi"
+  },
+  {
+   "v2019": "8.5.3",
+   "v2025": "A.2.5.4",
+   "baslik": "Üçüncü taraflara yapılan kişisel veri ifşalarının kayıtları",
+   "dokuman": "KVYS-LS-07 İfşa Kayıt Defteri",
+   "kanit": "İfşa kayıtları"
+  },
+  {
+   "v2019": "8.5.4",
+   "v2025": "A.2.5.5",
+   "baslik": "Kişisel veri ifşa taleplerinin bildirimi",
+   "dokuman": "KVYS-PR-10 Yasal Talep Prosedürü",
+   "kanit": "Kolluk/idari taleplerin müşteriye bildirim kaydı"
+  },
+  {
+   "v2019": "8.5.5",
+   "v2025": "A.2.5.6",
+   "baslik": "Yasal olarak bağlayıcı kişisel veri ifşaları",
+   "dokuman": "KVYS-PR-10 §Bağlayıcı Talepler",
+   "kanit": "Talep, hukuki inceleme ve yanıt kayıtları"
+  },
+  {
+   "v2019": "8.5.6",
+   "v2025": "A.2.5.7",
+   "baslik": "Kişisel veri işleme için kullanılan alt yüklenicilerin ifşa edilmesi",
+   "dokuman": "KVYS-LS-09 Alt Yüklenici Envanteri",
+   "kanit": "Müşteriye açıklanan alt yüklenici listesi"
+  },
+  {
+   "v2019": "8.5.7",
+   "v2025": "A.2.5.8",
+   "baslik": "Kişisel verilerin işlenmesi için alt yüklenici kullanımı",
+   "dokuman": "KVYS-PR-11 Alt Yüklenici Yönetimi",
+   "kanit": "Müşteri onayı, alt yüklenici sözleşmeleri, denetim kayıtları"
+  },
+  {
+   "v2019": "8.5.8",
+   "v2025": "A.2.5.9",
+   "baslik": "Kişisel veri işleme için kullanılan alt yüklenicinin değişikliği",
+   "dokuman": "KVYS-PR-11 §Değişiklik Bildirimi",
+   "kanit": "Alt yüklenici değişikliğinin müşteriye önceden bildirim kaydı"
+  }
+ ],
+ "security": [
+  {
+   "v2025": "A.3.3",
+   "iso27002": "5.1",
+   "baslik": "Bilgi güvenliği politikaları",
+   "dokuman": "KVYS-PL-03 Bilgi Güvenliği Politikası",
+   "kanit": "Onaylı politika, duyuru kaydı"
+  },
+  {
+   "v2025": "A.3.4",
+   "iso27002": "5.2",
+   "baslik": "Bilgi güvenliği rolleri ve sorumlulukları",
+   "dokuman": "KVYS-EK-01 §Roller",
+   "kanit": "Görev tanımları, atama yazıları"
+  },
+  {
+   "v2025": "A.3.5",
+   "iso27002": "5.12",
+   "baslik": "Bilgilerin sınıflandırılması",
+   "dokuman": "KVYS-PL-04 Sınıflandırma Politikası",
+   "kanit": "Sınıflandırma şeması; kişisel veri ayrı sınıf"
+  },
+  {
+   "v2025": "A.3.6",
+   "iso27002": "5.13",
+   "baslik": "Bilgilerin etiketlenmesi",
+   "dokuman": "KVYS-TL-01 Etiketleme Talimatı",
+   "kanit": "Etiketlenmiş örnekler"
+  },
+  {
+   "v2025": "A.3.7",
+   "iso27002": "5.14",
+   "baslik": "Bilgi transferi",
+   "dokuman": "KVYS-PR-07 Aktarım Prosedürü",
+   "kanit": "Transfer kuralları ve anlaşmaları"
+  },
+  {
+   "v2025": "A.3.8",
+   "iso27002": "5.16",
+   "baslik": "Kimlik yönetimi",
+   "dokuman": "KVYS-PR-12 Erişim ve Kimlik Yönetimi",
+   "kanit": "Kimlik yaşam döngüsü kayıtları"
+  },
+  {
+   "v2025": "A.3.9",
+   "iso27002": "5.18",
+   "baslik": "Erişim hakları",
+   "dokuman": "KVYS-PR-12 §Erişim Hakları",
+   "kanit": "Periyodik erişim gözden geçirme; kişisel veriye erişim log'u"
+  },
+  {
+   "v2025": "A.3.10",
+   "iso27002": "5.20",
+   "baslik": "Tedarikçi sözleşmelerinde bilgi güvenliğinin ele alınması",
+   "dokuman": "KVYS-FR-08 / FR-11 Sözleşme Ekleri",
+   "kanit": "İmzalı güvenlik ve gizlilik maddeleri"
+  },
+  {
+   "v2025": "A.3.11",
+   "iso27002": "5.24",
+   "baslik": "Bilgi güvenliği ihlal olayı yönetimi planlaması ve hazırlığı",
+   "dokuman": "KVYS-PR-13 Veri İhlali Yönetim Prosedürü",
+   "kanit": "Rol atamaları, 72 saat Kurul bildirim akışı"
+  },
+  {
+   "v2025": "A.3.12",
+   "iso27002": "5.26",
+   "baslik": "Bilgi güvenliği ihlal olaylarına müdahale",
+   "dokuman": "KVYS-PR-13 §Müdahale, KVYS-LS-10 İhlal Kayıt Defteri",
+   "kanit": "İhlal kayıtları, Kurul ve ilgili kişi bildirimleri"
+  },
+  {
+   "v2025": "A.3.13",
+   "iso27002": "5.31",
+   "baslik": "Yasal, meşru, düzenleyici ve sözleşmeye tabi gereklilikler",
+   "dokuman": "KVYS-LS-03 Mevzuat ve Yükümlülük Matrisi",
+   "kanit": "KVKK, ikincil mevzuat, sektörel düzenleme takibi"
+  },
+  {
+   "v2025": "A.3.14",
+   "iso27002": "5.33",
+   "baslik": "Kayıtların korunması",
+   "dokuman": "KVYS-PR-14 Doküman ve Kayıt Kontrol",
+   "kanit": "Saklama planı, erişim kısıtları"
+  },
+  {
+   "v2025": "A.3.15",
+   "iso27002": "5.35",
+   "baslik": "Bilgi güvenliğinin bağımsız gözden geçirilmesi",
+   "dokuman": "KVYS-PR-15 İç Tetkik Prosedürü",
+   "kanit": "Bağımsız gözden geçirme raporu"
+  },
+  {
+   "v2025": "A.3.16",
+   "iso27002": "5.36",
+   "baslik": "Bilgi güvenliğine yönelik politikalar, kurallar ve standartlara uygunluk",
+   "dokuman": "KVYS-PR-16 Uygunluk Gözden Geçirme",
+   "kanit": "Uyum kontrol listeleri ve sonuçları"
+  },
+  {
+   "v2025": "A.3.17",
+   "iso27002": "6.3",
+   "baslik": "Bilgi güvenliği farkındalığı, eğitim ve öğretim",
+   "dokuman": "KVYS-PN-02 Farkındalık ve Eğitim Planı",
+   "kanit": "Eğitim kayıtları; kişisel veri farkındalık içeriği"
+  },
+  {
+   "v2025": "A.3.18",
+   "iso27002": "6.6",
+   "baslik": "Gizlilik veya ifşa etmeme anlaşmaları",
+   "dokuman": "KVYS-FR-13 Gizlilik Taahhütnamesi",
+   "kanit": "İmzalı taahhütnameler (çalışan ve tedarikçi)"
+  },
+  {
+   "v2025": "A.3.19",
+   "iso27002": "7.7",
+   "baslik": "Temiz masa ve temiz ekran",
+   "dokuman": "KVYS-PL-05 Kabul Edilebilir Kullanım",
+   "kanit": "Periyodik denetim kayıtları"
+  },
+  {
+   "v2025": "A.3.20",
+   "iso27002": "7.10",
+   "baslik": "Depolama ortamı",
+   "dokuman": "KVYS-PR-17 Ortam Yönetimi",
+   "kanit": "Ortam envanteri, taşıma ve imha kayıtları"
+  },
+  {
+   "v2025": "A.3.21",
+   "iso27002": "7.14",
+   "baslik": "Ekipmanın güvenli bir şekilde yok edilmesi veya tekrar kullanılması",
+   "dokuman": "KVYS-PR-17 §Güvenli İmha",
+   "kanit": "İmha tutanakları, veri silme sertifikaları"
+  },
+  {
+   "v2025": "A.3.22",
+   "iso27002": "8.1",
+   "baslik": "Kullanıcı uç nokta cihazları",
+   "dokuman": "KVYS-PL-06 Uç Nokta Politikası",
+   "kanit": "MDM/şifreleme yapılandırması"
+  },
+  {
+   "v2025": "A.3.23",
+   "iso27002": "8.5",
+   "baslik": "Güvenli kimlik doğrulama",
+   "dokuman": "KVYS-PR-12 §Kimlik Doğrulama",
+   "kanit": "MFA yapılandırma kanıtı"
+  },
+  {
+   "v2025": "A.3.24",
+   "iso27002": "8.13",
+   "baslik": "Bilgi yedekleme",
+   "dokuman": "KVYS-PR-18 Yedekleme Prosedürü",
+   "kanit": "Yedek kayıtları, geri dönüş testi; yedekte saklama süresi uyumu"
+  },
+  {
+   "v2025": "A.3.25",
+   "iso27002": "8.15",
+   "baslik": "Kaydetme (log tutma)",
+   "dokuman": "KVYS-PR-19 Log Yönetimi",
+   "kanit": "Kişisel veriye erişim log'ları, saklama süresi, bütünlük"
+  },
+  {
+   "v2025": "A.3.26",
+   "iso27002": "8.24",
+   "baslik": "Kriptografi (şifreleme) kullanımı",
+   "dokuman": "KVYS-PL-07 Kriptografi Politikası",
+   "kanit": "Şifreleme standartları, anahtar yönetimi"
+  },
+  {
+   "v2025": "A.3.27",
+   "iso27002": "8.25",
+   "baslik": "Güvenli geliştirme yaşam döngüsü",
+   "dokuman": "KVYS-PR-20 Güvenli Geliştirme",
+   "kanit": "SDLC tanımı, güvenlik kapıları"
+  },
+  {
+   "v2025": "A.3.28",
+   "iso27002": "8.26",
+   "baslik": "Uygulama güvenlik gereklilikleri",
+   "dokuman": "KVYS-PR-20 §Güvenlik Gereksinimleri",
+   "kanit": "Gereksinim listesi; tasarım gereği gizlilik kanıtı"
+  },
+  {
+   "v2025": "A.3.29",
+   "iso27002": "8.27",
+   "baslik": "Güvenli sistem mimarisi ve mühendislik ilkeleri",
+   "dokuman": "KVYS-PR-20 §Mimari",
+   "kanit": "Mimari prensipler, tehdit modelleme"
+  },
+  {
+   "v2025": "A.3.30",
+   "iso27002": "8.30",
+   "baslik": "Dış kaynak yoluyla geliştirme",
+   "dokuman": "KVYS-PR-11 §Dış Geliştirme",
+   "kanit": "Sözleşme maddeleri, kabul testleri"
+  },
+  {
+   "v2025": "A.3.31",
+   "iso27002": "8.33",
+   "baslik": "Test bilgisi",
+   "dokuman": "KVYS-PL-08 Test Verisi Politikası",
+   "kanit": "Test ortamında maskeleme/anonimleştirme kanıtı"
+  }
+ ]
+}

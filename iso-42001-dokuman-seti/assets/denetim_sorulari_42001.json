@@ -1,0 +1,735 @@
+{
+ "standart": "ISO/IEC 42001:2023",
+ "surum": "1.0",
+ "aciklama": "Belgelendirme kuruluşu tetkik kontrol listesinden uyarlanmış denetçi soru bankası. Her satır bir denetçi sorusudur; 'kanit' alanı sahada istenecek kanıt tipini gösterir. Cevap seçenekleri: E (Evet) / H (Hayır) / U/D (Uygulanabilir değil — yalnızca Ek A kontrolleri için).",
+ "bolumler": [
+  {
+   "tip": "madde",
+   "ref": "4.1",
+   "baslik": "Kuruluşun ve bağlamının anlaşılması",
+   "sorular": [
+    "Kuruluş, amacına ve stratejik yönüne uygun; YZYS'nin amaçlanan sonuçlarına ulaşma yeteneğini etkileyen iç ve dış hususları belirlemiş mi?",
+    "Kuruluş, iklim değişikliğinin ilgili bir husus olup olmadığını değerlendirmiş mi?",
+    "Kuruluş, YZ sistemleri açısından rolünü/rollerini belirlemiş mi? (YZ sağlayıcı, YZ üreticisi, YZ müşterisi, YZ ortağı, YZ süjesi veya ilgili otorite)"
+   ],
+   "kanit": "Faaliyet izin ve lisansları, iş planı, pazar analizi, GZFT analizi, YZYS el kitabı, kuruluşun YZ ekosistemindeki rolünün tanımı, ilgili taraf örnekleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "4.2",
+   "baslik": "İlgili tarafların ihtiyaç ve beklentilerinin anlaşılması",
+   "sorular": [
+    "YZYS için ilgili taraflar ile ihtiyaç ve beklentileri belirlenmiş mi?",
+    "Kararın muhatabı olan kişiler (YZ süjeleri) ilgili taraf listesinde yer alıyor mu?",
+    "İlgili taraflardan hangilerinin iklim değişikliğiyle ilgili gereklilikleri olduğu değerlendirilmiş mi?"
+   ],
+   "kanit": "İlgili taraf analiz tablosu, beklenti-gereklilik eşlemesi, geri bildirim kayıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "4.3",
+   "baslik": "YZYS kapsamının belirlenmesi",
+   "sorular": [
+    "YZYS kapsamı dokümante bilgi olarak mevcut mu?",
+    "Kapsam, kuruluşun YZ ile ilgili faaliyetlerini (YZ sistemi geliştirme, sağlama, kullanma) temsil edecek şekilde belirlenmiş mi?",
+    "Kapsam dışı bırakılan YZ sistemleri ve gerekçeleri yazılı mı?"
+   ],
+   "kanit": "Kapsama dahil faaliyet ve lokasyonlar, kapsamın dokümante edildiğine dair kanıt, kapsam dışı bırakma gerekçeleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "4.4",
+   "baslik": "YZ yönetim sistemi",
+   "sorular": [
+    "YZYS kurulmuş, uygulanmış, sürdürülüyor ve sürekli iyileştiriliyor mu?",
+    "Süreçler ve süreçler arası etkileşim tanımlı mı?"
+   ],
+   "kanit": "Süreç haritası, YZYS el kitabı, süreç sahipleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "5.1",
+   "baslik": "Liderlik ve taahhüt",
+   "sorular": [
+    "Üst yönetim YZYS konusunda liderlik ve taahhüdünü gösteriyor mu?",
+    "YZ hedefleri kuruluşun stratejik yönüyle uyumlu mu?",
+    "Üst yönetim gerekli kaynakların sağlanmasını güvence altına alıyor mu?"
+   ],
+   "kanit": "YGG tutanakları, bütçe kararları, kaynak tahsisi kayıtları, üst yönetim iletişimleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "5.2",
+   "baslik": "YZ politikası",
+   "sorular": [
+    "Kuruluş tarafından dokümante edilmiş ve sürdürülen bir YZ politikası var mı?",
+    "YZ politikası şu gereklilikleri karşılıyor mu: kuruluşun amacına uygunluk, YZ hedefleri için çerçeve sağlama, uygulanabilir gereklilikleri karşılama ve YZYS'nin sürekli iyileştirilmesi taahhüdü?",
+    "YZ politikası dokümante bilgi olarak mevcut mu, kuruluş içinde duyurulmuş mu ve uygun olduğu ölçüde ilgili taraflara açık mı?"
+   ],
+   "kanit": "YZ politikası (tarih, sürüm), kuruluş içi duyuru kanıtı, ilgili taraflara erişilebilirlik kanıtı"
+  },
+  {
+   "tip": "madde",
+   "ref": "5.3",
+   "baslik": "Roller, sorumluluklar ve yetkiler",
+   "sorular": [
+    "Üst yönetim YZYS'ye ilişkin sorumluluk ve yetkileri tanımlamış ve kuruluş içinde duyurmuş mu?",
+    "YZYS'nin performansının üst yönetime raporlanmasına ilişkin sorumluluk atanmış mı?"
+   ],
+   "kanit": "YZYS'den sorumlu kişi/kurul/yapı, görev tanımları, atama kararları, organizasyon şeması"
+  },
+  {
+   "tip": "madde",
+   "ref": "6.1.1",
+   "baslik": "Risk ve fırsatları ele alan faaliyetler — Genel",
+   "sorular": [
+    "Kuruluş, YZ yönetim sistemiyle ilgili risk ve fırsatları belirlemiş mi?",
+    "Kabul edilebilir ve kabul edilemez riskleri ayırt etmek; YZ risk değerlendirmesi yapmak, YZ risk işleme yürütmek ve YZ risk etkilerini değerlendirmek için YZ risk kriterleri oluşturulmuş mu?",
+    "Kuruluş belirlenen risk ve fırsatları ele alacak faaliyetleri planlıyor mu?",
+    "Risk değerlendirmesi planlı aralıklarla ve kuruluşta değişiklik olduğunda gözden geçiriliyor mu?"
+   ],
+   "kanit": "Risk ve fırsat kaydı, YZ'ye ilişkin risk örnekleri, risk kriterleri örnekleri, gözden geçirme kayıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "6.1.2",
+   "baslik": "YZ risk değerlendirmesi",
+   "sorular": [
+    "Kuruluş YZ risk değerlendirmesi için bir süreç oluşturmuş mu?",
+    "Süreç tekrarlanabilir, geçerli ve karşılaştırılabilir sonuçlar üretiyor mu?",
+    "YZ risk değerlendirmesine ilişkin dokümante bilgi mevcut mu?"
+   ],
+   "kanit": "YZ risk değerlendirmesi (tarih, değerlendirmeyi yapanlar, belirlenen risk örnekleri), risk metodolojisi dokümanı"
+  },
+  {
+   "tip": "madde",
+   "ref": "6.1.3",
+   "baslik": "YZ risk işleme",
+   "sorular": [
+    "Seçilen seçenekleri uygulamak için gerekli YZ risk işleme seçeneklerini ve kontrolleri içeren bir risk işleme süreci tanımlanmış mı?",
+    "Dokümante edilmiş bir Uygulanabilirlik Bildirgesi (SoA) mevcut mu?",
+    "SoA, ISO/IEC 42001 Ek A kontrollerini ve kuruluşun geliştirdiği ilave kontrolleri içeriyor mu?",
+    "SoA, uygulanan kontroller için gerekçe ve Ek A'dan hariç tutulan kontroller için hariç tutma gerekçesi içeriyor mu?",
+    "Dokümante edilmiş bir risk işleme planı mevcut mu?",
+    "Risk işleme planı artık riskleri tanımlıyor mu?",
+    "Kuruluş, risk işleme planı ve artık riskler için ilgili yönetimden onay almış mı?"
+   ],
+   "kanit": "SoA (tarih, sürüm, kod), risk işleme planı, artık risk örnekleri, risk sahibi onay kayıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "6.1.4",
+   "baslik": "YZ sistemi etki değerlendirmesi",
+   "sorular": [
+    "Kuruluş, YZ sistemlerinin geliştirilmesi, sağlanması veya kullanılmasından kişiler, kişi grupları ve toplumlar üzerinde doğabilecek potansiyel sonuçları değerlendirmek için bir süreç tanımlamış mı?",
+    "YZ sistemi etki değerlendirmesi, kişiler, gruplar ve toplumlar üzerindeki sonuçları belirlerken amaçlanan kullanımı ve öngörülebilir amaç dışı kullanımı dikkate alıyor mu?",
+    "Etki değerlendirmesi süreci risk değerlendirmesi sürecinden ayrı ve ayrıca dokümante edilmiş mi?"
+   ],
+   "kanit": "YZ sistemi etki değerlendirmesi (tarih, kod, bulgular), etki değerlendirme metodolojisi"
+  },
+  {
+   "tip": "madde",
+   "ref": "6.2",
+   "baslik": "YZ hedefleri ve bunlara ulaşmak için planlama",
+   "sorular": [
+    "Kuruluş içinde ilgili pozisyon ve seviyeler için YZ hedefleri dokümante edilmiş mi?",
+    "Hedefler duyuruluyor, izleniyor ve uygun şekilde güncelleniyor mu?",
+    "Kuruluş YZ hedeflerine ulaşmak için planlar oluşturmuş mu? (ne yapılacak, hangi kaynakla, kim sorumlu, ne zaman tamamlanacak, sonuç nasıl değerlendirilecek)"
+   ],
+   "kanit": "Hedef örnekleri, sorumluluklar, hedefe ulaşma planları, ölçüm sonuçları"
+  },
+  {
+   "tip": "madde",
+   "ref": "6.3",
+   "baslik": "Değişikliklerin planlanması",
+   "sorular": [
+    "Kuruluş YZYS'sindeki değişiklikleri planlı bir şekilde yapıyor mu?",
+    "Uygulanan her değişiklik için kuruluş ihtiyacı belirliyor, etkiyi değerlendiriyor, ayrıntıları ilgili paydaşlara duyuruyor, geri alma (roll-back) stratejisi sağlıyor, uygulamayı kontrol ediyor ve uygulama sonrası değişikliğin etkilerini gözden geçiriyor mu?"
+   ],
+   "kanit": "Değişiklik yönetimi prosedürü, uygulanmış değişiklik örnekleri, geri alma planları, değişiklik sorumlulukları"
+  },
+  {
+   "tip": "madde",
+   "ref": "7.1",
+   "baslik": "Kaynaklar",
+   "sorular": [
+    "Üst yönetim YZYS için gerekli kaynakları belirliyor ve sağlıyor mu?",
+    "Sağlanan kaynaklar hesaplama gücünü, hizmetleri, finansal ve insan kaynaklarını içeriyor mu?"
+   ],
+   "kanit": "Bütçe, kadro planı, hesaplama kaynağı tahsisi, hizmet sözleşmeleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "7.2",
+   "baslik": "Yetkinlik",
+   "sorular": [
+    "Kuruluş, YZYS üzerinde etkisi olan kişilerin öğrenim, eğitim ve deneyim açısından yetkin olmasını sağlıyor mu?",
+    "Kuruluş gerekli yetkinliği kazanmak için önlemler alıyor (yetkin personel istihdamı, eğitim, mentorluk, sorumluluk değişikliği vb.) ve bu önlemlerin etkinliğini değerlendiriyor mu?",
+    "Yetkinlik kanıtı olarak dokümante bilgi mevcut mu?"
+   ],
+   "kanit": "Dokümante prosedürler, eğitim programı/planı, personel özlük dosyaları, diplomalar, sertifikalar, yetkilendirmeler, diğer eğitim kanıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "7.3",
+   "baslik": "Farkındalık",
+   "sorular": [
+    "Kuruluş, kontrolü altında çalışan kişilerin YZ politikasından, YZYS'nin etkinliğine kişisel katkılarından ve gerekliliklere uymamanın sonuçlarından haberdar olmasını sağlıyor mu?"
+   ],
+   "kanit": "Farkındalık eğitimi kayıtları, katılım listeleri, iç duyurular, intranet yayınları"
+  },
+  {
+   "tip": "madde",
+   "ref": "7.4",
+   "baslik": "İletişim",
+   "sorular": [
+    "Kuruluş, YZYS ile ilgili iç ve dış iletişim için süreçler oluşturmuş mu?",
+    "Kuruluş YZYS hakkında ne iletişim kuracağını, ne zaman iletişim kuracağını ve hangi iletişim kanallarının kullanılacağını belirlemiş mi?",
+    "YZYS ile ilgili iletişim sorumlulukları atanmış ve duyurulmuş mu?"
+   ],
+   "kanit": "İletişim planı, iletişim matrisi (ne/ne zaman/kime/nasıl/kim), duyuru kayıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "7.5",
+   "baslik": "Dokümante bilgi",
+   "sorular": [
+    "YZYS, ISO/IEC 42001'in gerektirdiği dokümante bilgiyi ve kuruluşun YZYS etkinliği için gerekli gördüğü dokümante bilgiyi içeriyor mu?",
+    "Dokümante bilginin kontrolü sağlanıyor mu? (dağıtım, erişim, kullanım, saklama, koruma, değişiklik kontrolü, imha)",
+    "Dış kaynaklı dokümante bilgi belirlenmiş ve kontrol altında mı?"
+   ],
+   "kanit": "Dokümante prosedürler, politikalar, doküman ana listesi, doküman kontrol prosedürü, revizyon kayıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "8.1",
+   "baslik": "İşletimsel planlama ve kontrol",
+   "sorular": [
+    "Kuruluş YZYS süreçlerini belirlenmiş kriterlere göre kontrol ediyor mu?",
+    "Süreçlerin kontrol edildiğine dair kanıt olarak dokümante bilgi mevcut mu?",
+    "Kuruluş planlı değişiklikleri kontrol ediyor ve olumsuz etkileri azaltmak için istenmeyen değişikliklerin sonuçlarını gözden geçiriyor mu?",
+    "Dış kaynaklı ürün, hizmet ve prosesler için kontroller oluşturulmuş ve uygulanıyor mu?"
+   ],
+   "kanit": "İşletim kriterleri, süreç kayıtları, dış kaynak sözleşmeleri ve kontrol kanıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "8.2",
+   "baslik": "YZ risk değerlendirmesinin uygulanması",
+   "sorular": [
+    "YZ risk değerlendirmesi planlı aralıklarla ve önemli değişiklik önerildiğinde veya gerçekleştiğinde uygulanıyor mu?",
+    "YZ risk değerlendirme sonuçlarına ilişkin dokümante bilgi saklanıyor mu?"
+   ],
+   "kanit": "Tarihli risk değerlendirme sürümleri, tetikleyici olay kayıtları"
+  },
+  {
+   "tip": "madde",
+   "ref": "8.3",
+   "baslik": "YZ risk işlemenin uygulanması",
+   "sorular": [
+    "Kuruluş YZ risk işleme planını uyguluyor mu?",
+    "YZ risk işleme sonuçlarına ilişkin dokümante bilgi saklanıyor mu?"
+   ],
+   "kanit": "Risk işleme planı durum sütunu, tamamlanan aksiyon kanıtları, artık risk güncellemeleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "8.4",
+   "baslik": "YZ sistemi etki değerlendirmesinin uygulanması",
+   "sorular": [
+    "Kuruluş YZ sistemi etki değerlendirme sürecini uyguluyor mu?",
+    "YZ sistemi etki değerlendirme sonuçlarına ilişkin dokümante bilgi saklanıyor mu?",
+    "Etki değerlendirmesi yaşam döngüsü boyunca ve tetikleyici olaylarda güncelleniyor mu?"
+   ],
+   "kanit": "Tamamlanmış etki değerlendirme kayıtları, değerlendirme tarihi ve sonraki gözden geçirme tarihi, onaylayan"
+  },
+  {
+   "tip": "madde",
+   "ref": "9.1",
+   "baslik": "İzleme, ölçme, analiz ve değerlendirme",
+   "sorular": [
+    "Kuruluş YZYS'sinin performansını ve etkinliğini değerlendiriyor mu?",
+    "Neyin izleneceği ve ölçüleceği, hangi yöntemle, ne zaman ve sonuçların kim tarafından analiz edileceği belirlenmiş mi?",
+    "İzleme ve ölçme kanıtı olarak dokümante bilgi saklanıyor mu?"
+   ],
+   "kanit": "İzleme planı, performans göstergeleri, ölçüm raporları, adillik ve kayma (drift) metrikleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "9.2",
+   "baslik": "İç tetkik",
+   "sorular": [
+    "Kuruluş YZYS'nin iç tetkiklerini planlı aralıklarla gerçekleştiriyor mu?",
+    "Bir iç tetkik programı oluşturulmuş, uygulanmış ve sürdürülüyor mu?",
+    "İç tetkiklere ilişkin dokümante bilgi mevcut mu?",
+    "İç tetkikçiler gerekli yetkinliğe ve bağımsızlığa (tarafsızlığa) sahip mi?"
+   ],
+   "kanit": "Dokümante prosedürler, iç tetkik programı, tetkik planları, soru listeleri, tetkik raporları, tetkikçi yetkinlik kanıtı"
+  },
+  {
+   "tip": "madde",
+   "ref": "9.3",
+   "baslik": "Yönetimin gözden geçirmesi",
+   "sorular": [
+    "Üst yönetim YZYS'yi planlı aralıklarla gözden geçiriyor mu?",
+    "YGG girdileri şunları içeriyor mu: önceki YGG kararlarının durumu, değişen iç/dış hususlar, uygunsuzluk ve düzeltici faaliyetler, izleme ve ölçme sonuçları, tetkik sonuçları, hedeflere ulaşma durumu, ilgili taraf geri bildirimi, risk değerlendirme sonuçları, etki değerlendirme sonuçları, iyileştirme fırsatları?",
+    "YGG sonuçları sürekli iyileştirme fırsatlarına ve YZYS'de değişiklik ihtiyacına ilişkin kararları içeriyor mu?",
+    "YGG sonuçlarına ilişkin dokümante bilgi saklanıyor mu?"
+   ],
+   "kanit": "Dokümante prosedürler, YGG tutanakları, katılımcı listesi, karar ve aksiyon takibi"
+  },
+  {
+   "tip": "madde",
+   "ref": "10.1",
+   "baslik": "Sürekli iyileştirme",
+   "sorular": [
+    "Kuruluş YZYS'nin uygunluğunu, yeterliliğini ve etkinliğini sürekli iyileştiriyor mu?"
+   ],
+   "kanit": "İyileştirme kararları, YGG çıktıları, iyileştirme projeleri"
+  },
+  {
+   "tip": "madde",
+   "ref": "10.2",
+   "baslik": "Uygunsuzluk ve düzeltici faaliyet",
+   "sorular": [
+    "Kuruluş uygunsuzlukları düzeltmeler ve düzeltici faaliyetler uygulayarak gözden geçiriyor ve ele alıyor mu?",
+    "Uygunsuzluğun kök nedeni belirleniyor ve benzer uygunsuzlukların başka yerde var olup olmadığı araştırılıyor mu?",
+    "Düzeltici faaliyetlerin etkinliği gözden geçiriliyor mu?",
+    "Uygunsuzlukların yapısına, alınan düzeltici faaliyetlere ve sonuçlarına ilişkin dokümante bilgi saklanıyor mu?"
+   ],
+   "kanit": "Dokümante prosedürler, uygunsuzluk kayıtları, şikâyetler, DÖF formları, kök neden analizleri, etkinlik doğrulama kayıtları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.2.2",
+   "baslik": "YZ politikası",
+   "sorular": [
+    "YZ'nin geliştirilmesi ve kullanımı için bir politika oluşturulmuş ve dokümante edilmiş mi?",
+    "YZ politikası kuruluşun tüm YZ ile ilgili faaliyetlerine yön verecek ilkeleri içeriyor mu?",
+    "YZ politikası istisna ve sapmaların ele alınmasına ilişkin süreci dokümante ediyor mu?"
+   ],
+   "kanit": "YZ politikası, ilke listesi, istisna/sapma yönetim süreci"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.2.3",
+   "baslik": "Diğer kurumsal politikalar ile uyum",
+   "sorular": [
+    "Kuruluş mevcut politikalarının YZ ile ilgili hedeflerinden etkilenip etkilenmediğini veya bunlara uygulanıp uygulanmadığını belirlemiş mi?",
+    "Kuruluşun diğer politikaları YZ ile ilgili hükümleri içerecek şekilde güncellenmiş mi?"
+   ],
+   "kanit": "Politika uyum matrisi, bilgi güvenliği/KVKK/kalite/etik politikalarının güncellenme kayıtları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.2.4",
+   "baslik": "YZ politikasının gözden geçirilmesi",
+   "sorular": [
+    "Kuruluş YZ politikasını planlı aralıklarla ve gerektiğinde ilave olarak gözden geçirerek uygunluğunun, yeterliliğinin ve etkinliğinin sürdüğünü güvence altına alıyor mu?",
+    "Kuruluş YZ politikasının geliştirilmesi, gözden geçirilmesi ve değerlendirilmesinden sorumlu bir rol atamış mı?"
+   ],
+   "kanit": "YZ politikası, politikayı gözden geçirmekten sorumlu kişi, mevcut politikaların YZ hükümleriyle güncellendiğine dair kanıt"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.3.2",
+   "baslik": "YZ rolleri ve sorumlulukları",
+   "sorular": [
+    "Kuruluş YZ ile ilgili rol ve sorumlulukları tahsis etmiş mi?",
+    "Rol ve sorumluluklar şu alanları kapsıyor mu: risk yönetimi, mahremiyet, güvenlik, emniyet, YZ sistemi etki değerlendirmesi, performans, insan gözetimi, tedarikçi ilişkileri, uyum, veri kalitesi yönetimi ve kuruluşun gerekli gördüğü diğer alanlar?"
+   ],
+   "kanit": "YZ ile ilgili çeşitli fonksiyonlardan sorumlu kişiler, rol ve sorumluluk atama kayıtları, RACI matrisi"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.3.3",
+   "baslik": "Endişelerin raporlanması",
+   "sorular": [
+    "Kuruluş YZ sistemlerine ilişkin endişelerin raporlanması (whistleblowing) için bir süreç oluşturmuş ve uygulamaya koymuş mu?",
+    "Bildirim mekanizması gizliliği veya anonimliği ya da her ikisini birden güvence altına alıyor mu?",
+    "Bildirim mekanizması personelin erişimine açık ve yetkin kişilerce yönetiliyor mu?",
+    "Endişe bildirim sistemi bir eskalasyon mekanizması sağlıyor mu?",
+    "Kuruluş endişe bildiren kişilerin misillemeden korunmasını sağlıyor mu?",
+    "Bildirimde bulunanlar, gizlilik korunarak, bildirimlerinin durumu hakkında bilgilendiriliyor mu?"
+   ],
+   "kanit": "Endişe bildirim (whistleblowing) prosedürü, bildirim kanalı kanıtı, gelen bildirim kayıtları, misillemeye karşı koruma taahhüdü, geri bildirim kayıtları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.4.2",
+   "baslik": "Kaynak dokümantasyonu",
+   "sorular": [
+    "Kuruluş, YZ ile ilgili faaliyetler için YZ sistemi yaşam döngüsünün çeşitli aşamalarında gereken kaynakları belirlemiş ve dokümante etmiş mi?",
+    "Kaynak belirleme; YZ sistemi bileşenleri, veri, araç kaynakları, hesaplama ve insan kaynaklarını içeriyor mu?"
+   ],
+   "kanit": "Kaynak envanteri, yaşam döngüsü aşaması bazında kaynak dokümantasyonu, kaynak sorumluları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.4.3",
+   "baslik": "Veri kaynakları",
+   "sorular": [
+    "Kaynak belirlemenin bir parçası olarak kuruluş, YZ sistemleri için kullanılan veri kaynaklarına ilişkin bilgiyi dokümante etmiş mi?",
+    "YZ geliştirme ve işletiminde kullanılan tüm veri setlerini kaydeden merkezi bir veri envanteri sürdürülüyor mu?",
+    "Kuruluş veri kökenini (provenance) izliyor ve veriyi eğitim, doğrulama, test ve üretim kullanımına göre kategorize ediyor mu?",
+    "Veri, YZ modellerinin örüntüleri tanımasını destekleyecek şekilde etiketleniyor mu?",
+    "Kuruluş kalite, tamlık, tutarlılık veya temsil edicilik gibi veri kalitesi parametrelerini değerlendirmek için kriterler oluşturmuş mu?",
+    "Kuruluş veri saklama ve imha politikalarını uygulamaya koymuş mu?"
+   ],
+   "kanit": "Veri envanteri, veri saklama politikası, veri etiketleme prosedürü, veri kalitesi parametre kriterleri, veri sorumlulukları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.4.4",
+   "baslik": "Araç kaynakları",
+   "sorular": [
+    "Kuruluş YZ sistemi için kullanılan araç kaynaklarına ilişkin bilgiyi dokümante etmiş mi?",
+    "Araç kaynaklarının belirlenmesi; veri hazırlama, model tasarımı, değerlendirme, devreye alma veya izleme için kullanılan hem yazılım hem donanımı içeriyor mu?",
+    "Kuruluş kullanılan makine öğrenmesi model tiplerini dokümante etmiş mi?",
+    "Veri hazırlama için kullanılan araç kaynakları belirlenmiş ve dokümante edilmiş mi?"
+   ],
+   "kanit": "Kullanılan araç örnekleri, araç envanteri, araç kaynaklarına ilişkin sorumluluk, kullanılan makine öğrenmesi model tiplerine ilişkin dokümantasyon"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.4.5",
+   "baslik": "Sistem ve hesaplama kaynakları",
+   "sorular": [
+    "Kuruluş YZ sistemi için kullanılan sistem ve hesaplama kaynaklarına ilişkin bilgiyi dokümante etmiş mi?",
+    "Kuruluş, YZ sistemi yaşam döngüsünün farklı aşamalarının farklı tip sistem ve hesaplama kaynakları gerektirdiğinin farkında mı?",
+    "Kuruluş YZ iş yükünü çalıştırmak için kullanılan donanımın etkisini (örn. maliyet ve çevresel etki) biliyor ve nicelendiriyor mu?"
+   ],
+   "kanit": "Sistem ve hesaplama kaynağı envanteri, YZ sistemi ortamı, kullanılan donanım örnekleri, donanım sorumlulukları, gelecekteki kaynak ihtiyacı projeksiyonları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.4.6",
+   "baslik": "İnsan kaynakları",
+   "sorular": [
+    "Kuruluş, YZ sisteminin geliştirilmesi, devreye alınması, işletimi, değişiklik yönetimi, bakımı, transferi, hizmetten çıkarılması, doğrulanması ve entegrasyonu için kullanılan insan kaynaklarına (yetkinlikleri dahil) ilişkin bilgiyi dokümante etmiş mi?",
+    "Kuruluş, YZ sistemi yaşam döngüsünün çeşitli aşamalarının farklı yetkinliklere sahip personel gerektirdiğinin farkında mı?",
+    "Kuruluş, YZ ekosistemindeki rolünü dikkate alarak gerekli insan kaynağına sahip mi?"
+   ],
+   "kanit": "Yetkinlik kayıtları, yetkinlik gerekliliklerinin yaşam döngüsü aşamalarına eşlenmesi, yetkinliğin sürdürülmesi ve geliştirilmesine ilişkin sorumluluk"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.5.2",
+   "baslik": "YZ sistemi etki değerlendirme süreci",
+   "sorular": [
+    "Kuruluş, YZ sisteminden yaşam döngüsü boyunca kişiler veya kişi grupları ve toplumlar üzerinde doğabilecek potansiyel sonuçları değerlendirmek için bir süreç oluşturmuş mu?",
+    "Kuruluş, YZ sistemi etki değerlendirmesinin hangi koşullarda yapılacağını ve bu sürecin hangi unsurları içereceğini belirlemiş mi?",
+    "YZ sistemi etki değerlendirmesi yapma sorumlulukları atanmış mı?"
+   ],
+   "kanit": "Dokümante prosedür, değerlendirme tetikleyicileri listesi, sorumluluk atamaları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.5.3",
+   "baslik": "YZ sistemi etki değerlendirmelerinin dokümantasyonu",
+   "sorular": [
+    "Kuruluş YZ sistemi etki değerlendirmelerinin sonuçlarını dokümante etmiş ve bu sonuçları tanımlı bir süre boyunca saklıyor mu?",
+    "Dokümantasyon şunları içeriyor mu: YZ sisteminin amaçlanan kullanımı ve makul şekilde öngörülebilir amaç dışı kullanımı, YZ sisteminin olumlu ve olumsuz etkileri, öngörülebilir hatalar ve bunları azaltacak faaliyetler, sistemin uygulanabildiği ilgili demografik gruplar, sistemin karmaşıklığı, insanların sistemle ilişkisindeki rolü ile istihdam ve personel beceri kazanımı?"
+   ],
+   "kanit": "Etki değerlendirme kayıtları (tarih, hazırlayan, içerik), saklama süresi tanımı, olumlu/olumsuz etki analizi"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.5.4",
+   "baslik": "YZ sisteminin kişiler ve kişi grupları üzerindeki etkisinin değerlendirilmesi",
+   "sorular": [
+    "Kuruluş YZ sistemlerinin kişiler veya gruplar üzerindeki potansiyel etkilerini yaşam döngüsü boyunca değerlendirmiş ve dokümante etmiş mi?",
+    "Etki değerlendirmesi, ilgili olduğu ölçüde şu alanları dikkate alıyor mu: adillik, hesap verebilirlik, şeffaflık ve açıklanabilirlik, güvenlik ve mahremiyet, emniyet ve sağlık, finansal sonuçlar, erişilebilirlik, insan hakları?",
+    "Kırılgan gruplar (çocuklar, engelliler, dil azınlıkları, düşük dijital okuryazarlığa sahip kişiler) ayrıca ele alınmış mı?"
+   ],
+   "kanit": "Etkilenen gruplar analizi, adillik ve ayrımcılık değerlendirmesi, erişilebilirlik ve insan hakları değerlendirmesi"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.5.5",
+   "baslik": "YZ sistemlerinin toplumsal etkilerinin değerlendirilmesi",
+   "sorular": [
+    "Kuruluş YZ sistemlerinin potansiyel toplumsal etkilerini yaşam döngüleri boyunca değerlendirmiş ve dokümante etmiş mi?",
+    "Belirlenen toplumsal etkiler, uygulanabilir olduğu ölçüde şu alanlara atıfta bulunuyor mu: çevresel sürdürülebilirlik (doğal kaynaklar üzerindeki etki, sera gazı emisyonları), ekonomi (finansal hizmetlere erişim, vergiler, istihdam olanakları, ticaret), yönetişim (yasama süreci, siyasi kazanç için yanlış bilgi, ulusal güvenlik, ceza adaleti sistemleri), sağlık ve emniyet?"
+   ],
+   "kanit": "Dokümante prosedür, YZ sistemi etki değerlendirmesi (tarih, hazırlayan, içerik), kişiler/gruplar/toplumlar üzerinde belirlenen etkiler"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.1.2",
+   "baslik": "YZ sisteminin sorumlu geliştirilmesi için hedefler",
+   "sorular": [
+    "Kuruluş YZ sistemlerinin sorumlu geliştirilmesine yön verecek hedefleri dokümante etmiş mi?",
+    "Kuruluş sorumlu geliştirme hedeflerine ulaşmak için YZ sistemi yaşam döngüsüne önlemler entegre ediyor mu?"
+   ],
+   "kanit": "Sorumlu YZ geliştirme hedefi örnekleri, hedeflere ulaşmak için özel önlemler, ölçüm göstergeleri"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.1.3",
+   "baslik": "Sorumlu YZ sistemi tasarım ve geliştirme süreçleri",
+   "sorular": [
+    "Kuruluş YZ'nin sorumlu tasarım ve geliştirilmesi için süreçler tanımlamış mı?",
+    "Bu süreçler insan gözetimi, test, uzmanlık, yayın (release) kriterleri, onaylar ve imzalar, değişiklik kontrolü veya ilgili tarafların katılımı ile ilgili hususları içeriyor mu?"
+   ],
+   "kanit": "Dokümante prosedürler, tasarım gözden geçirme kayıtları, etik kontrol noktaları, sorumluluklar"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.2",
+   "baslik": "YZ sistem gereklilikleri ve şartnamesi",
+   "sorular": [
+    "Kuruluş yeni YZ sistemleri ve mevcut sistemlerdeki önemli iyileştirmeler için gereklilikleri dokümante etmiş mi?",
+    "YZ sisteminin neden geliştirildiğini, modelin nasıl eğitilebileceğini ve veri gerekliliklerinin nasıl karşılanabileceğini açıklayan dokümantasyon mevcut mu?"
+   ],
+   "kanit": "Dokümante bilgi, gereklilik şartnamesi sorumlulukları, yeni YZ sistemleri veya mevcut sistemlerdeki değişikliklere ilişkin gereklilik örnekleri"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.3",
+   "baslik": "YZ sistem tasarım ve geliştirmesinin dokümantasyonu",
+   "sorular": [
+    "YZ sistemleri için tasarım ve geliştirme süreci dokümante edilmiş mi?",
+    "Kuruluş tasarım tercihlerini gerekçelendiriyor mu? (makine öğrenmesi yaklaşımı, öğrenme algoritması, model eğitimi hususları, seçilen donanım ve yazılım bileşenleri, güvenlik tehditlerinin azaltılması, sistemle insan etkileşimi)",
+    "Dokümante edilmiş bir sistem mimarisi mevcut mu?"
+   ],
+   "kanit": "Dokümante prosedürler, tasarım ve geliştirme sorumlulukları, tasarım-geliştirme süreç kayıtları, sistem mimarisi"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.4",
+   "baslik": "YZ sistem doğrulaması ve geçerlemesi",
+   "sorular": [
+    "Kuruluş YZ sistemi için doğrulama ve geçerleme (V&V) önlemlerini tanımlamış mı?",
+    "Doğrulama ve geçerleme önlemleri; test metodolojileri ve araçlarını, test verisinin seçimini (kullanım alanı için temsil ediciliği dahil) ve yayın kriteri gerekliliklerini kapsıyor mu?",
+    "Kuruluş, YZ sistemi bileşenlerini ve sistemin bütününü kişiler ve toplumlar üzerindeki etkilere ilişkin riskler açısından değerlendirmek için bir plan dokümante etmiş mi?",
+    "YZ sisteminin kullanımına ilişkin kriterler oluşturulmuş ve dokümante edilmiş mi?",
+    "Kuruluş YZ sistemini bu kriterlere göre değerlendiriyor mu?"
+   ],
+   "kanit": "Dokümante V&V prosedürleri, V&V sorumlulukları, YZ sistemi için dokümante V&V planı, yayın kriteri örnekleri, test sonuçları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.5",
+   "baslik": "YZ sisteminin devreye alınması",
+   "sorular": [
+    "Kuruluş YZ sistemi için bir devreye alma (deployment) planı dokümante etmiş mi?",
+    "Devreye alma planı, YZ sistemi bileşenlerinin birlikte mi yoksa bağımsız mı devreye alınacağını dokümante ediyor mu?",
+    "Devreye alma planı, devreye almadan önce karşılanması gereken yayın kriterlerine ilişkin bilgi içeriyor mu?",
+    "Kullanıcı test gereklilikleri devreye alma planında dokümante edilmiş mi?",
+    "Devreye alma planı, devreye alma öncesinde alınması gereken onay ve imzalara atıfta bulunuyor mu?"
+   ],
+   "kanit": "Devreye alma planı (tarih, imzalayan), yayın kriteri örnekleri, kullanıcı test gereklilikleri, geri alma (rollback) planı"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.6",
+   "baslik": "YZ sistemi işletimi ve izlenmesi",
+   "sorular": [
+    "Kuruluş YZ sisteminin sürekli işletimi için gerekli unsurları tanımlamış ve dokümante etmiş mi?",
+    "Kuruluş YZ sisteminin performansını izlemek için kriterler ve metrikler oluşturmuş mu?",
+    "YZ sisteminin performansı sürekli olarak izleniyor mu?",
+    "Kuruluşun YZ sistemini gerektiğinde onarmak için (örn. hata ve arızalara yanıt olarak) oluşturulmuş bir süreci var mı?",
+    "Kuruluşun YZ sistemini gerektiğinde güncellemek için iyi tanımlanmış bir süreci var mı?",
+    "Kuruluş YZ sistemi kullanıcılarına yeterli destek sağlıyor mu?",
+    "Kuruluş veri zehirlenmesi (data poisoning), model çalma (model stealing) veya model tersine çevirme (model inversion) saldırıları gibi YZ'ye özgü tehditlere karşı yeterli güvenlik önlemleri uygulamış mı?"
+   ],
+   "kanit": "Performans kriter ve metrikleri, performans izleme sorumlulukları, performans raporları, onarım kayıtları, güncelleme kayıtları, destek sorumluluk ve kaynakları, uygulanan güvenlik kontrolleri"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.7",
+   "baslik": "YZ sistemi teknik dokümantasyonu",
+   "sorular": [
+    "Kuruluş her ilgili taraf kategorisi için hangi YZ sistemi teknik dokümantasyonunun gerekli olduğunu belirlemiş mi?",
+    "Kuruluş gerekli teknik dokümantasyonu, çeşitli ilgili tarafların ihtiyaçlarına uygun bir formatta sağlıyor mu?",
+    "YZ sistemi teknik dokümantasyonu şunları içeriyor mu: YZ sisteminin tanımı (amaçlanan amaç dahil), kullanım talimatları, YZ sisteminin devreye alınması ve işletimine ilişkin teknik varsayımlar, sistemin teknik sınırlılıkları, izleme yetenekleri ve fonksiyonları?"
+   ],
+   "kanit": "YZ sistemi teknik dokümantasyonu (model kartı/sistem kartı), teknik dokümantasyonu hazırlama sorumluluğu, sürüm kontrolü, ilgili taraflara iletildiğine dair kanıt"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.6.2.8",
+   "baslik": "YZ sistemi olay günlüklerinin kaydı",
+   "sorular": [
+    "Kuruluş, YZ sistemi yaşam döngüsünün hangi aşamalarında olay kaydının etkinleştirileceğini belirlemiş mi?",
+    "YZ sistemi işletimdeyken olay kaydı (logging) aktif mi?",
+    "Günlükler, YZ sisteminin amaçlandığı gibi çalışıp çalışmadığını belirlemeye imkân veriyor mu?",
+    "Günlükler, YZ sisteminin amaçlanan performans aralığının dışında çalıştığı durumları tespit etmeye imkân veriyor mu?",
+    "Kuruluş günlükler için bir saklama süresi belirlemiş mi?",
+    "Günlükler yeterince korunuyor mu?"
+   ],
+   "kanit": "Kayıt (logging) prosedürü, veri saklama politikası, tutulan günlük tipleri, günlükler için koruma önlemleri, erişim kontrolü"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.7.2",
+   "baslik": "YZ sistemlerinin geliştirilmesi ve iyileştirilmesi için veriler",
+   "sorular": [
+    "Kuruluş YZ sistemlerinin geliştirilmesine ilişkin veri yönetimi süreçlerini tanımlamış ve dokümante etmiş mi?",
+    "Kuruluş veri için mahremiyet ve güvenlik kontrollerini uygulamış mı?",
+    "Kuruluş şeffaflık ve açıklanabilirliği sağlamak için önlemler uyguluyor mu?",
+    "Eğitim için kullanılan veri, YZ sisteminin amaçlanan kullanım alanı için temsil edici mi?",
+    "Kuruluş verinin doğru olmasını ve bütünlüğünü korumasını sağlıyor mu?"
+   ],
+   "kanit": "Veri yönetimi prosedürleri, veri yönetimi sorumlulukları, uygulanan güvenlik önlemi örnekleri, temsil edicilik analizi"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.7.3",
+   "baslik": "Verilerin edinilmesi",
+   "sorular": [
+    "Kuruluş YZ sistemlerinde kullanılan verinin edinilmesi ve seçilmesine ilişkin ayrıntıları belirlemiş mi?",
+    "Kuruluş YZ sistemleri için gereken veri kategorilerini, kullanılacak veri kaynaklarını ve bunların özelliklerini belirlemiş mi?",
+    "Kuruluş gereken veri miktarını, veri kökeni (provenance) ve haklara ilişkin hususları belirlemiş mi?"
+   ],
+   "kanit": "Kullanılan veri kategorileri, veri kaynakları, veri kökeni, veri edinme sorumlulukları, lisans/izin belgeleri"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.7.4",
+   "baslik": "YZ sistemleri için verilerin kalitesi",
+   "sorular": [
+    "Kuruluş veri kalitesi için gereklilikleri tanımlamış ve dokümante etmiş mi?",
+    "Veri için kalite gereklilikleri belirlenirken kuruluş YZ sisteminin amaçlanan amacını dikkate alıyor mu?",
+    "Kuruluş YZ geliştirme ve işletiminde kullanılan verinin kalite gerekliliklerini karşılamasını sağlıyor mu?"
+   ],
+   "kanit": "Dokümante prosedürler, veri için kalite gereklilikleri, veri kalite kontrolleri, veri kalitesi sorumluluğu"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.7.5",
+   "baslik": "Veri kökeni",
+   "sorular": [
+    "Kuruluş YZ sistemlerinde kullanılan verinin kökeninin (provenance) kaydedilmesi için bir süreç tanımlamış ve dokümante etmiş mi?",
+    "Veri kökeni kayıtları verinin oluşturulması, güncellenmesi, aktarımı (transcription), soyutlanması, doğrulanması ve kontrolünün devredilmesine ilişkin bilgi içeriyor mu?"
+   ],
+   "kanit": "Dokümante prosedürler, veri kökeni kayıtları, dönüşüm izleri"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.7.6",
+   "baslik": "Veri hazırlama",
+   "sorular": [
+    "Kuruluş veri hazırlama seçimlerine ve kullanılacak veri hazırlama yöntemlerine ilişkin kriterleri tanımlamış ve dokümante etmiş mi?",
+    "Kuruluş veriyi belirli YZ görevleri için kullanılabilir hâle getirmek üzere veri hazırlama teknikleri uyguluyor mu?"
+   ],
+   "kanit": "Dokümante prosedürler, uygulanan veri hazırlama işlemleri, veri hazırlama sorumluluğu, veri hazırlama kayıtları, etiketleyici talimatları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.8.2",
+   "baslik": "Kullanıcılar için sistem dokümantasyonu ve bilgileri",
+   "sorular": [
+    "Kuruluş, YZ sisteminin sorumlu ve etkin kullanımı için kullanıcılara hangi bilginin sağlanması gerektiğini belirlemiş mi?",
+    "Kuruluş gerekli bilgiyi kullanıcılara uygun bir formatta sağlıyor mu?",
+    "Kullanıcılara sağlanan bilgi şu hususlara atıfta bulunuyor mu: sistemin amacı, YZ sistemiyle nasıl etkileşim kurulacağı, teknik gereklilikler, güncellemeler ve değişiklikler, iletişim bilgileri, eğitim materyali, insan gözetimi ihtiyaçları?",
+    "Kuruluş kullanıcıların eksiksiz, güncel ve doğru bilgiye erişebildiğini doğruluyor mu?"
+   ],
+   "kanit": "Kullanıcıya bilgi sağlama sorumluluğu, sağlanan bilgi örnekleri, bilgi sağlama yöntemleri, sınırlılıklar beyanı"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.8.3",
+   "baslik": "Harici raporlama",
+   "sorular": [
+    "Kuruluş ilgili tarafların YZ sisteminin olumsuz etkilerini bildirebilmesi için bir mekanizma sağlıyor mu?",
+    "Bildirim kanalları açık ve kolay erişilebilir mi?",
+    "Alınan bildirimler kayda geçiriliyor, kategorize ediliyor ve gözden geçiriliyor mu?",
+    "Kuruluş alınan bildirimlere yanıt olarak gerektiğinde düzeltici faaliyetler uyguluyor mu?"
+   ],
+   "kanit": "Bildirim için dokümante prosedür, alınan bildirim kayıtları, bildirim mekanizması, bildirimleri gözden geçirme sorumluluğu, alınan düzeltici faaliyetler"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.8.4",
+   "baslik": "Olayların iletilmesi",
+   "sorular": [
+    "Kuruluş YZ sistemi kullanıcılarına olayların iletilmesi için bir plan dokümante etmiş mi?",
+    "Kuruluş, bağlama göre kullanıcıları ve diğer ilgili tarafları olaylar hakkında bilgilendirme yükümlülüklerinin farkında mı?",
+    "Kuruluş iletilmesi gereken olay tiplerini, bildirim süresini ve iletilmesi gereken ayrıntıları belirlemiş mi?",
+    "Kuruluşun YZ ile ilgili olaylar için de uyguladığı bir olay yönetimi süreci var mı?",
+    "Olay yönetimine ilişkin sorumluluklar atanmış mı?"
+   ],
+   "kanit": "Olay yönetimi prosedürü, olay yönetimi sorumlulukları, olay kayıtları, olayların kullanıcılara iletildiğine dair kanıt, bildirim şablonları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.8.5",
+   "baslik": "İlgili taraflar için bilgiler",
+   "sorular": [
+    "Kuruluş YZ sistemleri hakkında ilgili taraflara bilgi raporlama yükümlülüklerini dokümante etmiş mi?",
+    "İlgili taraflarla (örn. otoriteler, kolluk kuvvetleri) iletişim sorumlulukları atanmış ve duyurulmuş mu?",
+    "Kuruluş gerekli bilgiyi ilgili taraflara iletiyor mu?"
+   ],
+   "kanit": "İlgili taraflara sağlanan bilgi, raporlama sorumlulukları, otorite/düzenleyici ile iletişim kanıtı"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.9.2",
+   "baslik": "YZ sistemlerinin sorumlu kullanılmasına yönelik süreçler",
+   "sorular": [
+    "Kuruluş YZ sistemlerinin sorumlu kullanımı için süreçleri tanımlamış ve dokümante etmiş mi?",
+    "Kuruluş sorumlu kullanım hususlarını ele alan politikaları dokümante etmiş mi?"
+   ],
+   "kanit": "Dokümante politika ve prosedürler, kullanım kuralları, kullanıcı eğitimi kayıtları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.9.3",
+   "baslik": "YZ sistemlerinin sorumlu kullanımına yönelik hedefler",
+   "sorular": [
+    "Kuruluş YZ sistemlerinin sorumlu kullanımı için hedefleri dokümante etmiş mi?",
+    "Kuruluş sorumlu YZ kullanımı hedeflerine ulaşmak için mekanizmalar uygulamaya koymuş mu?",
+    "Kuruluş hedefleri tanımlarken, özellikle insan gözetimiyle ilgili olarak, YZ sistemi etki değerlendirmesinin sonuçlarını dikkate alıyor mu?"
+   ],
+   "kanit": "Dokümante hedefler, hedefleri uygulamaya yönelik önlemler, gerçekleştirme sorumlulukları, insan gözetimi tanımı"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.9.4",
+   "baslik": "YZ sisteminin amaçlanan kullanımı",
+   "sorular": [
+    "Kuruluş YZ sisteminin amaçlanan amacına ve beraberindeki dokümantasyona uygun olarak kullanılmasını sağlıyor mu?",
+    "Kuruluş, YZ sisteminin devreye alınması ve işletiminin amaçlanan kullanıma uygun olduğunu göstermek için olay günlükleri tutuyor mu?",
+    "Yasak/amaç dışı kullanımlar yazılı olarak tanımlanmış ve sapma izleniyor mu?"
+   ],
+   "kanit": "YZ sistemi dokümantasyonu, amaçlanan amaca uygun kullanımı gösteren kayıtlar, amaç dışı kullanım listesi, sapma izleme kayıtları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.10.2",
+   "baslik": "Sorumlulukların tahsisi",
+   "sorular": [
+    "Kuruluş YZ sistemi yaşam döngüsü içindeki sorumlulukların ilgili taraflar (tedarikçiler, müşteriler, üçüncü taraflar vb.) arasında tahsis edilmesini sağlıyor mu?",
+    "Kuruluş bir müşteri için YZ sistemi geliştirdiğinde, sistemin geliştirilmesinde sorumlu bir yaklaşım benimsemesini sağlıyor mu?",
+    "İşlenen veri kişisel veri içerdiğinde, sorumluluklar ilgili mevzuat uyarınca veri sorumlusu ve veri işleyen arasında paylaştırılmış mı?"
+   ],
+   "kanit": "Sözleşmeler, protokoller, prosedürler, sorumluluk paylaşım matrisi, veri sorumlusu/veri işleyen tanımları"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.10.3",
+   "baslik": "Tedarikçiler",
+   "sorular": [
+    "Kuruluşun, tedarikçilerce sağlanan hizmet, ürün veya materyallerin kullanımının sorumlu YZ yaklaşımıyla uyumlu olmasını sağlayan bir süreci var mı?",
+    "Kuruluş, farklı risk seviyelerini dikkate alan tedarikçi değerlendirme ve seçim kriterleri uyguluyor mu?",
+    "Tedarikçilerle yapılan sözleşmeler kuruluşun sorumlu YZ gerekliliklerini içeriyor mu?",
+    "Bir YZ sistemi veya bileşeni beklendiği gibi performans göstermediğinde kuruluş tedarikçisinden düzeltici faaliyet talep ediyor mu?",
+    "Kuruluş tedarikçilerinin ürün veya bileşenlerle birlikte yeterli ve eksiksiz dokümantasyon sağlamasını güvence altına alıyor mu?"
+   ],
+   "kanit": "Tedarikçi örnekleri, tedarikçi değerlendirme ve seçim sorumlulukları, sözleşmeler, YZ sözleşme ekleri, ürün dokümantasyonu"
+  },
+  {
+   "tip": "kontrol",
+   "ref": "A.10.4",
+   "baslik": "Müşteriler",
+   "sorular": [
+    "Kuruluşun sorumlu YZ geliştirme ve kullanım yaklaşımı müşterilerin ihtiyaç ve beklentilerini dikkate alıyor mu?",
+    "Kuruluş müşterilerinin ihtiyaç ve beklentilerini anlamak için çaba gösteriyor mu?",
+    "Kuruluş müşterilerine YZ sistemlerinin kullanımına ilişkin riskler hakkında yeterli ve eksiksiz bilgi sağlıyor mu?"
+   ],
+   "kanit": "Sözleşmeler, müşteri örnekleri, müşteri iletişim kayıtları, risk bilgilendirme metinleri"
+  }
+ ]
+}
